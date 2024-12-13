@@ -72,7 +72,7 @@ public class ScoreZone : MonoBehaviour
     }
     private int GetScoreToAddSec()
     {
-        return Config.GetScorePerClick();
+        return Config.GetScorePerSec();
     }
 
     private void UpdateTotalScore(int totalScore)
