@@ -15,7 +15,7 @@ public class ForkBar : MonoBehaviour
     private float timer = 0f;
     
     
-    public static event Action  OnPerClickScaleKfChanged;
+    //public static event Action  OnPerClickScaleKfChanged;
     // Start is called before the first frame update
     
     void Start()

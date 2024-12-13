@@ -15,7 +15,8 @@ public class TxtAddScorePerClick : MonoBehaviour
     void Start()
     {
         txtAddScore = gameObject.GetComponent<Text>();
-        txtAddScore.text = Config.GetScorePerClick().ToString();
+        int currScoreToAdd = Config.GetScorePerClick() * Config.GetPerClickScaleKf();
+        txtAddScore.text = currScoreToAdd.ToString();
         objectRenderer = gameObject.GetComponent<Graphic>();
         AnimateMoveUpDisappear();
     }
