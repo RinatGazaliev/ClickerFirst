@@ -35,13 +35,14 @@ public class Config : MonoBehaviour
     
     public static int GetScorePerClick() {
         Debug.Log("ScorePerClick"+PlayerPrefs.GetInt(SCOREPERCLICK, 1));
-        return PlayerPrefs.GetInt(SCOREPERCLICK, 1);
+        int currScorePerClick = PlayerPrefs.GetInt(SCOREPERCLICK, 1) * PerClickScaleKf;
+        return currScorePerClick;
         
     }
     
     #endregion
     
-    #region ScorePerClick
+    #region ScorePerSec
     public const string SCOREPERSEC = "Score_sec";
     //public static event Action<int> OnChangeTotalScore = delegate (int _scoreValue) { };
     
@@ -55,6 +56,35 @@ public class Config : MonoBehaviour
         Debug.Log("ScorePerClick"+PlayerPrefs.GetInt(SCOREPERSEC, 1));
         return PlayerPrefs.GetInt(SCOREPERSEC, 1);
         
+    }
+    
+    #endregion
+    
+    #region ForkParams
+    
+    public const string FORKADD = "ForkAddValue";
+    
+    public static void SetForkAddValue(float scoreValue) {
+        PlayerPrefs.SetFloat(FORKADD, scoreValue);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    
+    public static float GetForkAddValue() {
+        return PlayerPrefs.GetFloat(FORKADD, 0.05f);
+    }
+
+
+    private static int PerClickScaleKf = 1;
+    public static event Action<int> OnChangePerClickScaleKf = delegate (int _scaleValue) { };
+    public static int GetPerClickScaleKf() {
+        return PerClickScaleKf;
+    }
+    
+    public static void SetPerClickScaleKf(int scaleValue)
+    {
+        PerClickScaleKf = scaleValue;
+        OnChangePerClickScaleKf(scaleValue);
     }
     
     #endregion

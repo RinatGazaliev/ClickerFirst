@@ -14,7 +14,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     {
         // Вызываем событие и передаем объект, на который кликнули
         OnObjectClicked?.Invoke(gameObject);
-        Debug.Log($"Объект {gameObject.name} был нажат");
+       // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }// Start is called before the first frame update
     void Start()
     {
@@ -38,4 +38,6 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         OnObjectClicked?.Invoke(gameObject);
         
     }
+    
+
 }

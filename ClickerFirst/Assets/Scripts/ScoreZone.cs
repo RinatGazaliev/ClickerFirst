@@ -13,6 +13,7 @@ public class ScoreZone : MonoBehaviour
     [SerializeField] private Vector3 spawnPositionPerClick = Vector3.zero; // Позиция спавна
     [SerializeField] private Vector3 spawnPositionPerSec = Vector3.zero; 
     [SerializeField] private Vector3 spawnRotation = Vector3.zero; // Ротация спавна (в градусах)
+    private int scalePerClickKf;
 
     // Метод для вызова события спавна
   
@@ -23,6 +24,7 @@ public class ScoreZone : MonoBehaviour
         // Подписываемся на событие
         MainObject.OnObjectClicked += ClickTotalScore;
         Config.OnChangeTotalScore += UpdateTotalScore;
+        Config.OnChangePerClickScaleKf += UpdatePerClickForkKf;
     }
 
     void OnDisable()
@@ -30,7 +32,10 @@ public class ScoreZone : MonoBehaviour
         // Отписываемся от события
         MainObject.OnObjectClicked -= ClickTotalScore;
         Config.OnChangeTotalScore -= UpdateTotalScore;
+        Config.OnChangePerClickScaleKf -= UpdatePerClickForkKf;
     }
+    
+    
 
     private void ClickTotalScore(GameObject clickedObject)
     {
@@ -49,7 +54,8 @@ public class ScoreZone : MonoBehaviour
     private void AddTotalScoreOnClick()
     {
         int currScore = Config.GetTotalScore();
-        Config.SetTotalScore(currScore+GetScoreToAddClick());
+        Debug.Log("PointsToAdd");
+        Config.SetTotalScore(currScore+GetScoreToAddClick()*scalePerClickKf);
         //TODO AddAnimate And Spawn Object txtPerClick
     }
     
@@ -73,11 +79,18 @@ public class ScoreZone : MonoBehaviour
     {
         txtTotalScore.text = totalScore.ToString();
     }
+    
+    private void UpdatePerClickForkKf(int scaleKf)
+    {
+        scalePerClickKf=scaleKf;
+        Debug.Log("CurscalePerClickKf"+scalePerClickKf);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         txtTotalScore.text = Config.GetTotalScore().ToString();
+        scalePerClickKf = Config.GetPerClickScaleKf();
     }
 
     // Update is called once per frame
@@ -93,7 +106,7 @@ public class ScoreZone : MonoBehaviour
             // Конвертируем в Quaternion ротацию
             Quaternion rotation = Quaternion.Euler(Vector3.zero);
             Vector3 worldPosition = transform.TransformPoint(spawnPositionPerClick);
-            Debug.Log("RorldCoord"+worldPosition);
+            Debug.Log("WorldCoord"+worldPosition);
             //transform
             // Спавним объект
             GameObject SpawnedObj = Instantiate(spawnedAddScorePerClick, worldPosition, rotation);
