@@ -70,6 +70,51 @@ public class Config : MonoBehaviour
 
     #endregion
 
+
+    #region TotalDistance
+
+    private const string TOTALDISTANCE = "Distance_total";
+    //public static event Action<int> OnChangeTotalScore = delegate (int _scoreValue) { };
+
+    public static void SetTotalDistance(float distanceValue)
+    {
+        PlayerPrefs.SetFloat(TOTALDISTANCE, distanceValue);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+
+    public static float GetTotalDistance()
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        return PlayerPrefs.GetFloat(TOTALDISTANCE, 0);
+
+    }
+
+    #endregion
+
+    #region ChangeRoadTexture
+
+    private const string CURRENTTEXTUREROADNUMBER = "TextureRoad_N";
+    public static readonly int[] DistanceToChangeTextureRoad = {50, 100, 200, 400 };
+    //public static event Action<int> OnChangeTotalScore = delegate (int _scoreValue) { };
+
+    public static void SetRoadTextureCurrN(int currTextNumber)
+    {
+        PlayerPrefs.SetInt(CURRENTTEXTUREROADNUMBER, currTextNumber);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+
+    public static int GetRoadTextureCurrN()
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        return PlayerPrefs.GetInt(CURRENTTEXTUREROADNUMBER, 0);
+
+    }
+
+    #endregion
+    
+
     #region ForkParams
 
     public const string FORKADD = "ForkAddValue";
@@ -100,6 +145,9 @@ public class Config : MonoBehaviour
         PerClickScaleKf = scaleValue;
         OnChangePerClickScaleKf(scaleValue);
     }
+    
+    
+    
 
     #endregion
 
