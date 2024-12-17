@@ -92,11 +92,12 @@ public class Config : MonoBehaviour
 
     #endregion
 
-    #region ChangeRoadTexture
+    #region ChangeRoadAbdHeavenTexture
 
     private const string CURRENTTEXTUREROADNUMBER = "TextureRoad_N";
-    public static readonly int[] DistanceToChangeTextureRoad = {50, 100, 200, 400 };
-    //public static event Action<int> OnChangeTotalScore = delegate (int _scoreValue) { };
+    public static readonly int[] DistanceToChangeTextureRoad = { 25, 50, 100, 200, 400 };
+    //private bool isHeavenMove = false;
+    public static event Action<bool> OnChangeHeavenMove = delegate (bool _isHeaveMove) { };
 
     public static void SetRoadTextureCurrN(int currTextNumber)
     {
@@ -111,6 +112,14 @@ public class Config : MonoBehaviour
         return PlayerPrefs.GetInt(CURRENTTEXTUREROADNUMBER, 0);
 
     }
+    public static void SetHeavenMove(bool _isHeavenMove)
+    {
+        //isHeavenMove = _isHeavenMove;
+        OnChangeHeavenMove(_isHeavenMove);
+        //OnChangeTotalScore(scoreValue);
+    }
+    
+    
 
     #endregion
     

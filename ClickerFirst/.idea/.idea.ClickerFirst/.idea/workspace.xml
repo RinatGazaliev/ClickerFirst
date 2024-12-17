@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,11 +19,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ClearPrefsWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/Config.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/Config.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TxtAddScorePerSec.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -102,6 +103,8 @@
       <updated>1733975210301</updated>
       <workItem from="1733975212256" duration="11992000" />
       <workItem from="1734075192498" duration="18886000" />
+      <workItem from="1734348765395" duration="13985000" />
+      <workItem from="1734406626081" duration="2499000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -135,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734100637715</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="#MovingObjectsMechanicAdded">
+      <option name="closed" value="true" />
+      <created>1734366807517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734366807517</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +166,7 @@
     <MESSAGE value="#PrepareToTransfer" />
     <MESSAGE value="#AddForkBarAndScaleForkKf" />
     <MESSAGE value="#BoostersMechanicsAdded" />
-    <option name="LAST_COMMIT_MESSAGE" value="#BoostersMechanicsAdded" />
+    <MESSAGE value="#MovingObjectsMechanicAdded" />
+    <option name="LAST_COMMIT_MESSAGE" value="#MovingObjectsMechanicAdded" />
   </component>
 </project>

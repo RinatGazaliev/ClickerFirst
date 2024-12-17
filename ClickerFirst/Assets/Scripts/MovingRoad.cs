@@ -8,7 +8,7 @@ public class MovingRoad : MonoBehaviour
     // Start is called before the first frame update
     private float currSpeedKf = 500f;
     private bool isWalkActive = false;
-    private bool isRunActive = false;
+   
     [SerializeField] Text txtTotalDistance;
     [SerializeField] GameObject Part1;
     [SerializeField] GameObject Part2;
@@ -16,12 +16,13 @@ public class MovingRoad : MonoBehaviour
     private float startPositionPart2;
     //public Transform object1; // Первый объект
     //public Transform object2; 
-    private float direction;
+   
     private float timeSinceLastSave = 0f; // Таймер для сохранения в PlayerPrefs
     private float elapsedTime = 0f; // Общий накопленный таймер
     private float totalDistance;
     [SerializeField] private List<Sprite> SpriteRoadUp;
     [SerializeField] private List<Color> SpriteRoadDown;
+    
     private int currRoadTextureN;
 
     void Start()
@@ -32,7 +33,7 @@ public class MovingRoad : MonoBehaviour
         startPositionPart2 = Part2.transform.localPosition.x;
         Debug.Log("startPositionPart1"+startPositionPart1);
         
-        direction = startPositionPart1 - startPositionPart2;
+       
         totalDistance = Config.GetTotalDistance();
         txtTotalDistance.text = $"{totalDistance:F2} m";
         currRoadTextureN = Config.GetRoadTextureCurrN();
@@ -45,60 +46,8 @@ public class MovingRoad : MonoBehaviour
     {
         if (isWalkActive)
         {
-            var vector3 = Part2.transform.localPosition;
-            Debug.Log("Part2.transform.localPosition"+vector3.x);
-            vector3.x = vector3.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf();
-            Part2.transform.localPosition = vector3;
-           // Debug.Log("Part2.transform.localPosition"+vector3.x);
-
-            // Двигаем объект 1 с такой же разницей
-            var position = Part1.transform.localPosition;
-            position.x = position.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf();
-            Part1.transform.localPosition = position;
-            //Debug.Log("Part2.transform.localPosition"+Part2.transform.localPosition);
-
-           // float currDistanceLeft = Vector3.Distance(object2.position, startPositionPart1);
-            
-      
-            // Проверяем, достиг ли объект 2 начальной позиции объекта 1
-            if (Part2.transform.localPosition.x<= startPositionPart1)
-            {
-               
-                // Перемещаем объекты на начальные позиции
-                var object1Position = Part1.transform.localPosition;
-                object1Position.x = startPositionPart1;
-                Part1.transform.localPosition = object1Position;
-                
-                var object2Position = Part2.transform.localPosition;
-                object2Position.x = startPositionPart2;
-                Part2.transform.localPosition = object2Position;
-                if (totalDistance>Config.DistanceToChangeTextureRoad[currRoadTextureN])
-                {
-                    currRoadTextureN = currRoadTextureN + 1;
-                    Config.SetRoadTextureCurrN(currRoadTextureN);
-                    SetTextureObjectTwo();
-                }
-                else
-                {
-                    SetSpriteTextureN();
-                }
-            }
-            
-            // Рассчитываем значение переменной `value` каждый кадр
-            elapsedTime += Time.deltaTime;
-            totalDistance += Time.deltaTime*Config.GetPerClickScaleKf(); // Обновляем значение плавно
-
-            // Сохраняем значение в PlayerPrefs каждую секунду
-            timeSinceLastSave += Time.deltaTime;
-            Debug.Log("timeSinceLastSave"+timeSinceLastSave);
-            if (timeSinceLastSave >= 1f)
-            {
-                Debug.Log("total DistanceSaved");
-                timeSinceLastSave = 0f; // Сбрасываем счетчик
-                Config.SetTotalDistance (totalDistance); // Сохраняем текущее значение
-            }
-            txtTotalDistance.text = $"{totalDistance:F2} m";
-            
+            MoveRoad();
+            UpdateDistanceValue();
 
         }  // Двигаем объект 2 в сторону начальной позиции объекта 1
  
@@ -192,4 +141,70 @@ public class MovingRoad : MonoBehaviour
             Debug.Log("Объект с именем 'SpriteDown' не найден.");
         }
     }
+
+    private void MoveRoad()
+    {
+        var vector3 = Part2.transform.localPosition;
+        Debug.Log("Part2.transform.localPosition"+vector3.x);
+        vector3.x = vector3.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf();
+        Part2.transform.localPosition = vector3;
+        // Debug.Log("Part2.transform.localPosition"+vector3.x);
+
+        // Двигаем объект 1 с такой же разницей
+        var position = Part1.transform.localPosition;
+        position.x = position.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf();
+        Part1.transform.localPosition = position;
+        //Debug.Log("Part2.transform.localPosition"+Part2.transform.localPosition);
+
+        // float currDistanceLeft = Vector3.Distance(object2.position, startPositionPart1);
+            
+      
+        // Проверяем, достиг ли объект 2 начальной позиции объекта 1
+        if (Part2.transform.localPosition.x<= startPositionPart1)
+        {
+               
+            // Перемещаем объекты на начальные позиции
+            var object1Position = Part1.transform.localPosition;
+            object1Position.x = startPositionPart1;
+            Part1.transform.localPosition = object1Position;
+                
+            var object2Position = Part2.transform.localPosition;
+            object2Position.x = startPositionPart2;
+            Part2.transform.localPosition = object2Position;
+            if (totalDistance>Config.DistanceToChangeTextureRoad[currRoadTextureN])
+            {
+                currRoadTextureN = currRoadTextureN + 1;
+                Config.SetRoadTextureCurrN(currRoadTextureN);
+                SetTextureObjectTwo();
+                Config.SetHeavenMove(true);
+            }
+            else
+            {
+                SetSpriteTextureN();
+            }
+        }
+    }
+
+    private void UpdateDistanceValue()
+    {
+        // Рассчитываем значение переменной `value` каждый кадр
+        elapsedTime += Time.deltaTime;
+        totalDistance += Time.deltaTime*Config.GetPerClickScaleKf(); // Обновляем значение плавно
+
+        // Сохраняем значение в PlayerPrefs каждую секунду
+        timeSinceLastSave += Time.deltaTime;
+        Debug.Log("timeSinceLastSave"+timeSinceLastSave);
+        if (timeSinceLastSave >= 1f)
+        {
+            Debug.Log("total DistanceSaved");
+            timeSinceLastSave = 0f; // Сбрасываем счетчик
+            Config.SetTotalDistance (totalDistance); // Сохраняем текущее значение
+        }
+        txtTotalDistance.text = $"{totalDistance:F2} m";
+    }
+    private void MoveHeaven ()
+    {
+        
+    }
+
 }
