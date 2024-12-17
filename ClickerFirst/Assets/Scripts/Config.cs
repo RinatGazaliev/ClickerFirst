@@ -29,6 +29,7 @@ public class Config : MonoBehaviour
     #region ScorePerClick
 
     private const string SCOREPERCLICK = "Score_click";
+   
     //public static event Action<int> OnChangeTotalScore = delegate (int _scoreValue) { };
 
     public static void SetScorePerClick(int scoreValue)
@@ -187,6 +188,38 @@ public class Config : MonoBehaviour
     }
     
     
+    #endregion
+    
+    #region RewardDoublePoints
+
+    private static int rewDoublePoints = 1;
+
+    public static void SetDoublePointsRewValue(int value)
+    {
+        rewDoublePoints = value;
+    }
+
+    public static int GetDoublePointsRewValue()
+    {
+        return rewDoublePoints;
+    }
+
+    #endregion
+    
+    #region RewarMoveBoost
+
+    private static float rewMoveBoost = 1f;
+
+    public static void SetMoveBoostRewValue(float value)
+    {
+        rewMoveBoost = value;
+    }
+
+    public static float GetMoveBoostRewValue()
+    {
+        return rewMoveBoost;
+    }
+
     #endregion
     
     void Start()

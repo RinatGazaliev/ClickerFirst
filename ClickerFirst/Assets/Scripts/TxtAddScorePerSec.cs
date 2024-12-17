@@ -14,7 +14,7 @@ public class TxtAddScorePerSec : MonoBehaviour
     void Start()
     {
         txtAddScore = gameObject.GetComponent<Text>();
-        txtAddScore.text = Config.GetScorePerSec().ToString();
+        txtAddScore.text = (Config.GetScorePerSec()*Config.GetDoublePointsRewValue()).ToString();
         objectRenderer = gameObject.GetComponent<Graphic>();
         AnimateMoveUpDisappear();
     }

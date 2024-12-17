@@ -10,7 +10,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     // Событие, на которое могут подписаться другие объекты
     public static event Action <GameObject> OnObjectClicked;
 
-    void OnMouseDown()
+    public void  OnMouseDown()
     {
         // Вызываем событие и передаем объект, на который кликнули
         OnObjectClicked?.Invoke(gameObject);

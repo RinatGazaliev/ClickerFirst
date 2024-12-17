@@ -146,13 +146,13 @@ public class MovingRoad : MonoBehaviour
     {
         var vector3 = Part2.transform.localPosition;
         Debug.Log("Part2.transform.localPosition"+vector3.x);
-        vector3.x = vector3.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf();
+        vector3.x = vector3.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue();
         Part2.transform.localPosition = vector3;
         // Debug.Log("Part2.transform.localPosition"+vector3.x);
 
         // Двигаем объект 1 с такой же разницей
         var position = Part1.transform.localPosition;
-        position.x = position.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf();
+        position.x = position.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue();
         Part1.transform.localPosition = position;
         //Debug.Log("Part2.transform.localPosition"+Part2.transform.localPosition);
 
@@ -189,7 +189,7 @@ public class MovingRoad : MonoBehaviour
     {
         // Рассчитываем значение переменной `value` каждый кадр
         elapsedTime += Time.deltaTime;
-        totalDistance += Time.deltaTime*Config.GetPerClickScaleKf(); // Обновляем значение плавно
+        totalDistance += Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue(); // Обновляем значение плавно
 
         // Сохраняем значение в PlayerPrefs каждую секунду
         timeSinceLastSave += Time.deltaTime;

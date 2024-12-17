@@ -23,6 +23,7 @@ public class ScoreZone : MonoBehaviour
     {
         // Подписываемся на событие
         MainObject.OnObjectClicked += ClickTotalScore;
+        RewAutoClicker.OnAutoClickerClick += AutoClickTotalScore;
         Config.OnChangeTotalScore += UpdateTotalScore;
         Config.OnChangePerClickScaleKf += UpdatePerClickForkKf;
     }
@@ -31,6 +32,7 @@ public class ScoreZone : MonoBehaviour
     {
         // Отписываемся от события
         MainObject.OnObjectClicked -= ClickTotalScore;
+        RewAutoClicker.OnAutoClickerClick -= AutoClickTotalScore;
         Config.OnChangeTotalScore -= UpdateTotalScore;
         Config.OnChangePerClickScaleKf -= UpdatePerClickForkKf;
     }
@@ -50,19 +52,25 @@ public class ScoreZone : MonoBehaviour
 
         }
     }
+    
+    private void AutoClickTotalScore()
+    {
+        AddTotalScoreOnClick();
+        SpawnScorePerCLick();
+    }
 
     private void AddTotalScoreOnClick()
     {
         int currScore = Config.GetTotalScore();
         Debug.Log("PointsToAdd");
-        Config.SetTotalScore(currScore+GetScoreToAddClick()*scalePerClickKf);
+        Config.SetTotalScore(currScore+GetScoreToAddClick()*scalePerClickKf*Config.GetDoublePointsRewValue());
         //TODO AddAnimate And Spawn Object txtPerClick
     }
     
     public void AddTotalScoreOnSec()
     {
         int currScore = Config.GetTotalScore();
-        Config.SetTotalScore(currScore+GetScoreToAddSec());
+        Config.SetTotalScore(currScore+GetScoreToAddSec()*Config.GetDoublePointsRewValue());
         //TODO AddAnimate And Spawn Object txtPerClick
     }
 
