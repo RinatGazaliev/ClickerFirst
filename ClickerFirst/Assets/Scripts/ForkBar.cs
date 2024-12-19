@@ -67,7 +67,7 @@ public class ForkBar : MonoBehaviour
     {
         
         // Добавьте свою логику
-        if (clickedObject.name == "MainClickObject")
+        if (clickedObject.name == "Character")
         {
             float currValueSlider = sliderPork.value;
             currValueSlider = currValueSlider + addBarValue;

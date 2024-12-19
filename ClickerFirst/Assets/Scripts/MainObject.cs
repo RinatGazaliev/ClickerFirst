@@ -38,6 +38,51 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         OnObjectClicked?.Invoke(gameObject);
         
     }
-    
+
+    [Header("Head")] 
+    [SerializeField] private GameObject HeadBone;
+    [SerializeField] private GameObject HeadObject;
+    [SerializeField] private List<Sprite> HeadSprites;
+    [SerializeField] private List<Vector3> HeadScales; // Масштабы
+    [SerializeField] private List<Vector3> HeadPositions; // Позиции
+    [SerializeField] private List<Quaternion> HeadRotations; // Повороты
+    [SerializeField] int CurrentIndex;
+    private void OnValidate()
+    {
+        // Обновляем визуализацию при изменении CurrentIndex
+        UpdateVisualization();
+    }
+
+    private void UpdateVisualization()
+    {
+        // Проверяем корректность индекса
+        if (HeadSprites == null || HeadSprites.Count <= CurrentIndex ||
+            HeadScales == null || HeadScales.Count <= CurrentIndex ||
+            HeadPositions == null || HeadPositions.Count <= CurrentIndex ||
+            HeadRotations == null || HeadRotations.Count <= CurrentIndex)
+        {
+            Debug.LogWarning("Индекс выходит за пределы списка или списки не заданы.");
+            return;
+        }
+
+        // Устанавливаем спрайт для HeadObject
+        if (HeadObject != null)
+        {
+            var spriteRenderer = HeadObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = HeadObject.AddComponent<SpriteRenderer>();
+            }
+            spriteRenderer.sprite = HeadSprites[CurrentIndex];
+        }
+
+        // Настройка трансформации для HeadBone
+        if (HeadBone != null)
+        {
+            HeadBone.transform.localScale = HeadScales[CurrentIndex];
+            HeadBone.transform.localPosition = HeadPositions[CurrentIndex];
+            HeadBone.transform.rotation = HeadRotations[CurrentIndex];
+        }
+    }
 
 }

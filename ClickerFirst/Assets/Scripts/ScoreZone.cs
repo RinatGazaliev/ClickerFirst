@@ -43,7 +43,7 @@ public class ScoreZone : MonoBehaviour
     {
         Debug.Log($"{name} получил уведомление, что кликнули на {clickedObject.name}");
         // Добавьте свою логику
-        if (clickedObject.name == "MainClickObject")
+        if (clickedObject.name == "Character")
         {
             Debug.Log("Это мой целевой объект, запускаем действие!");
             AddTotalScoreOnClick();
