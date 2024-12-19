@@ -8,6 +8,8 @@ public class MovingRoad : MonoBehaviour
     // Start is called before the first frame update
     private float currSpeedKf = 500f;
     private bool isWalkActive = false;
+    
+    [SerializeField] PartRoadCompleted wdgtPartRoad;
    
     [SerializeField] Text txtTotalDistance;
     [SerializeField] GameObject Part1;
@@ -173,8 +175,11 @@ public class MovingRoad : MonoBehaviour
             Part2.transform.localPosition = object2Position;
             if (totalDistance>Config.DistanceToChangeTextureRoad[currRoadTextureN])
             {
+                Debug.Log("shouldChangeText");
                 currRoadTextureN = currRoadTextureN + 1;
                 Config.SetRoadTextureCurrN(currRoadTextureN);
+                wdgtPartRoad.gameObject.SetActive(true);
+                wdgtPartRoad.StartPartRoadWdg();
                 SetTextureObjectTwo();
                 Config.SetHeavenMove(true);
             }

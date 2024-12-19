@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class RewMoveBoost : MonoBehaviour
     //private float autoClickTimer = 0f;
     private Button btnSelf;
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
+    
+    public static event Action OnRewardMoveBoostTimeFinish;
     
     //public static event Action OnAutoClickerClick;
     // Start is called before the first frame update
@@ -60,6 +63,7 @@ public class RewMoveBoost : MonoBehaviour
         
         Config.SetMoveBoostRewValue(1f);
         isMoveBoostRunning = false;
+        OnRewardMoveBoostTimeFinish();
         
         Debug.Log("Auto-click ended");
     }

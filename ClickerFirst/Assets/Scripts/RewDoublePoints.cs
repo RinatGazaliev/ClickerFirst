@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class RewDoublePoints : MonoBehaviour
     private Button btnSelf;
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
     
+    public static event Action OnRewardDoublePointsTimeFinish;
     //public static event Action OnAutoClickerClick;
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,7 @@ public class RewDoublePoints : MonoBehaviour
         
         Config.SetDoublePointsRewValue(1);
         isDoublePointsRunning = false;
+        OnRewardDoublePointsTimeFinish();
         
         Debug.Log("Auto-click ended");
     }

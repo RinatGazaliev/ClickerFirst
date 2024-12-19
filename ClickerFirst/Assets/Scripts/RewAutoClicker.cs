@@ -14,6 +14,7 @@ public class RewAutoClicker : MonoBehaviour
     [SerializeField] private Slider timerSlider;
     [SerializeField] private MainObject sausageObject;// Таймер для события OnAutoClick
     
+    public static event Action OnRewardAutoClickTimeFinish;
     public static event Action OnAutoClickerClick;
     // Start is called before the first frame update
     void Start()
@@ -67,7 +68,10 @@ public class RewAutoClicker : MonoBehaviour
         {
             timerSlider.value = 0f;
         }
-        isAutoClickRunning = false; // Выключаем авто-клик
+
+       
+        isAutoClickRunning = false;// Выключаем авто-клик
+        OnRewardAutoClickTimeFinish();
         Debug.Log("Auto-click ended");
     }
     
@@ -87,4 +91,6 @@ public class RewAutoClicker : MonoBehaviour
         timerSlider.gameObject.SetActive(false);
         btnSelf.interactable = true;
     }
+
+
 }
