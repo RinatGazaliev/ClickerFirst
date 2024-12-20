@@ -5171,7 +5171,7 @@ MonoBehaviour:
   m_CategoryHash: 1.7667347e-13
   m_labelHash: 0.00000040954276
   m_SpriteKey: 0
-  m_SpriteHash: 624543048
+  m_SpriteHash: 823356863
 --- !u!1 &497548618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5528,25 +5528,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d92869c47f90744fac64013d61bc386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HatGroup: {fileID: 0}
+  HatGroup: {fileID: 444452076}
   CurrentHatIndex: 0
-  HatPositions: []
-  GlassesGroup: {fileID: 0}
+  GlassesGroup: {fileID: 1273356719}
   CurrentGlassesIndex: 0
-  GlassesPositions: []
-  JewelryGroup: {fileID: 0}
+  JewelryGroup: {fileID: 767429888}
   CurrentJewelryIndex: 0
-  JewelryPositions: []
-  LeftArmGroup: {fileID: 0}
-  RightArmGroup: {fileID: 0}
+  LeftArmGroup: {fileID: 767429887}
+  RightArmGroup: {fileID: 767429886}
   CurrentArmsIndex: 0
-  LeftArmPostion: []
-  RightArmPostion: []
-  LeftLegGroup: {fileID: 0}
-  RightLegGroup: {fileID: 0}
+  LeftLegGroup: {fileID: 1546539616}
+  RightLegGroup: {fileID: 1546539615}
   CurrentLegsIndex: 0
-  LeftLegPostion: []
-  RightLegPostion: []
 --- !u!222 &518472751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6110,7 +6103,7 @@ MonoBehaviour:
   m_CategoryHash: 2.1988087e-28
   m_labelHash: 1.2985474e-36
   m_SpriteKey: 0
-  m_SpriteHash: 174139042
+  m_SpriteHash: 545345176
 --- !u!114 &767429892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6126,7 +6119,7 @@ MonoBehaviour:
   m_CategoryHash: 9.40604e-13
   m_labelHash: 1.2985474e-36
   m_SpriteKey: 0
-  m_SpriteHash: 484026584
+  m_SpriteHash: 886743845
 --- !u!114 &767429893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6142,7 +6135,7 @@ MonoBehaviour:
   m_CategoryHash: 3.513393e-19
   m_labelHash: 4.1724694e-31
   m_SpriteKey: 0
-  m_SpriteHash: 170465611
+  m_SpriteHash: 338196662
 --- !u!1 &784233233
 GameObject:
   m_ObjectHideFlags: 0
@@ -8708,7 +8701,7 @@ MonoBehaviour:
   m_CategoryHash: 0.0001520041
   m_labelHash: 1.2985474e-36
   m_SpriteKey: 0
-  m_SpriteHash: 856292652
+  m_SpriteHash: 484828387
 --- !u!1 &1295035017
 GameObject:
   m_ObjectHideFlags: 0
@@ -10535,6 +10528,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545298689}
   m_CullTransparentMesh: 1
+--- !u!1 &1546539615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4114884313733118622, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+  m_PrefabInstance: {fileID: 444452071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1546539616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5379315711046920657, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+  m_PrefabInstance: {fileID: 444452071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550241954
 GameObject:
   m_ObjectHideFlags: 0

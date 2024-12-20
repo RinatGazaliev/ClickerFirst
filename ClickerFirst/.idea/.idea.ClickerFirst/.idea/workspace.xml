@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs.meta" afterDir="false" />
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#AttrWgtMechanicsFinished">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +123,7 @@
       <workItem from="1734437640226" duration="277000" />
       <workItem from="1734511689791" duration="3413000" />
       <workItem from="1734570841510" duration="22049000" />
-      <workItem from="1734671123918" duration="9640000" />
+      <workItem from="1734671123918" duration="10608000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -234,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734616559358</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="#AttrWgtMechanicsFinished">
+      <option name="closed" value="true" />
+      <created>1734681536851</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734681536851</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +266,7 @@
     <MESSAGE value="#CharacterArchitectureImproveTest" />
     <MESSAGE value="#AddedCharAtributesLogic" />
     <MESSAGE value="#ButtEquipPrepared" />
-    <option name="LAST_COMMIT_MESSAGE" value="#ButtEquipPrepared" />
+    <MESSAGE value="#AttrWgtMechanicsFinished" />
+    <option name="LAST_COMMIT_MESSAGE" value="#AttrWgtMechanicsFinished" />
   </component>
 </project>

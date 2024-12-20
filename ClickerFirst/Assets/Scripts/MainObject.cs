@@ -100,22 +100,22 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     [Header("Hat")] 
     [SerializeField] private GameObject HatGroup;
     [SerializeField] int CurrentHatIndex;
-    [SerializeField] private List<Vector3> HatPositions;
+    //[SerializeField] private List<Vector3> HatPositions;
     private void UpdateHatGroupVision()
     {
         HatGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Hat", $"Entry_{CurrentHatIndex}");
-        HatGroup.transform.localPosition = HatPositions[CurrentHatIndex];
+        //HatGroup.transform.localPosition = HatPositions[CurrentHatIndex];
 
     }
     
     [Header("Glasses")] 
     [SerializeField] private GameObject GlassesGroup;
     [SerializeField] int CurrentGlassesIndex;
-    [SerializeField] private List<Vector3> GlassesPositions;
+   // [SerializeField] private List<Vector3> GlassesPositions;
     private void UpdateGlassesGroupVision()
     {
         GlassesGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Glasses", $"Entry_{CurrentGlassesIndex}");
-        GlassesGroup.transform.localPosition = GlassesPositions[CurrentGlassesIndex];
+       // GlassesGroup.transform.localPosition = GlassesPositions[CurrentGlassesIndex];
 
     }
     
@@ -123,11 +123,11 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     [Header("Jewerly")] 
     [SerializeField] private GameObject JewelryGroup;
     [SerializeField] int CurrentJewelryIndex;
-    [SerializeField] private List<Vector3> JewelryPositions;
+   // [SerializeField] private List<Vector3> JewelryPositions;
     private void UpdateJewelryGroupVision()
     {
         JewelryGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Jewelry", $"Entry_{CurrentJewelryIndex}");
-        JewelryGroup.transform.localPosition = JewelryPositions[CurrentJewelryIndex];
+       // JewelryGroup.transform.localPosition = JewelryPositions[CurrentJewelryIndex];
 
     }
     
@@ -136,16 +136,16 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject LeftArmGroup;
     [SerializeField] private GameObject RightArmGroup;
     [SerializeField] int CurrentArmsIndex;
-    [SerializeField] private List<Vector3> LeftArmPostion;
-    [SerializeField] private List<Vector3> RightArmPostion;
+    /*[SerializeField] private List<Vector3> LeftArmPostion;
+    [SerializeField] private List<Vector3> RightArmPostion;*/
     
     private void UpdateArmsGroupVision()
     {
         LeftArmGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("LeftArm", $"Entry_{CurrentArmsIndex}");
         RightArmGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("RightArm", $"Entry_{CurrentArmsIndex}");
         
-        LeftArmGroup.transform.localPosition = LeftArmPostion[CurrentArmsIndex];
-        RightArmGroup.transform.localPosition = RightArmPostion[CurrentArmsIndex];
+        //LeftArmGroup.transform.localPosition = LeftArmPostion[CurrentArmsIndex];
+       // RightArmGroup.transform.localPosition = RightArmPostion[CurrentArmsIndex];
 
     }
     
@@ -153,16 +153,16 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject LeftLegGroup;
     [SerializeField] private GameObject RightLegGroup;
     [SerializeField] int CurrentLegsIndex;
-    [SerializeField] private List<Vector3> LeftLegPostion;
-    [SerializeField] private List<Vector3> RightLegPostion;
+    /*[SerializeField] private List<Vector3> LeftLegPostion;
+    [SerializeField] private List<Vector3> RightLegPostion;*/
     
     private void UpdateLegsGroupVision()
     {
         LeftLegGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("LeftLeg", $"Entry_{CurrentLegsIndex}");
         RightLegGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("RightLeg", $"Entry_{CurrentLegsIndex}");
         
-        LeftLegGroup.transform.localPosition = LeftLegPostion[CurrentLegsIndex];
-        RightLegGroup.transform.localPosition = RightLegPostion[CurrentLegsIndex];
+       // LeftLegGroup.transform.localPosition = LeftLegPostion[CurrentLegsIndex];
+       // RightLegGroup.transform.localPosition = RightLegPostion[CurrentLegsIndex];
     }
 
   
