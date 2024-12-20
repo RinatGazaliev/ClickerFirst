@@ -8,12 +8,12 @@ public class PartRoadCompleted : MonoBehaviour
 {
     public static event Action OnPartRoadCompletedActive;
     public static event Action OnPartRoadCompletedClosed;
-    [SerializeField] private Button btnContinue;
+    //[SerializeField] private Button btnContinue;
     
     // Start is called before the first frame update
     void Start()
     {
-        btnContinue.onClick.AddListener(ContinuePressed); 
+       // btnContinue.onClick.AddListener(ContinuePressed); 
     }
 
     // Update is called once per frame

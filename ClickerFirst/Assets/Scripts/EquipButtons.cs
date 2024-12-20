@@ -1,24 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EquipButtons : MonoBehaviour
 {
+    private enum GroupOptions
+    {
+        Hat,
+        Jewelry,
+        Legs,
+        Arms,
+        Glasses
+    }
+    
+    [SerializeField] private GroupOptions selectedGroup;
+    private string equipGroup => selectedGroup.ToString();
     [SerializeField] private int equipN;
-    [SerializeField] private string equipGroup;
+    //[SerializeField] private string equipGroup;
 
     private int currScenario;
     private string fullPlayerPrefsName;
-    private string anyGroupItemEquippedName;
+    private string isItemEquippedName;
 
     private Button btnSelf;
+    private Image imgSpriteEquip;
+    
+    public static event Action<string,int> OnItemEquipped = delegate(string _equipGroup, int _equipN) { };
+    public static event Action<string,int,Image> OnNeedFindSprite = delegate(string _equipGroup, int _equipN, Image _imageSprite) { };
     // Start is called before the first frame update
     void Start()
     {
         fullPlayerPrefsName = $"Equip_{equipGroup}_N_{equipN}";
-        anyGroupItemEquippedName = $"AnyItemEquipped_{equipGroup}";
+        isItemEquippedName = $"ItemEquipped_{equipGroup}_N_{equipN}";
         btnSelf = GetComponent<Button>();
+        btnSelf.onClick.AddListener(SaveDataAndEquip);
+        imgSpriteEquip = FindImageAmongChildren(transform);
         InitView();
     }
 
@@ -38,7 +56,7 @@ public class EquipButtons : MonoBehaviour
         }
         else
         {
-            if ( PlayerPrefs.GetInt(anyGroupItemEquippedName, 0)==0)
+            if ( PlayerPrefs.GetInt(isItemEquippedName, 0)==0)
             {
                 return 1;
             }
@@ -71,5 +89,29 @@ public class EquipButtons : MonoBehaviour
                 btnSelf.interactable=false;
                 break;
         }
+
+        OnNeedFindSprite(equipGroup,equipN,imgSpriteEquip);
+    }
+
+    //Туут необходимо обратиться к Character и обновить в нем активный спрайт для соответствующей группы
+    private void SaveDataAndEquip()
+    {
+        PlayerPrefs.SetInt(isItemEquippedName, 1);
+        OnItemEquipped(equipGroup, equipN);
+    }
+    
+    private Image FindImageAmongChildren(Transform parent)
+    {
+        // Перебираем только первый уровень дочерних объектов
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform child = parent.GetChild(i);
+            Image image = child.GetComponent<Image>();
+            if (image != null)
+            {
+                return image; // Возвращаем первый найденный компонент Image
+            }
+        }
+        return null; // Если Image не найден
     }
 }

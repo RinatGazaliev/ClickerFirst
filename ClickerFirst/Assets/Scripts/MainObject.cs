@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.U2D.Animation;
 
 public class MainObject : MonoBehaviour, IPointerClickHandler
@@ -17,6 +18,13 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         OnObjectClicked?.Invoke(gameObject);
        // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }// Start is called before the first frame update
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("MainObjClicked");
+        OnObjectClicked?.Invoke(gameObject);
+        
+    }
     void Start()
     {
        
@@ -28,39 +36,75 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         
     }
 
-    private void OnPointerClick()
-    {
-        
-    }
     private void OnValidate()
     {
         // Обновляем визуализацию при изменении CurrentIndex
         // UpdateHeadVisualization();
-        UpdateHutGroupVision();
+        UpdateHatGroupVision();
         UpdateGlassesGroupVision();
-        UpdateJewerlyGroupVision();
+        UpdateJewelryGroupVision();
         UpdateArmsGroupVision();
         UpdateLegsGroupVision();
     }
-    
-    
 
-
-    public void OnPointerClick(PointerEventData eventData)
+    private void OnEnable()
     {
-        Debug.Log("MainObjClicked");
-        OnObjectClicked?.Invoke(gameObject);
-        
+        EquipButtons.OnItemEquipped += EquipNewItem;
+        EquipButtons.OnNeedFindSprite += FindSprite;
+    }
+
+    private void OnDisable()
+    {
+        EquipButtons.OnItemEquipped -= EquipNewItem;
+        EquipButtons.OnNeedFindSprite -= FindSprite;
+    }
+
+
+
+
+    private void EquipNewItem(string equipGroup, int equipN)
+    {
+        switch (equipGroup)
+        {
+            case "Hat":
+                CurrentHatIndex = equipN;
+                UpdateHatGroupVision();
+                break;
+            
+            case "Glasses":
+                CurrentGlassesIndex = equipN;
+                UpdateGlassesGroupVision();
+                break;
+            case "Jewelry":
+                CurrentJewelryIndex = equipN;
+                UpdateJewelryGroupVision();
+                break;
+            case "Legs":
+                CurrentLegsIndex = equipN;
+                UpdateLegsGroupVision();
+                break;
+            case "Arms":
+                CurrentArmsIndex = equipN;
+                UpdateArmsGroupVision();
+                break;
+                
+        }
     }
     
-    [Header("Hut")] 
-    [SerializeField] private GameObject HutGroup;
-    [SerializeField] int CurrentHutIndex;
-    [SerializeField] private List<Vector3> HutPositions;
-    private void UpdateHutGroupVision()
+    private void FindSprite(string equipGroup, int equipN, Image spriteToSet)
     {
-        HutGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Hat", $"Entry_{CurrentHutIndex}");
-        HutGroup.transform.localPosition = HutPositions[CurrentHutIndex];
+        spriteToSet.sprite=HatGroup.GetComponent<SpriteResolver>().spriteLibrary.GetSprite(equipGroup, equipN.ToString());
+    }
+
+
+    [Header("Hat")] 
+    [SerializeField] private GameObject HatGroup;
+    [SerializeField] int CurrentHatIndex;
+    [SerializeField] private List<Vector3> HatPositions;
+    private void UpdateHatGroupVision()
+    {
+        HatGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Hat", $"Entry_{CurrentHatIndex}");
+        HatGroup.transform.localPosition = HatPositions[CurrentHatIndex];
 
     }
     
@@ -70,20 +114,20 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private List<Vector3> GlassesPositions;
     private void UpdateGlassesGroupVision()
     {
-        GlassesGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Hat", $"Entry_{CurrentGlassesIndex}");
+        GlassesGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Glasses", $"Entry_{CurrentGlassesIndex}");
         GlassesGroup.transform.localPosition = GlassesPositions[CurrentGlassesIndex];
 
     }
     
     
     [Header("Jewerly")] 
-    [SerializeField] private GameObject JewerlyGroup;
-    [SerializeField] int CurrentJewerlyIndex;
-    [SerializeField] private List<Vector3> JewerlyPositions;
-    private void UpdateJewerlyGroupVision()
+    [SerializeField] private GameObject JewelryGroup;
+    [SerializeField] int CurrentJewelryIndex;
+    [SerializeField] private List<Vector3> JewelryPositions;
+    private void UpdateJewelryGroupVision()
     {
-        JewerlyGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Jewerly", $"Entry_{CurrentJewerlyIndex}");
-        JewerlyGroup.transform.localPosition = JewerlyPositions[CurrentJewerlyIndex];
+        JewelryGroup.GetComponent<SpriteResolver>().SetCategoryAndLabel("Jewelry", $"Entry_{CurrentJewelryIndex}");
+        JewelryGroup.transform.localPosition = JewelryPositions[CurrentJewelryIndex];
 
     }
     
@@ -119,7 +163,6 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         
         LeftLegGroup.transform.localPosition = LeftLegPostion[CurrentLegsIndex];
         RightLegGroup.transform.localPosition = RightLegPostion[CurrentLegsIndex];
-
     }
 
   

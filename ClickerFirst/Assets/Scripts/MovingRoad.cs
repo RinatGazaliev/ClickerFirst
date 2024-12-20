@@ -9,7 +9,7 @@ public class MovingRoad : MonoBehaviour
     private float currSpeedKf = 500f;
     private bool isWalkActive = false;
     
-    [SerializeField] PartRoadCompleted wdgtPartRoad;
+    [SerializeField] ShowWgtManager showWdgManager;
    
     [SerializeField] Text txtTotalDistance;
     [SerializeField] GameObject Part1;
@@ -178,8 +178,8 @@ public class MovingRoad : MonoBehaviour
                 Debug.Log("shouldChangeText");
                 currRoadTextureN = currRoadTextureN + 1;
                 Config.SetRoadTextureCurrN(currRoadTextureN);
-                wdgtPartRoad.gameObject.SetActive(true);
-                wdgtPartRoad.StartPartRoadWdg();
+                //wdgtPartRoad.gameObject.SetActive(true);
+                showWdgManager.StartPartRoadWdg();
                 SetTextureObjectTwo();
                 Config.SetHeavenMove(true);
             }
