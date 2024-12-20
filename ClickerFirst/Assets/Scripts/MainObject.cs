@@ -93,7 +93,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     
     private void FindSprite(string equipGroup, int equipN, Image spriteToSet)
     {
-        spriteToSet.sprite=HatGroup.GetComponent<SpriteResolver>().spriteLibrary.GetSprite(equipGroup, equipN.ToString());
+        // spriteToSet.sprite=HatGroup.GetComponent<SpriteResolver>().spriteLibrary.GetSprite(equipGroup, equipN.ToString());
     }
 
 

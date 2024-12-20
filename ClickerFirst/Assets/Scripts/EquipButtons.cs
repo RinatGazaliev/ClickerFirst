@@ -34,6 +34,7 @@ public class EquipButtons : MonoBehaviour
     {
         fullPlayerPrefsName = $"Equip_{equipGroup}_N_{equipN}";
         isItemEquippedName = $"ItemEquipped_{equipGroup}_N_{equipN}";
+        Debug.Log("fullPlayerPrefsName"+fullPlayerPrefsName);
         btnSelf = GetComponent<Button>();
         btnSelf.onClick.AddListener(SaveDataAndEquip);
         imgSpriteEquip = FindImageAmongChildren(transform);
@@ -44,6 +45,19 @@ public class EquipButtons : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        btnSelf = GetComponent<Button>();
+        InitView();
+        // RewGetEquip.OnEquipRewPressed += InitView;
+
+    }
+
+    private void OnDisable()
+    {
+        RewGetEquip.OnEquipRewPressed -= InitView;
     }
 
     private int CheckScenario()
@@ -71,6 +85,7 @@ public class EquipButtons : MonoBehaviour
     private void InitView()
     {
         int currScenario = CheckScenario();
+        SetDefaultVisibility();
         //Debug.Log("INITEDVIEWS");
         switch (currScenario)
         {
@@ -91,6 +106,13 @@ public class EquipButtons : MonoBehaviour
         }
 
         OnNeedFindSprite(equipGroup,equipN,imgSpriteEquip);
+    }
+
+    private void SetDefaultVisibility()
+    {
+       transform.Find("Scenario_1").gameObject.SetActive(false);
+       transform.Find("Scenario_2").gameObject.SetActive(false);
+       transform.Find("Scenario_3").gameObject.SetActive(false);
     }
 
     //Туут необходимо обратиться к Character и обновить в нем активный спрайт для соответствующей группы
