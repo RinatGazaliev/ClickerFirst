@@ -51,12 +51,16 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     {
         EquipButtons.OnItemEquipped += EquipNewItem;
         EquipButtons.OnNeedFindSprite += FindSprite;
+        GetNewItemPopUp.OnItemEquipped += EquipNewItem;
+        GetNewItemPopUp.OnNeedFindSprite += FindSprite;
     }
 
     private void OnDisable()
     {
         EquipButtons.OnItemEquipped -= EquipNewItem;
         EquipButtons.OnNeedFindSprite -= FindSprite;
+        GetNewItemPopUp.OnItemEquipped -= EquipNewItem;
+        GetNewItemPopUp.OnNeedFindSprite -= FindSprite;
     }
 
 

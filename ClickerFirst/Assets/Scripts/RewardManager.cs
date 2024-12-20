@@ -58,6 +58,18 @@ public class RewardManager : MonoBehaviour
                 btnReward_MoveBoost.InitViews();
             }
         }
+        if (isTimerGetEquipRunning)
+        {
+            timerGetEquip -= Time.deltaTime;
+            if (timerGetEquip <= 0f)
+            {
+                //timerMoveBoosts = 0f;
+                isTimerGetEquipRunning = false;
+                timerGetEquip = totalTimerMoveBoost;
+                btnReward_GetEquip.gameObject.SetActive(true);
+                //btnReward_GetEquip.InitViews();
+            }
+        }
         
     }
 
@@ -79,12 +91,18 @@ public class RewardManager : MonoBehaviour
     [SerializeField] private float timerMoveBoosts;
     private bool isTimerMoveBoostRunning = false;
     //TODO Добавить делегат на ревард кл
+    
+    [Header("RewardEquip")] 
+    [SerializeField] private RewGetEquip btnReward_GetEquip;
+    [SerializeField] private float timerGetEquip;
+    private bool isTimerGetEquipRunning = false;
 
     private void OnEnable()
     {
        RewAutoClicker.OnRewardAutoClickTimeFinish+=UpdateAutoClickRewardTimer;
        RewDoublePoints.OnRewardDoublePointsTimeFinish+=UpdateDoublePointsRewardTimer;
        RewMoveBoost.OnRewardMoveBoostTimeFinish+=UpdateMoveBoostRewardTimer;
+       RewGetEquip.OnRewardGetEquipTimeFinish+=UpdateGetEquipRewardTimer;
     }
 
     private void OnDisable()
@@ -92,6 +110,7 @@ public class RewardManager : MonoBehaviour
         RewAutoClicker.OnRewardAutoClickTimeFinish-=UpdateAutoClickRewardTimer;
         RewDoublePoints.OnRewardDoublePointsTimeFinish-=UpdateDoublePointsRewardTimer;
         RewMoveBoost.OnRewardMoveBoostTimeFinish-=UpdateMoveBoostRewardTimer;
+        RewGetEquip.OnRewardGetEquipTimeFinish -= UpdateGetEquipRewardTimer;
     }
 
     private void UpdateAutoClickRewardTimer()
@@ -108,5 +127,11 @@ public class RewardManager : MonoBehaviour
     {
         btnReward_MoveBoost.gameObject.SetActive(false);
         isTimerMoveBoostRunning = true;
+    }
+    
+    private void UpdateGetEquipRewardTimer()
+    {
+        btnReward_GetEquip.gameObject.SetActive(false);
+        isTimerGetEquipRunning = true;
     }
 }

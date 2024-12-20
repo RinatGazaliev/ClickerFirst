@@ -12,6 +12,7 @@ public class ShowWgtManager : MonoBehaviour
         btnCloseAttrPopup.onClick.AddListener(TouchCloseAttr);
         btnEquipShop.onClick.AddListener(TouchEquipShop);
         btnContinuePartRoad.onClick.AddListener(TouchContinueRoad);
+        btnCLoseNewItem.onClick.AddListener(TouchCloseAttr);
         InitViews();
     }
 
@@ -33,6 +34,10 @@ public class ShowWgtManager : MonoBehaviour
    [Header("PartRoadWdg")] 
    [SerializeField] private PartRoadCompleted partRoadWgt;
    [SerializeField] Button btnContinuePartRoad;
+   
+   [Header("GetNewItemPopUp")] 
+   [SerializeField] private GetNewItemPopUp newItemPopup;
+   [SerializeField] Button btnCLoseNewItem;
 
 
    private void InitViews()
@@ -40,6 +45,7 @@ public class ShowWgtManager : MonoBehaviour
        attrPopup.SetActive(false);
        partRoadWgt.gameObject.SetActive(false);
        rewZone.SetActive(true);
+       newItemPopup.gameObject.SetActive(false);
    }
 
    private void TouchCloseAttr()
@@ -67,6 +73,13 @@ public class ShowWgtManager : MonoBehaviour
        Time.timeScale = 0f; 
        partRoadWgt.gameObject.SetActive(true);
        // OnPartRoadCompletedActive();
+   }
+
+   public void ShowNewItemPopUp(string group, int equipN)
+   {
+       rewZone.gameObject.SetActive(false);
+       newItemPopup.gameObject.SetActive(true);
+       newItemPopup.ShowGetNewItemPopUp(group,equipN);
    }
 
 }

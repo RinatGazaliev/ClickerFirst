@@ -9,8 +9,10 @@ public class RewGetEquip : MonoBehaviour
 
     private Button btnGetEquip;
     [SerializeField] private AttrShop attrShop;
+    [SerializeField] private ShowWgtManager showWgtManager;
     
     public static event Action OnEquipRewPressed;
+    public static event Action OnRewardGetEquipTimeFinish;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,8 @@ public class RewGetEquip : MonoBehaviour
         
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +35,7 @@ public class RewGetEquip : MonoBehaviour
 
     private void OpenRandomLockedEquip()
     {
+       
         Debug.Log("OpenRandomLocked");
         // Список для непустых массивов
         List<List<int>> nonEmptyArrays = new List<List<int>>();
@@ -90,6 +95,8 @@ public class RewGetEquip : MonoBehaviour
         Debug.Log("nameToSave"+nameToSave);
         PlayerPrefs.SetInt(nameToSave,1);
         attrShop.InitFunct();
+        showWgtManager.ShowNewItemPopUp(groupName,randomElement);
+        OnRewardGetEquipTimeFinish();
         //if (OnEquipRewPressed != null) OnEquipRewPressed();
     }
     
