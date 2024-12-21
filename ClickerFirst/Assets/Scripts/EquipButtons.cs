@@ -33,7 +33,7 @@ public class EquipButtons : MonoBehaviour
     void Start()
     {
         fullPlayerPrefsName = $"Equip_{equipGroup}_N_{equipN}";
-        isItemEquippedName = $"ItemEquipped_{equipGroup}_N_{equipN}";
+        isItemEquippedName = $"ItemEquipped_{equipGroup}_N_";
         Debug.Log("fullPlayerPrefsName"+fullPlayerPrefsName);
         btnSelf = GetComponent<Button>();
         btnSelf.onClick.AddListener(SaveDataAndEquip);
@@ -49,8 +49,10 @@ public class EquipButtons : MonoBehaviour
 
     private void OnEnable()
     {
-        btnSelf = GetComponent<Button>();
-        InitView();
+       // btnSelf = GetComponent<Button>();
+       ShowScenarioVisibility();
+       OnItemEquipped += ShopAttrEquipped;
+        RewGetEquip.OnEquipRewPressed += InitView;
         // RewGetEquip.OnEquipRewPressed += InitView;
 
     }
@@ -58,19 +60,24 @@ public class EquipButtons : MonoBehaviour
     private void OnDisable()
     {
         RewGetEquip.OnEquipRewPressed -= InitView;
+        OnItemEquipped -= ShopAttrEquipped;
     }
 
     private int CheckScenario()
     {
 
         int isEnable = PlayerPrefs.GetInt(fullPlayerPrefsName, 0);
+        if (equipN==0)
+        {
+            isEnable = 1;
+        }
         if (isEnable==0)
         {
             return 0; 
         }
         else
         {
-            if ( PlayerPrefs.GetInt(isItemEquippedName, 0)==0)
+            if ( PlayerPrefs.GetInt(isItemEquippedName, 0)!=equipN)
             {
                 return 1;
             }
@@ -82,29 +89,55 @@ public class EquipButtons : MonoBehaviour
         
     }
 
-    private void InitView()
+    private void ShowScenarioVisibility()
     {
         int currScenario = CheckScenario();
         SetDefaultVisibility();
-        //Debug.Log("INITEDVIEWS");
+        Debug.Log("INITEDVIEWS"+equipN);
         switch (currScenario)
         {
             case 0:
                 Transform child = transform.Find("Scenario_1");
                 child.gameObject.SetActive(true);
-                btnSelf.interactable=false;
+                if (btnSelf)
+                {
+                    btnSelf.interactable=false;
+                }
                 break;
             case 1:
                 Transform child1 = transform.Find("Scenario_2");
                 child1.gameObject.SetActive(true);
+                if (btnSelf)
+                {
+                    btnSelf.interactable = true;
+                }
+
                 break;
             case 2:
                 Transform child2 = transform.Find("Scenario_3");
                 child2.gameObject.SetActive(true);
-                btnSelf.interactable=false;
+                if (btnSelf)
+                {
+                    btnSelf.interactable = false;
+                }
+
                 break;
         }
 
+    }
+
+    private void ShopAttrEquipped(string _equipGroup, int _equipN)
+    {
+        if (equipGroup==_equipGroup)
+        {
+            ShowScenarioVisibility();
+        }
+        
+    }
+
+    private void InitView()
+    {
+        ShowScenarioVisibility();
         OnNeedFindSprite(equipGroup,equipN,imgSpriteEquip);
     }
 
@@ -118,8 +151,10 @@ public class EquipButtons : MonoBehaviour
     //Туут необходимо обратиться к Character и обновить в нем активный спрайт для соответствующей группы
     private void SaveDataAndEquip()
     {
-        PlayerPrefs.SetInt(isItemEquippedName, 1);
+        PlayerPrefs.SetInt(isItemEquippedName, equipN);
+        //InitView();
         OnItemEquipped(equipGroup, equipN);
+        
     }
     
     private Image FindImageAmongChildren(Transform parent)

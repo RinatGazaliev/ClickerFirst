@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#LogicEquipRewardFinished">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Character/Character.psb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Character/Character.psb.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_RINAT.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_RINAT.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +24,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a0f48008d3514033961b6cfbfec6a87c178800/8f/40cbc37f/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ClearPrefsWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/EquipButtons.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" root0="FORCE_HIGHLIGHTING" />
@@ -31,9 +35,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TxtAddScorePerSec.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.16/Tests/Runtime/PlaymodeTest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.16/Tests/Runtime/Shared/051-TestGenerics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/EventSystem/EventTriggerEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/CanvasUpdateRegistry.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/InputField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutRebuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/MaskableGraphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/RootCanvasTests.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,7 +134,8 @@
       <workItem from="1734570841510" duration="22049000" />
       <workItem from="1734671123918" duration="20476000" />
       <workItem from="1734696878594" duration="2034000" />
-      <workItem from="1734716264276" duration="2465000" />
+      <workItem from="1734716264276" duration="5502000" />
+      <workItem from="1734795237294" duration="6383000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -249,7 +257,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734683489411</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="#RewardEquipLogicFinished">
+      <option name="closed" value="true" />
+      <created>1734718982567</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734718982567</updated>
+    </task>
+    <task id="LOCAL-00017" summary="#WgtPopUpEquipItemAdded">
+      <option name="closed" value="true" />
+      <created>1734721775482</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1734721775482</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +304,9 @@
     <MESSAGE value="#ButtEquipPrepared" />
     <MESSAGE value="#AttrWgtMechanicsFinished" />
     <MESSAGE value="#NoCoord_PointersAdded" />
-    <option name="LAST_COMMIT_MESSAGE" value="#NoCoord_PointersAdded" />
+    <MESSAGE value="#RewardEquipLogicFinished" />
+    <MESSAGE value="#WgtPopUpEquipItemAdded" />
+    <MESSAGE value="#LogicEquipRewardFinished" />
+    <option name="LAST_COMMIT_MESSAGE" value="#LogicEquipRewardFinished" />
   </component>
 </project>

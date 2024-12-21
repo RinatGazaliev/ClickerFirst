@@ -27,7 +27,8 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     }
     void Start()
     {
-       
+        CheckEquippedItems();
+
     }
 
     // Update is called once per frame
@@ -63,6 +64,19 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         GetNewItemPopUp.OnNeedFindSprite -= FindSprite;
     }
 
+    private void CheckEquippedItems()
+    {
+        CurrentHatIndex = PlayerPrefs.GetInt("ItemEquipped_Hat_N_", 0);
+        CurrentJewelryIndex = PlayerPrefs.GetInt("ItemEquipped_Jewelry_N_", 0);
+        CurrentGlassesIndex = PlayerPrefs.GetInt("ItemEquipped_Glasses_N_", 0);
+        CurrentLegsIndex = PlayerPrefs.GetInt("ItemEquipped_Legs_N_", 0);
+        CurrentArmsIndex = PlayerPrefs.GetInt("ItemEquipped_Arms_N_", 0);
+        UpdateHatGroupVision();
+        UpdateGlassesGroupVision();
+        UpdateJewelryGroupVision();
+        UpdateArmsGroupVision();
+        UpdateLegsGroupVision();
+    }
 
 
 
@@ -71,6 +85,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         switch (equipGroup)
         {
             case "Hat":
+                
                 CurrentHatIndex = equipN;
                 UpdateHatGroupVision();
                 break;
@@ -97,7 +112,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     
     private void FindSprite(string equipGroup, int equipN, Image spriteToSet)
     {
-        // spriteToSet.sprite=HatGroup.GetComponent<SpriteResolver>().spriteLibrary.GetSprite(equipGroup, equipN.ToString());
+         spriteToSet.sprite=HatGroup.GetComponent<SpriteResolver>().spriteLibrary.GetSprite(equipGroup, $"Entry_{equipN}");
     }
 
 

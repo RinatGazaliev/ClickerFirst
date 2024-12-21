@@ -54,8 +54,8 @@ public class GetNewItemPopUp : MonoBehaviour
     
     private void SaveDataAndEquip()
     {
-        isItemEquippedName = $"ItemEquipped_{currGroup}_N_{currEquipN}";
-        PlayerPrefs.SetInt(isItemEquippedName, 1);
+        isItemEquippedName = $"ItemEquipped_{currGroup}_N_";
+        PlayerPrefs.SetInt(isItemEquippedName, currEquipN);
         OnItemEquipped(currGroup, currEquipN);
     }
 }

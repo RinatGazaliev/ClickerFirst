@@ -2926,6 +2926,10 @@ PrefabInstance:
       value: -515972959
       objectReference: {fileID: 0}
     - target: {fileID: -2747513251112204577, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7007890022133534201, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+    - target: {fileID: -2747513251112204577, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -2987,7 +2991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2150935193779890676, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2043897321369300675, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
@@ -3492,7 +3496,7 @@ PrefabInstance:
     - target: {fileID: 584675178995762750, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2135354982242681956, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      objectReference: {fileID: 4898606845898708430, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
     - target: {fileID: 584675178995762750, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
       value: -1
@@ -3644,7 +3648,7 @@ PrefabInstance:
     - target: {fileID: 1474710035941432087, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5767074549677868899, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      objectReference: {fileID: -8034987774657349853, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
     - target: {fileID: 1474710035941432087, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
       value: -1
@@ -3832,7 +3836,7 @@ PrefabInstance:
     - target: {fileID: 3039457497383912102, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8137428219326327068, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      objectReference: {fileID: -2183707018312346149, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
     - target: {fileID: 3039457497383912102, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
       value: -1
@@ -3919,7 +3923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969446964257436265, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3978146046272418327, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_Layer
@@ -4148,7 +4152,7 @@ PrefabInstance:
     - target: {fileID: 5408407513471121887, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -8995346005875458942, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      objectReference: {fileID: -2020430851737266444, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
     - target: {fileID: 5408407513471121887, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
       value: -1
@@ -4710,6 +4714,10 @@ PrefabInstance:
       value: -515972959
       objectReference: {fileID: 0}
     - target: {fileID: 8869635121947729658, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -95396696740235553, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+    - target: {fileID: 8869635121947729658, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -4832,12 +4840,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4637835292035647473, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       insertIndex: -1
       addedObject: {fileID: 767429891}
-    - targetCorrespondingSourceObject: {fileID: -2150935193779890676, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -5379315711046920657, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 767429890}
-    - targetCorrespondingSourceObject: {fileID: 3969446964257436265, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
+      addedObject: {fileID: 1546539618}
+    - targetCorrespondingSourceObject: {fileID: -4114884313733118622, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 767429889}
+      addedObject: {fileID: 1546539617}
     - targetCorrespondingSourceObject: {fileID: 8539520150963190018, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1273356720}
@@ -4879,211 +4887,211 @@ MonoBehaviour:
   - m_Name: Hat
     m_Hash: 0
     m_CategoryList:
-    - m_Name: 0
+    - m_Name: Entry_0
       m_Hash: 0
       m_Sprite: {fileID: -8995346005875458942, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 1
+    - m_Name: Entry_1
       m_Hash: 0
       m_Sprite: {fileID: 7849108127666982237, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 2
+    - m_Name: Entry_2
       m_Hash: 0
       m_Sprite: {fileID: -8242897567993689941, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 3
+    - m_Name: Entry_3
       m_Hash: 0
       m_Sprite: {fileID: -5946605267561604203, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 4
+    - m_Name: Entry_4
       m_Hash: 0
       m_Sprite: {fileID: -7115559666609093587, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 5
+    - m_Name: Entry_5
       m_Hash: 0
       m_Sprite: {fileID: -7964758595709084681, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 6
+    - m_Name: Entry_6
       m_Hash: 0
       m_Sprite: {fileID: -4566264731817322426, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 7
+    - m_Name: Entry_7
       m_Hash: 0
       m_Sprite: {fileID: -2020430851737266444, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 8
+    - m_Name: Entry_8
       m_Hash: 0
       m_Sprite: {fileID: -2046129436312283451, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 9
+    - m_Name: Entry_9
       m_Hash: 0
       m_Sprite: {fileID: 2895177889940257944, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 10
+    - m_Name: Entry_10
       m_Hash: 0
       m_Sprite: {fileID: -919346220345479937, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 11
+    - m_Name: Entry_11
       m_Hash: 0
       m_Sprite: {fileID: 8656230208920155090, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 12
+    - m_Name: Entry_12
       m_Hash: 0
       m_Sprite: {fileID: -7816129974630458224, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 13
+    - m_Name: Entry_13
       m_Hash: 0
       m_Sprite: {fileID: -3091853315350247792, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 14
+    - m_Name: Entry_14
       m_Hash: 0
       m_Sprite: {fileID: -7830764263685414543, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 15
+    - m_Name: Entry_15
       m_Hash: 0
       m_Sprite: {fileID: -8666596823487248645, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
   - m_Name: Glasses
     m_Hash: 0
     m_CategoryList:
-    - m_Name: 0
+    - m_Name: Entry_0
       m_Hash: 0
       m_Sprite: {fileID: -2183707018312346149, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 1
+    - m_Name: Entry_1
       m_Hash: 0
       m_Sprite: {fileID: 8137428219326327068, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 2
+    - m_Name: Entry_2
       m_Hash: 0
       m_Sprite: {fileID: 8891167215641675418, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 3
+    - m_Name: Entry_3
       m_Hash: 0
       m_Sprite: {fileID: -3630024251403564458, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 4
+    - m_Name: Entry_4
       m_Hash: 0
       m_Sprite: {fileID: 7434335232457316966, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 5
+    - m_Name: Entry_5
       m_Hash: 0
       m_Sprite: {fileID: -3872914128089992859, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 6
+    - m_Name: Entry_6
       m_Hash: 0
       m_Sprite: {fileID: -3320981119516841315, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 7
+    - m_Name: Entry_7
       m_Hash: 0
       m_Sprite: {fileID: 7999270952479020959, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 8
+    - m_Name: Entry_8
       m_Hash: 0
       m_Sprite: {fileID: -6657397870148245907, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 9
+    - m_Name: Entry_9
       m_Hash: 0
       m_Sprite: {fileID: -432614606864452300, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  - m_Name: Boots
+  - m_Name: RightLeg
     m_Hash: 0
     m_CategoryList:
-    - m_Name: 0_R
+    - m_Name: Entry_0
       m_Hash: 0
       m_Sprite: {fileID: -3840816208672048697, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 1_R
+    - m_Name: Entry_1
       m_Hash: 0
       m_Sprite: {fileID: -95396696740235553, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 2_R
+    - m_Name: Entry_2
       m_Hash: 0
       m_Sprite: {fileID: 4501992104024139503, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 3_R
+    - m_Name: Entry_3
       m_Hash: 0
       m_Sprite: {fileID: 8502158431313169512, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 4_R
+    - m_Name: Entry_4
       m_Hash: 0
       m_Sprite: {fileID: 3551978038600693471, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 5_R
+    - m_Name: Entry_5
       m_Hash: 0
       m_Sprite: {fileID: 5184388956324565058, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 6_R
+    - m_Name: Entry_6
       m_Hash: 0
       m_Sprite: {fileID: -3987136991431795408, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 7_R
+    - m_Name: Entry_7
       m_Hash: 0
       m_Sprite: {fileID: -42471964094741482, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 8_R
+    - m_Name: Entry_8
       m_Hash: 0
       m_Sprite: {fileID: -1786123023730988323, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 9_R
+    - m_Name: Entry_9
       m_Hash: 0
       m_Sprite: {fileID: -7121303911427017662, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  - m_Name: BootsL
+  - m_Name: LeftLeg
     m_Hash: 0
     m_CategoryList:
-    - m_Name: 0_L
+    - m_Name: Entry_0
       m_Hash: 0
       m_Sprite: {fileID: 4363531328046476112, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 1_L
+    - m_Name: Entry_1
       m_Hash: 0
       m_Sprite: {fileID: 7007890022133534201, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 2_L
+    - m_Name: Entry_2
       m_Hash: 0
       m_Sprite: {fileID: -5480146533617863828, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 3_L
+    - m_Name: Entry_3
       m_Hash: 0
       m_Sprite: {fileID: -1088601867272327389, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 4_L
+    - m_Name: Entry_4
       m_Hash: 0
       m_Sprite: {fileID: -5318472648591240798, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 5_L
+    - m_Name: Entry_5
       m_Hash: 0
       m_Sprite: {fileID: -1083365628748604761, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 6_L
+    - m_Name: Entry_6
       m_Hash: 0
       m_Sprite: {fileID: 6465915534883095340, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 7_L
+    - m_Name: Entry_7
       m_Hash: 0
       m_Sprite: {fileID: -7676073342061894292, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 8_L
+    - m_Name: Entry_8
       m_Hash: 0
       m_Sprite: {fileID: 2727941908523561222, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 9_L
+    - m_Name: Entry_9
       m_Hash: 0
       m_Sprite: {fileID: -7879885271852494216, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  - m_Name: GloveL
+  - m_Name: LeftArm
     m_Hash: 0
     m_CategoryList:
-    - m_Name: 0
+    - m_Name: Entry_0
       m_Hash: 0
       m_Sprite: {fileID: 8939563049240969161, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 1
+    - m_Name: Entry_1
       m_Hash: 0
       m_Sprite: {fileID: 5767074549677868899, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 2
+    - m_Name: Entry_2
       m_Hash: 0
       m_Sprite: {fileID: 6930855414799590275, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 3
+    - m_Name: Entry_3
       m_Hash: 0
       m_Sprite: {fileID: 1996515248651089993, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 4
+    - m_Name: Entry_4
       m_Hash: 0
       m_Sprite: {fileID: 2366639096894946042, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 5
+    - m_Name: Entry_5
       m_Hash: 0
       m_Sprite: {fileID: 4862788518940102625, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 6
+    - m_Name: Entry_6
       m_Hash: 0
       m_Sprite: {fileID: -8034987774657349853, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 7
+    - m_Name: Entry_7
       m_Hash: 0
       m_Sprite: {fileID: 1298871988026858772, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 8
+    - m_Name: Entry_8
       m_Hash: 0
       m_Sprite: {fileID: 2487950823681689840, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  - m_Name: GloveR
+  - m_Name: RightArm
     m_Hash: 0
     m_CategoryList:
-    - m_Name: 0
+    - m_Name: Entry_0
       m_Hash: 0
       m_Sprite: {fileID: -2023747855639197709, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 1
+    - m_Name: Entry_1
       m_Hash: 0
       m_Sprite: {fileID: 2135354982242681956, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 2
+    - m_Name: Entry_2
       m_Hash: 0
       m_Sprite: {fileID: -697898110430644485, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 3
+    - m_Name: Entry_3
       m_Hash: 0
       m_Sprite: {fileID: 2223693584267937514, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 4
+    - m_Name: Entry_4
       m_Hash: 0
       m_Sprite: {fileID: 1186948799452096995, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 5
+    - m_Name: Entry_5
       m_Hash: 0
       m_Sprite: {fileID: 7994321373194270107, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 6
+    - m_Name: Entry_6
       m_Hash: 0
       m_Sprite: {fileID: 4898606845898708430, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 7
+    - m_Name: Entry_7
       m_Hash: 0
       m_Sprite: {fileID: -2023747855639197709, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-    - m_Name: 8
+    - m_Name: Entry_8
       m_Hash: 0
       m_Sprite: {fileID: -2023747855639197709, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
   - m_Name: Scarf
@@ -5138,9 +5146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 1.7667347e-13
-  m_labelHash: 0.00000040954276
+  m_labelHash: 2.2333124e-13
   m_SpriteKey: 0
-  m_SpriteHash: 823356863
+  m_SpriteHash: 796391452
 --- !u!1 &497548618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,17 +5645,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HatGroup: {fileID: 444452076}
-  CurrentHatIndex: 0
+  CurrentHatIndex: 7
   GlassesGroup: {fileID: 1273356719}
   CurrentGlassesIndex: 0
   JewelryGroup: {fileID: 767429888}
   CurrentJewelryIndex: 0
   LeftArmGroup: {fileID: 767429887}
   RightArmGroup: {fileID: 767429886}
-  CurrentArmsIndex: 0
+  CurrentArmsIndex: 6
   LeftLegGroup: {fileID: 1546539616}
   RightLegGroup: {fileID: 1546539615}
-  CurrentLegsIndex: 0
+  CurrentLegsIndex: 1
 --- !u!222 &518472751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6319,16 +6327,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &767429884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3969446964257436265, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  m_PrefabInstance: {fileID: 444452071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &767429885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2150935193779890676, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  m_PrefabInstance: {fileID: 444452071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767429886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4637835292035647473, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
@@ -6344,38 +6342,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -6251057342943108930, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
   m_PrefabInstance: {fileID: 444452071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &767429889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767429884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CategoryHash: 4.816446e-35
-  m_labelHash: 4.7205105e-18
-  m_SpriteKey: 0
-  m_SpriteHash: 35161580
---- !u!114 &767429890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767429885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CategoryHash: 0
-  m_labelHash: 0
-  m_SpriteKey: 0
-  m_SpriteHash: 270043142
 --- !u!114 &767429891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6388,10 +6354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 2.1988087e-28
-  m_labelHash: 1.2985474e-36
+  m_CategoryHash: 1.2787314e-12
+  m_labelHash: 3.3386203e-21
   m_SpriteKey: 0
-  m_SpriteHash: 545345176
+  m_SpriteHash: 165866413
 --- !u!114 &767429892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6404,10 +6370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 9.40604e-13
-  m_labelHash: 1.2985474e-36
+  m_CategoryHash: 9.311122e-13
+  m_labelHash: 3.3386203e-21
   m_SpriteKey: 0
-  m_SpriteHash: 886743845
+  m_SpriteHash: 498664976
 --- !u!114 &767429893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9089,7 +9055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 0.0001520041
-  m_labelHash: 1.2985474e-36
+  m_labelHash: 0.0000001489224
   m_SpriteKey: 0
   m_SpriteHash: 484828387
 --- !u!1 &1293227208
@@ -10847,6 +10813,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -5379315711046920657, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
   m_PrefabInstance: {fileID: 444452071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1546539617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546539615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 3.5554285e-35
+  m_labelHash: 4.491665e-37
+  m_SpriteKey: 0
+  m_SpriteHash: 206447366
+--- !u!114 &1546539618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546539616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 2.6698418e-35
+  m_labelHash: 4.491665e-37
+  m_SpriteKey: 0
+  m_SpriteHash: 404082363
 --- !u!1 &1550241954
 GameObject:
   m_ObjectHideFlags: 0
@@ -13479,7 +13477,7 @@ MonoBehaviour:
   btnReward_MoveBoost: {fileID: 1601803089}
   timerMoveBoosts: 21
   btnReward_GetEquip: {fileID: 260547025}
-  timerGetEquip: 20
+  timerGetEquip: 10
 --- !u!4 &2032661758
 Transform:
   m_ObjectHideFlags: 0
