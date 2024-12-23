@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#LogicEquipRewardFinished">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/1_Idle_1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/1_Idle_1.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/2_Walking.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/2_Walking.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/3_Run.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/3_Run.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/6_HardBreath.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/6_HardBreath.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/Character.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2_Animation/Character.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Character/Character.psb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Character/Character.psb.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_RINAT.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_RINAT.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +32,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a0f48008d3514033961b6cfbfec6a87c178800/8f/40cbc37f/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/1_Character/Character.psb.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/1_Character/Character.psb.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/1_Character/Character.psb.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/1_Character/Character.psb.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ClearPrefsWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/EquipButtons.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,25 +72,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Rinat&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging Rinat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Rinat\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Rinat\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Rinat\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Rinat\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Rinat\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Rinat\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.40f1\Editor\Unity.exe" />
@@ -135,7 +147,8 @@
       <workItem from="1734671123918" duration="20476000" />
       <workItem from="1734696878594" duration="2034000" />
       <workItem from="1734716264276" duration="5502000" />
-      <workItem from="1734795237294" duration="6383000" />
+      <workItem from="1734795237294" duration="6437000" />
+      <workItem from="1734941125460" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -273,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734721775482</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="#LogicEquipRewardFinished">
+      <option name="closed" value="true" />
+      <created>1734803705785</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1734803705785</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
