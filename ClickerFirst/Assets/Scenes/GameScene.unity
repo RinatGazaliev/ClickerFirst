@@ -906,11 +906,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86932498}
   m_CullTransparentMesh: 1
---- !u!1 &117374997 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3415255523766823718, guid: 3a0bac9dcf98a5c48a144e15b7b96953, type: 3}
-  m_PrefabInstance: {fileID: 444452071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &123069634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1729,8 @@ GameObject:
   - component: {fileID: 260547023}
   - component: {fileID: 260547022}
   - component: {fileID: 260547025}
+  - component: {fileID: 260547027}
+  - component: {fileID: 260547026}
   m_Layer: 5
   m_Name: RewGetEquip
   m_TagString: Untagged
@@ -1856,6 +1853,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attrShop: {fileID: 72146474}
   showWgtManager: {fileID: 1327837699}
+--- !u!225 &260547026
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260547020}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &260547027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260547020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80a34c6a1e318444a1fc7c0eb61ff32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewAnimType: 0
+  fadeTime: 0.5
+  canvasGroup: {fileID: 260547026}
+  rectTransform: {fileID: 260547021}
+  dropdown: {fileID: 0}
 --- !u!1 &261073404
 GameObject:
   m_ObjectHideFlags: 0
@@ -6881,7 +6907,7 @@ MonoBehaviour:
   CurrentHatIndex: 1
   GlassesGroup: {fileID: 1273356719}
   CurrentGlassesIndex: 1
-  JewelryGroup: {fileID: 117374997}
+  JewelryGroup: {fileID: 767429888}
   CurrentJewelryIndex: 0
   LeftArmGroup: {fileID: 767429887}
   RightArmGroup: {fileID: 767429886}
@@ -8131,7 +8157,7 @@ MonoBehaviour:
   m_CategoryHash: 7.755017e-26
   m_labelHash: 0.0000001489224
   m_SpriteKey: 0
-  m_SpriteHash: 298788384
+  m_SpriteHash: 338196662
 --- !u!114 &767429891
 MonoBehaviour:
   m_ObjectHideFlags: 0
