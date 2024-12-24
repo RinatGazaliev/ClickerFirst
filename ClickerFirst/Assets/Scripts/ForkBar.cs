@@ -13,6 +13,7 @@ public class ForkBar : MonoBehaviour
     //private int perClickScaleKf;
 
     private float timer = 0f;
+    public static event Action<bool> OnForkBarIsRunning;
     
     
     //public static event Action  OnPerClickScaleKfChanged;
@@ -74,11 +75,14 @@ public class ForkBar : MonoBehaviour
             sliderPork.value = currValueSlider;
             if (sliderPork.value>0.7f)
             {
+                
                 if (Config.GetPerClickScaleKf() < 2)
                 {
                     Config.SetPerClickScaleKf(2);
+                    
+                   
                 }
-
+                OnForkBarIsRunning(true);
                 if (sliderPork.value>1f)
                 {
                     sliderPork.value = 1;  
@@ -91,7 +95,10 @@ public class ForkBar : MonoBehaviour
                 if (Config.GetPerClickScaleKf()  > 1)
                 {
                     Config.SetPerClickScaleKf(1) ;
+                    
+                    
                 }
+                OnForkBarIsRunning(false);
             }
             Debug.Log("CurrValueSlider"+currValueSlider);
         }

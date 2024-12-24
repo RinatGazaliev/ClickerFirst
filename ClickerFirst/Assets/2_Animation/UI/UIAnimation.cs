@@ -22,7 +22,7 @@ public class UIAnimation : MonoBehaviour
     public CanvasGroup canvasGroup;
 
     public RectTransform rectTransform;
-    [SerializeField] private Dropdown dropdown;
+    //[SerializeField] private Dropdown dropdown;
     private System.Action selectedFunction;
     
     // Start is called before the first frame update

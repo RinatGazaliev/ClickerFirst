@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System;
+using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.U2D.Animation;
@@ -10,13 +12,15 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
 {
     
     // Событие, на которое могут подписаться другие объекты
+    [SerializeField] private Animator animContrCharacter;
     public static event Action <GameObject> OnObjectClicked;
 
     public void  OnMouseDown()
     {
         // Вызываем событие и передаем объект, на который кликнули
         OnObjectClicked?.Invoke(gameObject);
-       // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
+        animContrCharacter = GetComponent<Animator>();
+        // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }// Start is called before the first frame update
     
     public void OnPointerClick(PointerEventData eventData)
@@ -54,6 +58,9 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         EquipButtons.OnNeedFindSprite += FindSprite;
         GetNewItemPopUp.OnItemEquipped += EquipNewItem;
         GetNewItemPopUp.OnNeedFindSprite += FindSprite;
+        MovingRoad.OnIsWalkingChange += OnChangeIsWalking;
+        ForkBar.OnForkBarIsRunning += OnChangeForkIsRunning;
+
     }
 
     private void OnDisable()
@@ -62,6 +69,22 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         EquipButtons.OnNeedFindSprite -= FindSprite;
         GetNewItemPopUp.OnItemEquipped -= EquipNewItem;
         GetNewItemPopUp.OnNeedFindSprite -= FindSprite;
+        MovingRoad.OnIsWalkingChange -= OnChangeIsWalking;
+        ForkBar.OnForkBarIsRunning -= OnChangeForkIsRunning;
+    }
+
+    private void OnChangeIsWalking(bool _isWalking)
+    {
+       animContrCharacter.SetBool("isWalking", _isWalking);
+       if (_isWalking==false)
+       {
+           animContrCharacter.SetBool("isRunning", _isWalking);
+       }
+    }
+    
+    private void OnChangeForkIsRunning(bool _isRunning)
+    {
+        animContrCharacter.SetBool("isRunning", _isRunning);
     }
 
     private void CheckEquippedItems()

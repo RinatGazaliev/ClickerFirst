@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,7 @@ public class MovingRoad : MonoBehaviour
     [SerializeField] private List<Color> SpriteRoadDown;
     
     private int currRoadTextureN;
+    public static event Action<bool> OnIsWalkingChange;
 
     void Start()
     {
@@ -65,12 +67,14 @@ public class MovingRoad : MonoBehaviour
     {
         // Устанавливаем переменную в true
         isWalkActive = true;
+        OnIsWalkingChange(true);
         Debug.Log("myBool is now TRUE");
 
         // Ждем 1 секунду
         yield return new WaitForSeconds(1f);
 
         // Устанавливаем переменную в false
+        OnIsWalkingChange(false);
         isWalkActive = false;
         Debug.Log("myBool is now FALSE");
     }
