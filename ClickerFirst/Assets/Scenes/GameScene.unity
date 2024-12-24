@@ -14634,7 +14634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ad2e48aa9fd254fb7b8ca69db66f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kickInterval: 3
   timerSlider: {fileID: 649070072}
+  animContrCharacter: {fileID: 444452079}
 --- !u!1 &1635947885
 GameObject:
   m_ObjectHideFlags: 0

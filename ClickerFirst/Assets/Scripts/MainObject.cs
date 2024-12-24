@@ -60,6 +60,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         GetNewItemPopUp.OnNeedFindSprite += FindSprite;
         MovingRoad.OnIsWalkingChange += OnChangeIsWalking;
         ForkBar.OnForkBarIsRunning += OnChangeForkIsRunning;
+        
 
     }
 
