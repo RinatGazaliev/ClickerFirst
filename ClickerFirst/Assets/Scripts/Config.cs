@@ -222,6 +222,65 @@ public class Config : MonoBehaviour
 
     #endregion
     
+    #region SoundMusic
+    
+    public const string SOUND = "sound";
+    public static bool isSound = true;
+    public static void SetSound(bool _isSound) {
+        isSound = _isSound;
+        if (_isSound)
+        {
+            PlayerPrefs.SetInt(SOUND, 1);
+        }
+        else {
+            PlayerPrefs.SetInt(SOUND, 0);
+        }
+        PlayerPrefs.Save();
+    }
+
+    public static void GetSound() {
+        int soundInt = PlayerPrefs.GetInt(SOUND, 1);
+        if (soundInt == 1)
+        {
+            isSound = true;
+        }
+        else {
+            isSound = false;
+        }
+    }
+
+
+    public const string MUSIC = "music";
+    public static bool isMusic = true;
+    public static void SetMusic(bool _isMusic)
+    {
+        isMusic = _isMusic;
+        if (_isMusic)
+        {
+            PlayerPrefs.SetInt(MUSIC, 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(MUSIC, 0);
+        }
+        PlayerPrefs.Save();
+    }
+
+    public static void GetMusic()
+    {
+        int musicInt = PlayerPrefs.GetInt(MUSIC, 1);
+        if (musicInt == 1)
+        {
+            isMusic = true;
+        }
+        else
+        {
+            isMusic = false;
+        }
+    }
+    
+    #endregion
+    
     void Start()
     {
         
