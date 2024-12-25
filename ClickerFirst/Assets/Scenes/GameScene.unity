@@ -14322,7 +14322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 3.5554285e-35
-  m_labelHash: 8.5670915e-12
+  m_labelHash: 4.491665e-37
   m_SpriteKey: 0
   m_SpriteHash: 206447366
 --- !u!114 &1546539618
@@ -14338,7 +14338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.6698418e-35
-  m_labelHash: 8.5670915e-12
+  m_labelHash: 4.491665e-37
   m_SpriteKey: 0
   m_SpriteHash: 404082363
 --- !u!1 &1549113979
@@ -15487,8 +15487,9 @@ GameObject:
   - component: {fileID: 1658804093}
   - component: {fileID: 1658804095}
   - component: {fileID: 1658804094}
+  - component: {fileID: 1658804096}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15551,6 +15552,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658804092}
   m_CullTransparentMesh: 1
+--- !u!95 &1658804096
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658804092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a245a24948dff5441b616621d29b8530, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1665217646
 GameObject:
   m_ObjectHideFlags: 0
