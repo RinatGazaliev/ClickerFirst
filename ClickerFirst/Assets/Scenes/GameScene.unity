@@ -775,6 +775,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124354611}
+  - component: {fileID: 124354612}
+  - component: {fileID: 124354613}
   m_Layer: 5
   m_Name: KickLeg
   m_TagString: Untagged
@@ -803,6 +805,41 @@ RectTransform:
   m_AnchoredPosition: {x: -761, y: -121.94002}
   m_SizeDelta: {x: 200, y: 876.18005}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &124354612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124354610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ed16ed1faa95842b8874e201fa966e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kickLeg: {fileID: 1232544087}
+  portal: {fileID: 1658804092}
+--- !u!95 &124354613
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124354610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &133064137
 GameObject:
   m_ObjectHideFlags: 0
@@ -11280,6 +11317,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: b4e8b71c32879124ba9042f7a6f735a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1232544089}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: b4e8b71c32879124ba9042f7a6f735a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1232544090}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: b4e8b71c32879124ba9042f7a6f735a4, type: 3}
 --- !u!4 &1232544083 stripped
 Transform:
@@ -11345,6 +11385,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1232544090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232544087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3f3f4843b467d419dcd55dbe4beeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238914729
 GameObject:
   m_ObjectHideFlags: 0
@@ -14322,7 +14374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 3.5554285e-35
-  m_labelHash: 4.491665e-37
+  m_labelHash: 0.0000001489224
   m_SpriteKey: 0
   m_SpriteHash: 994644880
 --- !u!114 &1546539618
@@ -14338,7 +14390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.6698418e-35
-  m_labelHash: 4.491665e-37
+  m_labelHash: 0.0000001489224
   m_SpriteKey: 0
   m_SpriteHash: 789773869
 --- !u!1 &1549113979
@@ -15487,6 +15539,7 @@ GameObject:
   - component: {fileID: 1658804093}
   - component: {fileID: 1658804095}
   - component: {fileID: 1658804094}
+  - component: {fileID: 1658804097}
   - component: {fileID: 1658804096}
   m_Layer: 5
   m_Name: Portal
@@ -15573,6 +15626,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1658804097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658804092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0223e0c9d6afa884cb2dad7511278781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1665217646
 GameObject:
   m_ObjectHideFlags: 0

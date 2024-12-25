@@ -17,6 +17,8 @@ public class RewMoveBoost : MonoBehaviour
     [SerializeField] private Animator animContrCharacter;
     
     public static event Action OnRewardMoveBoostTimeFinish;
+    public static event Action OnRewardStarted;
+    public static event Action OnKickCalled;
     
     //public static event Action OnAutoClickerClick;
     // Start is called before the first frame update
@@ -42,8 +44,9 @@ public class RewMoveBoost : MonoBehaviour
     private IEnumerator StartAutoClickTimer()
     {
         //animContrCharacter.speed=1.3f;
+        OnRewardStarted();
         
-        animContrCharacter.SetTrigger("KickAnim");
+        
         animContrCharacter.SetFloat("walkSpeed",1.3f);
         animContrCharacter.SetFloat("runSpeed",1.3f);
        // animContrCharacter.SetBool("isKicked", true);
@@ -66,7 +69,8 @@ public class RewMoveBoost : MonoBehaviour
             if (timerKick >= kickInterval)
             {
                 timerKick = 0f; // Сброс таймера
-                animContrCharacter.SetTrigger("KickAnim");
+                //animContrCharacter.SetTrigger("KickAnim");
+                OnKickCalled();
             }
 
             yield return null;

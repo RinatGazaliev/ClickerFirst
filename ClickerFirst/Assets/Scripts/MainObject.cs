@@ -60,7 +60,8 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         GetNewItemPopUp.OnNeedFindSprite += FindSprite;
         MovingRoad.OnIsWalkingChange += OnChangeIsWalking;
         ForkBar.OnForkBarIsRunning += OnChangeForkIsRunning;
-        
+        RewMoveBoost.OnKickCalled += CallKick;
+
 
     }
 
@@ -72,6 +73,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         GetNewItemPopUp.OnNeedFindSprite -= FindSprite;
         MovingRoad.OnIsWalkingChange -= OnChangeIsWalking;
         ForkBar.OnForkBarIsRunning -= OnChangeForkIsRunning;
+        RewMoveBoost.OnKickCalled -= CallKick;
     }
 
     private void OnChangeIsWalking(bool _isWalking)
@@ -102,6 +104,10 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         UpdateLegsGroupVision();
     }
 
+    private void CallKick()
+    {
+        animContrCharacter.SetTrigger("KickAnim");
+    }
 
 
     private void EquipNewItem(string equipGroup, int equipN)
