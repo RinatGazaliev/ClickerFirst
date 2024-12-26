@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 
 public class RewDoublePoints : MonoBehaviour
@@ -13,6 +14,7 @@ public class RewDoublePoints : MonoBehaviour
     //private float autoClickTimer = 0f;
     private Button btnSelf;
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
+    [SerializeField] private string YGRewardID;
     
     public static event Action OnRewardDoublePointsTimeFinish;
     //public static event Action OnAutoClickerClick;
@@ -26,7 +28,7 @@ public class RewDoublePoints : MonoBehaviour
             timerSlider.value = 1f;
         }
         btnSelf=GetComponent<Button>();
-        btnSelf.onClick.AddListener(OnPointerClick);
+        btnSelf.onClick.AddListener(CallRewVideo);
         InitViews();
     }
 
@@ -68,7 +70,21 @@ public class RewDoublePoints : MonoBehaviour
         Debug.Log("Auto-click ended");
     }
     
-    private void OnPointerClick ()
+    private void OnEnable()
+    {
+        YG2RewardManager.instance.RewDoubleCoinsFinish += OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
+    }
+    private void OnDisable()
+    {
+        YG2RewardManager.instance.RewDoubleCoinsFinish -= OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
+    }
+    private void CallRewVideo()
+    {
+        YG2.RewardedAdvShow(YGRewardID);
+    }
+    private void OnRewardGain ()
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;

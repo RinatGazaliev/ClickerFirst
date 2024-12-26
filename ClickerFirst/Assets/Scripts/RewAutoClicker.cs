@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 using UnityEngine.UI;
 
 public class RewAutoClicker : MonoBehaviour
@@ -13,6 +14,7 @@ public class RewAutoClicker : MonoBehaviour
     private Button btnSelf;
     [SerializeField] private Slider timerSlider;
     [SerializeField] private MainObject sausageObject;// Таймер для события OnAutoClick
+    [SerializeField] private string YGRewardID;
     
     public static event Action OnRewardAutoClickTimeFinish;
     public static event Action OnAutoClickerClick;
@@ -26,7 +28,7 @@ public class RewAutoClicker : MonoBehaviour
             timerSlider.value = 1f;
         }
         btnSelf=GetComponent<Button>();
-        btnSelf.onClick.AddListener(OnPointerClick);
+        btnSelf.onClick.AddListener(CallRewVideo);
         InitViews();
     }
 
@@ -45,6 +47,22 @@ public class RewAutoClicker : MonoBehaviour
 
     }
     
+    private void OnEnable()
+    {
+        YG2RewardManager.instance.RewAutoClickFinish += OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
+    }
+    private void OnDisable()
+    {
+        YG2RewardManager.instance.RewAutoClickFinish -= OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
+    }
+
+    private void CallRewVideo()
+    {
+        YG2.RewardedAdvShow(YGRewardID);
+    }
+
     private IEnumerator StartAutoClickTimer()
     {
         isAutoClickRunning = true; // Включаем авто-клик
@@ -75,7 +93,7 @@ public class RewAutoClicker : MonoBehaviour
         Debug.Log("Auto-click ended");
     }
     
-    private void OnPointerClick ()
+    private void OnRewardGain ()
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;

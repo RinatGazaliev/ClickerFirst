@@ -1,0 +1,3 @@
+Build path: D:/2.ZoraJoy/Games/4.ClickerFirst/Builds/YG/26-12
+Build number: 1
+PluginYG version: 2.002

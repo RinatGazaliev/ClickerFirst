@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.U2D.Animation;
@@ -19,7 +18,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     {
         // Вызываем событие и передаем объект, на который кликнули
         OnObjectClicked?.Invoke(gameObject);
-        animContrCharacter = GetComponent<Animator>();
+        
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }// Start is called before the first frame update
     
@@ -31,6 +30,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     }
     void Start()
     {
+        //animContrCharacter = GetComponent<Animator>();
         CheckEquippedItems();
 
     }

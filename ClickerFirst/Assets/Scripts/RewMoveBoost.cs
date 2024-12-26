@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class RewMoveBoost : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RewMoveBoost : MonoBehaviour
     [SerializeField] private float kickInterval = 5f;
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
     [SerializeField] private Animator animContrCharacter;
+    [SerializeField] private string YGRewardID;
     
     public static event Action OnRewardMoveBoostTimeFinish;
     public static event Action OnRewardStarted;
@@ -31,7 +33,7 @@ public class RewMoveBoost : MonoBehaviour
             timerSlider.value = 1f;
         }
         btnSelf=GetComponent<Button>();
-        btnSelf.onClick.AddListener(OnPointerClick);
+        btnSelf.onClick.AddListener(CallRewVideo);
         InitViews();
     }
 
@@ -91,7 +93,7 @@ public class RewMoveBoost : MonoBehaviour
         Debug.Log("Auto-click ended");
     }
     
-    private void OnPointerClick ()
+    private void OnRewardGain ()
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
@@ -107,4 +109,20 @@ public class RewMoveBoost : MonoBehaviour
         timerSlider.gameObject.SetActive(false);
         btnSelf.interactable = true;
     }
+    
+    private void OnEnable()
+    {
+        YG2RewardManager.instance.RewMoveBoosterFinish += OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
+    }
+    private void OnDisable()
+    {
+        YG2RewardManager.instance.RewMoveBoosterFinish -= OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
+    }
+    private void CallRewVideo()
+    {
+        YG2.RewardedAdvShow(YGRewardID);
+    }
+
 }

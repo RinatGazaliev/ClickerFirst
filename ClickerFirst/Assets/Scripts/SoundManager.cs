@@ -40,4 +40,26 @@ public class SoundManager : MonoBehaviour
             audioSound.PlayOneShot(butt_click);
         }
     }
+    
+    
+    
+    public void DisableSound()
+    {
+        Config.SetSound(false);
+        
+        audioSound.volume=0; 
+
+    }
+
+    public void EnableSound()
+    {
+        Config.SetSound(true);
+        audioSound.volume=1; 
+    }
+    
+    public void StopAllSounds()
+    {
+        audioSound.Stop();
+        //StopAudioLoop();
+    }
 }

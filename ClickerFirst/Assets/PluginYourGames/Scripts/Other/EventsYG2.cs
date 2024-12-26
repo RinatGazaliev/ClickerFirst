@@ -173,7 +173,7 @@ namespace YG
         public void _RewardedAdvShow(string id) => YG2.RewardedAdvShow(id);
         public void _LoadRewardedAdv_optionalPlatform() => YG2.optionalPlatform.LoadRewardedAdv();
 
-        private void OnOpenRewardedAdv() => Execute(EventYG2Type.OpenRewardedAdv);
+        private void OnOpenRewardedAdv(string id) => Execute(EventYG2Type.OpenRewardedAdv);
         private void OnCloseRewaededAdv() => Execute(EventYG2Type.CloseRewaededAdv);
         private void OnRewardAdv(string id) => Execute(EventYG2Type.RewardAdv);
         private void OnErrorRewardedAdv() => Execute(EventYG2Type.ErrorRewardedAdv);

@@ -16,7 +16,7 @@ namespace YG.Insides
         {
             yield return new WaitForSecondsRealtime(YG2.infoYG.Simulation.loadAdv);
 
-            YGInsides.OpenRewardedAdv();
+            YGInsides.OpenRewardedAdv(id);
             if (!YG2.infoYG.Simulation.testFailAds)
                 DrawScreen(new Color(0, 0, 1, 0.5f));
             else

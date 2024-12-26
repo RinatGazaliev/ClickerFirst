@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using YG;
 using Random = UnityEngine.Random;
 
 public class RewGetEquip : MonoBehaviour
@@ -10,6 +11,7 @@ public class RewGetEquip : MonoBehaviour
     private Button btnGetEquip;
     [SerializeField] private AttrShop attrShop;
     [SerializeField] private ShowWgtManager showWgtManager;
+    [SerializeField] private string YGRewardID;
     
     public static event Action OnEquipRewPressed;
     public static event Action OnRewardGetEquipTimeFinish;
@@ -19,7 +21,7 @@ public class RewGetEquip : MonoBehaviour
         btnGetEquip = GetComponent<Button>();
         if (btnGetEquip!=null)
         {
-           btnGetEquip.onClick.AddListener(OpenRandomLockedEquip); 
+           btnGetEquip.onClick.AddListener(CallRewVideo); 
         }
 
         
@@ -33,7 +35,7 @@ public class RewGetEquip : MonoBehaviour
         
     }
 
-    private void OpenRandomLockedEquip()
+    private void OnRewardGain()
     {
        
         Debug.Log("OpenRandomLocked");
@@ -103,5 +105,20 @@ public class RewGetEquip : MonoBehaviour
     public void SelectRandomElement()
     {
   
+    }
+    
+    private void OnEnable()
+    {
+        YG2RewardManager.instance.RewGetEquipFinish += OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
+    }
+    private void OnDisable()
+    {
+        YG2RewardManager.instance.RewGetEquipFinish -= OnRewardGain;
+        //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
+    }
+    private void CallRewVideo()
+    {
+        YG2.RewardedAdvShow(YGRewardID);
     }
 }

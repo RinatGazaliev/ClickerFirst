@@ -100,5 +100,20 @@ public class MusicManager : MonoBehaviour
             audioSoundEffect.Stop(); // Останавливаем текущий проигрываемый звук
         }
     }
+    public void EnableMusic()
+    {
+        Config.SetMusic(true);
+        audioMusic.volume=1;
+        audioSoundEffect.volume = 1;
+    }
+    
+    public void DisableMusic()
+    {
+        Config.SetMusic(false);
+        
+        audioMusic.volume=0;
+        audioSoundEffect.volume = 0;
+
+    }
     
 }

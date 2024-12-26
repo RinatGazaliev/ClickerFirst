@@ -2,27 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttrShop : MonoBehaviour
 {
     public List<string> groupNames;
+    public string currActiveGroup = "Hat";
     
     [SerializeField] private GameObject groupHat; // Название группы
+    [SerializeField] private Button btnHatGroup;
 
-    public List<int> HatNotActiveElements; 
+    public List<int> HatNotActiveElements;
+    
     
 
     [SerializeField] private GameObject groupJewelry; // Название группы
+    [SerializeField] private Button btnJewelryGroup;
     public List<int> JewelryNotActiveElements;
     
     [SerializeField] private GameObject groupGlasses; // Название группы
+    [SerializeField] private Button btnGlassesGroup;
     public List<int> GlassesNotActiveElements;
     
     [SerializeField] private GameObject groupArms; // Название группы
+    [SerializeField] private Button btnArmsGroup;
     public List<int> ArmsNotActiveElements;
     
     [SerializeField] private GameObject groupLegs; // Название группы
+    [SerializeField] private Button btnLegsGroup;
     public List<int> LegsNotActiveElements;
     
 
@@ -30,6 +39,12 @@ public class AttrShop : MonoBehaviour
     void Start()
     {
         InitFunct();
+        UpdateViews();
+        btnHatGroup.onClick.AddListener(BtnHatClicked);
+        btnJewelryGroup.onClick.AddListener(BtnJewelryClicked);
+        btnGlassesGroup.onClick.AddListener(BtnGlassesClicked);
+        btnLegsGroup.onClick.AddListener(BtnLegsClicked);
+        btnArmsGroup.onClick.AddListener(BtnArmsClicked);
 
     }
 
@@ -69,6 +84,110 @@ public class AttrShop : MonoBehaviour
         ActivateRandomElement(groupArms, ArmsNotActiveElements);
         ActivateRandomElement(groupLegs, LegsNotActiveElements);
         CollectChildNames();
+    }
+
+    private void BtnHatClicked()
+    {
+        currActiveGroup = "Hat";
+        UpdateViews();
+    }
+    
+    private void BtnJewelryClicked()
+    {
+        currActiveGroup = "Jewelry";
+        UpdateViews();
+    }
+    
+    private void BtnGlassesClicked()
+    {
+        currActiveGroup = "Glasses";
+        UpdateViews();
+    }
+    
+    private void BtnArmsClicked()
+    {
+        currActiveGroup = "Arms";
+        UpdateViews();
+    }
+    
+    private void BtnLegsClicked()
+    {
+        currActiveGroup = "Legs";
+        UpdateViews();
+    }
+
+    public void UpdateViews()
+    {
+        DisableAttrView();
+        switch (currActiveGroup)
+        {
+            case "Hat" :
+                groupHat.SetActive(true);
+                btnHatGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+                btnHatGroup.transform.Find("InactiveView").gameObject.SetActive(false);
+                break;
+            case "Jewelry" :
+                groupJewelry.SetActive(true);
+                btnJewelryGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+                btnJewelryGroup.transform.Find("InactiveView").gameObject.SetActive(false);
+                break;
+            case "Glasses" :
+                groupGlasses.SetActive(true);
+                btnGlassesGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+                btnGlassesGroup.transform.Find("InactiveView").gameObject.SetActive(false);
+                break;
+            case "Legs" :
+                groupLegs.SetActive(true);
+                btnLegsGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+                btnLegsGroup.transform.Find("InactiveView").gameObject.SetActive(false);
+                break;
+            
+            case "Arms" :
+                groupArms.SetActive(true);
+                btnArmsGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+                btnArmsGroup.transform.Find("InactiveView").gameObject.SetActive(false);
+                break;
+        }
+    }
+
+    private void DisableAttrView()
+    {
+        //Hat
+        groupHat.SetActive(false);
+        btnHatGroup.transform.Find("ActiveView").gameObject.SetActive(false);
+        btnHatGroup.transform.Find("InactiveView").gameObject.SetActive(true);
+        
+        //Jewelry
+        groupJewelry.SetActive(false);
+        btnJewelryGroup.transform.Find("ActiveView").gameObject.SetActive(false);
+        btnJewelryGroup.transform.Find("InactiveView").gameObject.SetActive(true);
+        
+        //Glasses
+        groupGlasses.SetActive(false);
+        btnGlassesGroup.transform.Find("ActiveView").gameObject.SetActive(false);
+        btnGlassesGroup.transform.Find("InactiveView").gameObject.SetActive(true);
+        
+        //Legs
+        groupLegs.SetActive(false);
+        btnLegsGroup.transform.Find("ActiveView").gameObject.SetActive(false);
+        btnLegsGroup.transform.Find("InactiveView").gameObject.SetActive(true);
+        
+        //Arms
+        groupArms.SetActive(false);
+        btnArmsGroup.transform.Find("ActiveView").gameObject.SetActive(false);
+        btnArmsGroup.transform.Find("InactiveView").gameObject.SetActive(true);
+    }
+
+    private void SetHatActive()
+    {
+        //Hat
+        groupHat.SetActive(true);
+        btnHatGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+        btnHatGroup.transform.Find("InactiveView").gameObject.SetActive(true);
+        
+        groupHat.SetActive(true);
+        btnHatGroup.transform.Find("ActiveView").gameObject.SetActive(true);
+        btnHatGroup.transform.Find("InactiveView").gameObject.SetActive(true);
     }
 
     public void ActivateRandomElement(GameObject groupObject, List<int> elementNumbers)

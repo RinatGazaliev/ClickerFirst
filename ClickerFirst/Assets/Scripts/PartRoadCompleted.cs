@@ -3,17 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class PartRoadCompleted : MonoBehaviour
 {
     public static event Action OnPartRoadCompletedActive;
     public static event Action OnPartRoadCompletedClosed;
-    //[SerializeField] private Button btnContinue;
+    [SerializeField] private Button btnContinue;
     
     // Start is called before the first frame update
     void Start()
     {
-       // btnContinue.onClick.AddListener(ContinuePressed); 
+        btnContinue.onClick.AddListener(ContinuePressed); 
     }
 
     // Update is called once per frame
@@ -29,11 +30,13 @@ public class PartRoadCompleted : MonoBehaviour
     }
     private void ContinuePressed()
     {
-        Time.timeScale = 1f;
-        
         Debug.Log("AddInterHere");
+        YG2.InterstitialAdvShow();
+        OnPartRoadCompletedClosed();
         gameObject.SetActive(false);
+
         // OnPartRoadCompletedActive();
     }
+    
     
 }

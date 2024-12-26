@@ -6,7 +6,7 @@ namespace YG
 {
     public partial class YG2
     {
-        public static Action onOpenRewardedAdv;
+        public static Action <string>  onOpenRewardedAdv;
         public static Action onCloseRewaededAdv;
         public static Action<string> onRewardAdv;
         public static Action onErrorRewardedAdv;
@@ -60,10 +60,14 @@ namespace YG.Insides
         private static float timeOpenRewardedAdv;
         public static Action rewardCallback = null;
 
-        public static void OpenRewardedAdv()
-        {
+        public static void OpenRewardedAdv(string id)
+        {            
+            if (id == "null" || id == null)
+                id = string.Empty;
+            currentRewardID = id;
+            
             YG2.PauseGame(true);
-            YG2.onOpenRewardedAdv?.Invoke();
+            YG2.onOpenRewardedAdv?.Invoke(currentRewardID);
             YG2.onOpenAnyAdv?.Invoke();
             YG2.nowRewardAdv = true;
             timeOpenRewardedAdv = Time.realtimeSinceStartup;

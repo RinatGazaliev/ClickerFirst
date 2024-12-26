@@ -15,6 +15,7 @@ public class MovingRoad : MonoBehaviour
     [SerializeField] Text txtTotalDistance;
     [SerializeField] GameObject Part1;
     [SerializeField] GameObject Part2;
+    [SerializeField] GameObject Flag;
     private float startPositionPart1;
     private float startPositionPart2;
     //public Transform object1; // Первый объект
@@ -48,10 +49,18 @@ public class MovingRoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Time.timeScale"+Time.timeScale);
         if (isWalkActive)
         {
             MoveRoad();
             UpdateDistanceValue();
+            if (Flag.activeSelf)
+            {
+                if (Part2.transform.localPosition.x*2<=startPositionPart2)
+                {
+                    showWdgManager.StartPartRoadWdg();
+                }
+            }
 
         }  // Двигаем объект 2 в сторону начальной позиции объекта 1
  
@@ -83,6 +92,8 @@ public class MovingRoad : MonoBehaviour
     {
         // Подписываемся на событие
         MainObject.OnObjectClicked += StartTimerWalkCoroutine;
+        PartRoadCompleted.OnPartRoadCompletedClosed += InactivateFlag;
+        
         
     }
 
@@ -90,7 +101,13 @@ public class MovingRoad : MonoBehaviour
     {
         // Отписываемся от события
         MainObject.OnObjectClicked -= StartTimerWalkCoroutine;
-        
+        PartRoadCompleted.OnPartRoadCompletedClosed -= InactivateFlag;
+    }
+
+    private void InactivateFlag()
+    {
+        Flag.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     private void SetSpriteTextureN()
@@ -183,9 +200,10 @@ public class MovingRoad : MonoBehaviour
                 currRoadTextureN = currRoadTextureN + 1;
                 Config.SetRoadTextureCurrN(currRoadTextureN);
                 //wdgtPartRoad.gameObject.SetActive(true);
-                showWdgManager.StartPartRoadWdg();
+                //showWdgManager.StartPartRoadWdg();
                 SetTextureObjectTwo();
                 Config.SetHeavenMove(true);
+                Flag.SetActive(true);
             }
             else
             {
