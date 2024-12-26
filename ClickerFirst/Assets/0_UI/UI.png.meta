@@ -1055,13 +1055,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_mask
+      name: UI_45
       rect:
         serializedVersion: 2
-        x: 1848
-        y: 1501
-        width: 141
-        height: 136
+        x: 1599
+        y: 1048
+        width: 262
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1069,8 +1069,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dfeb1452c535cf4295efe6dea1e04e2
-      internalID: -809232766
+      spriteID: abcdf0b6afe627a4791d60e8ec8fdaf5
+      internalID: 1164379453
       vertices: []
       indices: 
       edges: []
@@ -1126,6 +1126,7 @@ TextureImporter:
       UI_42: -1966735670
       UI_43: 1254248316
       UI_44: -706270983
+      UI_45: 1164379453
       UI_5: 1919801234
       UI_6: -1361268746
       UI_7: 910720230
