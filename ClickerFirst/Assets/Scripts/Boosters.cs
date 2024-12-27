@@ -9,10 +9,12 @@ public class Boosters : MonoBehaviour
     [SerializeField] private int boosterN;
     private Text txtPrice;
     private bool isPerClick;
+    private bool isMoveBoost;
 
     private int price;
     private int perSecBoostValue;
     private int perClickBoostValue;
+    private float distanceBoostValue;
 
     private int pushedN;
 
@@ -110,19 +112,33 @@ public class Boosters : MonoBehaviour
         {
             case 0:
                 isPerClick = true;
+                isMoveBoost = false;
                 perClickBoostValue = 1;
                 break;
             case 1:
                 isPerClick = false;
+                isMoveBoost = false;
                 perSecBoostValue = 1;
                 break;
             case 2:
-                isPerClick = true;
-                perClickBoostValue = 10;
+                isPerClick = false;
+                isMoveBoost = true;
+                distanceBoostValue = 0.01f;
                 break;
             case 3:
+                isPerClick = true;
+                isMoveBoost = false;
+                perClickBoostValue = 10;
+                break;
+            case 4:
                 isPerClick = false;
+                isMoveBoost = false;
                 perSecBoostValue = 10;
+                break;
+            case 5:
+                isPerClick = false;
+                isMoveBoost = true;
+                distanceBoostValue = 0.1f;
                 break;
                 
         }
@@ -132,20 +148,26 @@ public class Boosters : MonoBehaviour
     {
         
         Config.SetBoosterPushedN(boosterN);
-        
-
-        if (isPerClick)
+        if (isMoveBoost)
         {
-            //int currPerClick = Config.GetScorePerClick() + perClickBoostValue;
-            
             Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
-            Debug.Log("ButtPerClick");
         }
         else
         {
-            Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue);
-            Debug.Log("ButtPerSec");
+            if (isPerClick)
+            {
+                //int currPerClick = Config.GetScorePerClick() + perClickBoostValue;
+            
+                Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
+                Debug.Log("ButtPerClick");
+            }
+            else
+            {
+                Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue);
+                Debug.Log("ButtPerSec");
+            }
         }
+       
         int currTotalScore = Config.GetTotalScore();
         currTotalScore = currTotalScore - price;
         Config.SetTotalScore(currTotalScore);

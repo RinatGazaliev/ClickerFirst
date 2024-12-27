@@ -49,6 +49,23 @@ public class Config : MonoBehaviour
     }
 
     #endregion
+    #region DistanceBooster
+    private const string DISTANCEBOOST = "Distance_boost";
+    
+    public static float GetDistanceBoostKf()
+    {
+        float currScorePerClick = PlayerPrefs.GetFloat(DISTANCEBOOST, 1);
+        return currScorePerClick;
+
+    }
+    
+    public static void SetDistanceBoostKf(float scoreValue)
+    {
+        PlayerPrefs.SetFloat(DISTANCEBOOST, scoreValue);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    #endregion
 
     #region ScorePerSec
 
@@ -182,7 +199,7 @@ public class Config : MonoBehaviour
         
     }
     
-    private static List<int> boosterPrice = new List<int> {10, 10, 200, 200, 400, 400 };
+    private static List<int> boosterPrice = new List<int> {10, 10, 200, 500, 500, 10000 };
     public static int GetBoosterPrice(int boosterN) {
         return boosterPrice[boosterN];
     }

@@ -30,7 +30,7 @@ public class UIAnimation : MonoBehaviour
     {
        // ButtSmoothFromLeft();
         SaveAnimFunct(viewType);
-        CallAnimationFunct();
+        //CallAnimationFunct();
     }
 
     // Update is called once per frame
