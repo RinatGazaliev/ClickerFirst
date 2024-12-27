@@ -46,7 +46,7 @@ public class ForkBar : MonoBehaviour
             }
             timer = 0f; // Сбрасываем таймер   
 
-            Debug.Log($"Текущее значение A: {sliderPork.value}");
+                //Debug.Log($"Текущее значение A: {sliderPork.value}");
         }
     }
     

@@ -55,9 +55,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     private void OnEnable()
     {
         EquipButtons.OnItemEquipped += EquipNewItem;
-        EquipButtons.OnNeedFindSprite += FindSprite;
         GetNewItemPopUp.OnItemEquipped += EquipNewItem;
-        GetNewItemPopUp.OnNeedFindSprite += FindSprite;
         MovingRoad.OnIsWalkingChange += OnChangeIsWalking;
         ForkBar.OnForkBarIsRunning += OnChangeForkIsRunning;
         RewMoveBoost.OnKickCalled += CallKick;
@@ -68,9 +66,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     private void OnDisable()
     {
         EquipButtons.OnItemEquipped -= EquipNewItem;
-        EquipButtons.OnNeedFindSprite -= FindSprite;
         GetNewItemPopUp.OnItemEquipped -= EquipNewItem;
-        GetNewItemPopUp.OnNeedFindSprite -= FindSprite;
         MovingRoad.OnIsWalkingChange -= OnChangeIsWalking;
         ForkBar.OnForkBarIsRunning -= OnChangeForkIsRunning;
         RewMoveBoost.OnKickCalled -= CallKick;

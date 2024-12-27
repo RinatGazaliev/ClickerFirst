@@ -21,9 +21,28 @@ public class ShowWgtManager : MonoBehaviour
     {
         
     }
+    void OnEnable()
+    {
+        // Подписываемся на событие
+        //EquipButtons.OnNeedFindSprite += FindSprite;
+        GetNewItemPopUp.OnNeedFindSprite += attrShop.FindSprite;
+        
+    }
+
+    void OnDisable()
+    {
+        // Отписываемся от события
+        //RewGetEquip.OnEquipRewPressed  -= InitFunct;
+        //EquipButtons.OnNeedFindSprite -= FindSprite;
+        GetNewItemPopUp.OnNeedFindSprite -= attrShop.FindSprite;;
+        
+    }
+    
+    
     
     [Header("AttributesPopup")] 
     [SerializeField] private GameObject attrPopup;
+    [SerializeField] private AttrShop attrShop;
     [SerializeField] Button btnCloseAttrPopup;
    // [SerializeField] private List<Vector3> HatPositions;
    

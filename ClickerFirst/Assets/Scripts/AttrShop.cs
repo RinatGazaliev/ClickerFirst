@@ -13,6 +13,7 @@ public class AttrShop : MonoBehaviour
     
     [SerializeField] private GameObject groupHat; // Название группы
     [SerializeField] private Button btnHatGroup;
+    [SerializeField] private List<Sprite> spritesHat;
 
     public List<int> HatNotActiveElements;
     
@@ -20,18 +21,23 @@ public class AttrShop : MonoBehaviour
 
     [SerializeField] private GameObject groupJewelry; // Название группы
     [SerializeField] private Button btnJewelryGroup;
+    [SerializeField] private List<Sprite> spritesJewelry;
     public List<int> JewelryNotActiveElements;
+   
     
     [SerializeField] private GameObject groupGlasses; // Название группы
     [SerializeField] private Button btnGlassesGroup;
+    [SerializeField] private List<Sprite> spritesGlasses;
     public List<int> GlassesNotActiveElements;
     
     [SerializeField] private GameObject groupArms; // Название группы
     [SerializeField] private Button btnArmsGroup;
+    [SerializeField] private List<Sprite> spritesArms;
     public List<int> ArmsNotActiveElements;
     
     [SerializeField] private GameObject groupLegs; // Название группы
     [SerializeField] private Button btnLegsGroup;
+    [SerializeField] private List<Sprite> spritesLegs;
     public List<int> LegsNotActiveElements;
     
 
@@ -65,14 +71,17 @@ public class AttrShop : MonoBehaviour
     void OnEnable()
     {
         // Подписываемся на событие
-        
+        EquipButtons.OnNeedFindSprite += FindSprite;
+        GetNewItemPopUp.OnNeedFindSprite += FindSprite;
         
     }
 
     void OnDisable()
     {
         // Отписываемся от события
-        RewGetEquip.OnEquipRewPressed  -= InitFunct;
+        //RewGetEquip.OnEquipRewPressed  -= InitFunct;
+        EquipButtons.OnNeedFindSprite -= FindSprite;
+        GetNewItemPopUp.OnNeedFindSprite -= FindSprite;
         
     }
 
@@ -270,5 +279,31 @@ public class AttrShop : MonoBehaviour
             }
             
         }
+    }
+    
+    public void FindSprite(string equipGroup, int equipN, Image spriteToSet)
+    {
+        Debug.Log("FindSpriteFunct");
+        switch (equipGroup)
+        {
+            case "Hat" :
+                spriteToSet.sprite=spritesHat[equipN];
+                break;
+            case "Jewelry" :
+                spriteToSet.sprite=spritesJewelry[equipN];
+                break;
+            case "Glasses" :
+                spriteToSet.sprite=spritesGlasses[equipN];
+                break;
+            case "Legs" :
+                spriteToSet.sprite=spritesLegs[equipN];
+                break;
+            
+            case "Arms" :
+                spriteToSet.sprite=spritesArms[equipN];
+                break;
+            
+        }
+   
     }
 }

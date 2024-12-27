@@ -21,6 +21,7 @@ public class GetNewItemPopUp : MonoBehaviour
         imgSpriteEquip = FindImageAmongChildren(transform);
         btnEquipItem.onClick.AddListener(SaveDataAndEquip);
         
+        
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class GetNewItemPopUp : MonoBehaviour
 
     public void ShowGetNewItemPopUp(string group, int equip)
     {
+       // Debug.Log("ShowGetNewItemFunct");
         currGroup = group;
         currEquipN = equip;
        
