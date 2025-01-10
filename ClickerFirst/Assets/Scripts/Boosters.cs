@@ -6,15 +6,23 @@ using UnityEngine.UI;
 
 public class Boosters : MonoBehaviour
 {
+    
+    public static event Action OnBoosterClick = delegate() { };
+    
+    
     [SerializeField] private int boosterN;
+    //[SerializeField] private bool isMoveBoost;
+    //[SerializeField] private bool isPerClick;
+    
+    
     private Text txtPrice;
-    private bool isPerClick;
-    private bool isMoveBoost;
-
+    //private bool isPerClick;
+    
+[Header ("BoostParams")]
     private int price;
-    private int perSecBoostValue;
-    private int perClickBoostValue;
-    private float distanceBoostValue;
+    [SerializeField] private int perSecBoostValue;
+    [SerializeField] private int perClickBoostValue;
+    [SerializeField] private float distanceBoostValue;
 
     private int pushedN;
 
@@ -35,7 +43,7 @@ public class Boosters : MonoBehaviour
             
            btnBooster.onClick.AddListener(BoosterTouch);
            CheckState(Config.GetTotalScore());
-           SetStartButtParams();
+          // SetStartButtParams();
         }
     }
 
@@ -48,7 +56,8 @@ public class Boosters : MonoBehaviour
     {
         Config.OnChangeTotalScore -= CheckState;
     }
-
+    
+    
     private void SetTextPrice()
     {
 
@@ -106,7 +115,7 @@ public class Boosters : MonoBehaviour
         //btnBooster.interactable = price <= totalScore;
     }
 
-    private void SetStartButtParams()
+    /*private void SetStartButtParams()
     {
         switch (boosterN)
         {
@@ -123,7 +132,7 @@ public class Boosters : MonoBehaviour
             case 2:
                 isPerClick = false;
                 isMoveBoost = true;
-                distanceBoostValue = 0.01f;
+                distanceBoostValue = 0.91f;
                 break;
             case 3:
                 isPerClick = true;
@@ -142,31 +151,20 @@ public class Boosters : MonoBehaviour
                 break;
                 
         }
-    }
+    }*/
 
     private void BoosterTouch()
     {
         
         Config.SetBoosterPushedN(boosterN);
-        if (isMoveBoost)
-        {
-            Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
-        }
-        else
-        {
-            if (isPerClick)
-            {
-                //int currPerClick = Config.GetScorePerClick() + perClickBoostValue;
-            
-                Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
-                Debug.Log("ButtPerClick");
-            }
-            else
-            {
-                Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue);
-                Debug.Log("ButtPerSec");
-            }
-        }
+        Config.SetDistanceBoostKf(Config.GetDistanceBoostKf()+distanceBoostValue);
+
+        Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
+
+        Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue);
+        
+        
+
        
         int currTotalScore = Config.GetTotalScore();
         currTotalScore = currTotalScore - price;
@@ -175,6 +173,8 @@ public class Boosters : MonoBehaviour
         GetPriceValue();
         UpdateTextPriceValue();
         CheckState(currTotalScore);
+
+        OnBoosterClick();
 
     }
 }

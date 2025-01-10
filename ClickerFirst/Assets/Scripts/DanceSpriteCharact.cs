@@ -1,27 +1,33 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DanceSpriteCharact : MonoBehaviour
 {
-    public Image imageComponent; // Компонент Image
-    public Sprite sprite1; // Первый спрайт
-    public Sprite sprite2; // Второй спрайт
-    public float switchInterval = 0.5f; // Интервал переключения в секундах
+    public Image imageComponent; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Image
+    public Sprite sprite1; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    public Sprite sprite2; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    public float switchInterval = 0.5f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     private bool isSprite1Active = true;
     private Coroutine animationCoroutine;
 
-    public void StartAnimation()
+    private void Start()
+    {
+        StartAnimation();
+    }
+
+    private void StartAnimation()
     {
         if (animationCoroutine != null)
         {
-            StopCoroutine(animationCoroutine); // Останавливаем предыдущую корутину
+            StopCoroutine(animationCoroutine); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
         animationCoroutine = StartCoroutine(SwitchSprites());
     }
 
-    public void StopAnimation()
+    private void StopAnimation()
     {
         if (animationCoroutine != null)
         {
@@ -32,12 +38,12 @@ public class DanceSpriteCharact : MonoBehaviour
 
     IEnumerator SwitchSprites()
     {
-        while (true)
+        while (true) // Р‘РµСЃРєРѕРЅРµС‡РЅС‹Р№ С†РёРєР» РґР»СЏ РЅРµРїСЂРµСЂС‹РІРЅРѕРіРѕ РІС‹РїРѕР»РЅРµРЅРёСЏ
         {
             imageComponent.sprite = isSprite1Active ? sprite2 : sprite1;
             isSprite1Active = !isSprite1Active;
 
-            yield return new WaitForSeconds(switchInterval);
+            yield return new WaitForSecondsRealtime(switchInterval); // РџР°СѓР·Р° РїРµСЂРµРґ СЃР»РµРґСѓСЋС‰РµР№ СЃРјРµРЅРѕР№ СЃРїСЂР°Р№С‚Р°
         }
     }
 }

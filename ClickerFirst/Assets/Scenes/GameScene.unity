@@ -3255,7 +3255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &124354611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4913,6 +4913,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &172389591
 GameObject:
   m_ObjectHideFlags: 0
@@ -9481,6 +9484,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &343473029
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,7 +10791,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838d877602066964595c584cc1a7019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boosterN: 2
+  boosterN: 3
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1001 &404769284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24420,6 +24429,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0.02
 --- !u!224 &847908631 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1458340611983043067, guid: faabede0f0f66fc4081dc82243154e0d, type: 3}
@@ -25916,6 +25928,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &907236274
 GameObject:
   m_ObjectHideFlags: 0
@@ -28377,6 +28392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 1
+  perSecBoostValue: 1
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!224 &1024035276 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1458340611983043067, guid: faabede0f0f66fc4081dc82243154e0d, type: 3}
@@ -28653,6 +28671,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &1037165871
 GameObject:
   m_ObjectHideFlags: 0
@@ -28880,6 +28901,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &1043718467
 GameObject:
   m_ObjectHideFlags: 0
@@ -30842,6 +30866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &1111668439
 GameObject:
   m_ObjectHideFlags: 0
@@ -31366,6 +31393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &1134230088
 GameObject:
   m_ObjectHideFlags: 0
@@ -31799,6 +31829,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &1156753746
 GameObject:
   m_ObjectHideFlags: 0
@@ -45915,6 +45948,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &1617163205
 GameObject:
   m_ObjectHideFlags: 0
@@ -48065,6 +48101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 0
+  perSecBoostValue: 0
+  perClickBoostValue: 1
+  distanceBoostValue: 0
 --- !u!1001 &1710942649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50131,11 +50170,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtTotalScore: {fileID: 1920472190}
-  spawnedAddScorePerClick: {fileID: 1475992186114564874, guid: 961de7f5f3c3359409095cc90321e2ea, type: 3}
   spawnedAddScorePerSec: {fileID: 1475992186114564874, guid: 637bd6c3f93ce26469df8d548f9d9690, type: 3}
-  spawnPositionPerClick: {x: 250, y: 0, z: 0}
   spawnPositionPerSec: {x: 350, y: 0, z: 0}
+  txtScorePerSecTitle: {fileID: 1340038230}
+  txtScorePerSecValue: {fileID: 1470076518}
+  spawnedAddScorePerClick: {fileID: 1475992186114564874, guid: 961de7f5f3c3359409095cc90321e2ea, type: 3}
+  spawnPositionPerClick: {x: 250, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0}
+  txtScorePerClickTitle: {fileID: 2105352500}
+  txtScorePerClickValue: {fileID: 1323099246}
+  txtStepTitle: {fileID: 2093444272}
+  txtStepSize: {fileID: 1729057810}
 --- !u!224 &1792112852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52827,7 +52872,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838d877602066964595c584cc1a7019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boosterN: 2
+  boosterN: 4
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1001 &1898543369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57171,6 +57219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterN: 2
+  perSecBoostValue: 0
+  perClickBoostValue: 0
+  distanceBoostValue: 0
 --- !u!1 &2088191954
 GameObject:
   m_ObjectHideFlags: 0

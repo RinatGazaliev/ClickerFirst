@@ -5,19 +5,38 @@ using UnityEngine.UI;
 
 public class ScoreZone : MonoBehaviour
 {
-
     [SerializeField] Text txtTotalScore;
-    [SerializeField] private GameObject spawnedAddScorePerClick;
+    
+    [Header ("ScorePerSec")]
     [SerializeField] private GameObject spawnedAddScorePerSec;
+    [SerializeField] private Vector3 spawnPositionPerSec = Vector3.zero;
+    [SerializeField] Text txtScorePerSecTitle;
+    [SerializeField] Text txtScorePerSecValue;
+    
+   
+    [Header ("ScorePerClick")]
+    [SerializeField] private GameObject spawnedAddScorePerClick;
+    
    // [SerializeField] private TxtAddScorePerClick spawnedAddScorePerClick; // Объект, который будет спавниться
     [SerializeField] private Vector3 spawnPositionPerClick = Vector3.zero; // Позиция спавна
-    [SerializeField] private Vector3 spawnPositionPerSec = Vector3.zero; 
+    
     [SerializeField] private Vector3 spawnRotation = Vector3.zero; // Ротация спавна (в градусах)
-    private int scalePerClickKf;
-
-    // Метод для вызова события спавна
+    [SerializeField] Text txtScorePerClickTitle;
+    [SerializeField] Text txtScorePerClickValue;
   
     
+    [Header ("StepPerClick")]
+    [SerializeField] Text txtStepTitle;
+    [SerializeField] Text txtStepSize;
+    
+    private int scalePerClickKf;
+    
+    private float startStepSize = 0.5f;
+    // Метод для вызова события спавна
+  
+
+
+
 
     void OnEnable()
     {
@@ -26,6 +45,10 @@ public class ScoreZone : MonoBehaviour
         RewAutoClicker.OnAutoClickerClick += AutoClickTotalScore;
         Config.OnChangeTotalScore += UpdateTotalScore;
         Config.OnChangePerClickScaleKf += UpdatePerClickForkKf;
+        ForkBar.OnForkBarIsRunning += OnChangeIsWalkingBool;
+        Boosters.OnBoosterClick += UpdateTextParamsValues;
+        RewMoveBoost.OnRewardStarted += OnRewardKickBoost;
+        RewMoveBoost.OnRewardMoveBoostTimeFinish += OnRewardKickBoost;
     }
 
     void OnDisable()
@@ -35,6 +58,10 @@ public class ScoreZone : MonoBehaviour
         RewAutoClicker.OnAutoClickerClick -= AutoClickTotalScore;
         Config.OnChangeTotalScore -= UpdateTotalScore;
         Config.OnChangePerClickScaleKf -= UpdatePerClickForkKf;
+        ForkBar.OnForkBarIsRunning -= OnChangeIsWalkingBool;
+        Boosters.OnBoosterClick -= UpdateTextParamsValues;
+        RewMoveBoost.OnRewardStarted -= OnRewardKickBoost;
+        RewMoveBoost.OnRewardMoveBoostTimeFinish -= OnRewardKickBoost;
     }
     
     
@@ -99,6 +126,7 @@ public class ScoreZone : MonoBehaviour
     {
         txtTotalScore.text = Config.GetTotalScore().ToString();
         scalePerClickKf = Config.GetPerClickScaleKf();
+        UpdateTextParamsValues();
     }
 
     // Update is called once per frame
@@ -141,4 +169,34 @@ public class ScoreZone : MonoBehaviour
         Debug.Log($"Объект {spawnedAddScorePerSec.name} заспавнен в позиции {spawnPositionPerSec} с ротацией {spawnRotation}");
 
     }
+    
+    
+    private void UpdateTextParamsValues()
+    {
+        float StepSize = startStepSize + (Config.GetDistanceBoostKf()-1)/2;
+        txtStepSize.text = $"{StepSize:F2}";
+        txtScorePerClickValue.text = Config.GetScorePerClick().ToString();
+        txtScorePerSecValue.text = Config.GetScorePerSec().ToString();
+    }
+    
+    private void OnChangeIsWalkingBool(bool _isRunning)
+    {
+        if (_isRunning)
+        {
+            float StepSize = startStepSize*Config.GetMoveBoostRewValue()*Config.GetPerClickScaleKf() + (Config.GetDistanceBoostKf()-1)/2;
+            txtStepSize.text = $"{StepSize:F2}";
+        }
+        else
+        {
+            float StepSize = startStepSize*Config.GetMoveBoostRewValue() + (Config.GetDistanceBoostKf()-1)/2;
+            txtStepSize.text = $"{StepSize:F2}";
+        }
+      
+    }
+    private void OnRewardKickBoost()
+    {
+        float StepSize = startStepSize*Config.GetMoveBoostRewValue()*Config.GetPerClickScaleKf() + (Config.GetDistanceBoostKf()-1)/2;
+        txtStepSize.text = $"{StepSize:F2}";
+    }
+    
 }

@@ -26,6 +26,7 @@ public class MovingRoad : MonoBehaviour
     private float totalDistance;
     [SerializeField] private List<Sprite> SpriteRoadUp;
     [SerializeField] private List<Color> SpriteRoadDown;
+    private bool valueClickAdded = false;
     
     private int currRoadTextureN;
     public static event Action<bool> OnIsWalkingChange;
@@ -69,6 +70,12 @@ public class MovingRoad : MonoBehaviour
     private void StartTimerWalkCoroutine(GameObject clickedObject)
     {
         StopAllCoroutines();
+        //float distanceTotal = Config.GetTotalDistance();
+        //totalDistance += Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue()*Config.GetDistanceBoostKf()+ 0.1f;
+        //totalDistance = Config.GetTotalDistance() + 0.1f;
+        //Debug.Log("totalDistanceCheck"+Config.GetDistanceBoostKf());
+        //Config.SetTotalDistance(distanceTotal);
+        valueClickAdded = false;
         StartCoroutine(HandleBoolChange());
     }
 
@@ -77,6 +84,7 @@ public class MovingRoad : MonoBehaviour
         // Устанавливаем переменную в true
         isWalkActive = true;
         OnIsWalkingChange(true);
+        
         Debug.Log("myBool is now TRUE");
 
         // Ждем 1 секунду
@@ -215,8 +223,16 @@ public class MovingRoad : MonoBehaviour
     private void UpdateDistanceValue()
     {
         // Рассчитываем значение переменной `value` каждый кадр
-        elapsedTime += Time.deltaTime;
-        totalDistance += Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue(); // Обновляем значение плавно
+       // elapsedTime += Time.deltaTime;
+       float deltaDistance = Time.deltaTime * Config.GetPerClickScaleKf() * Config.GetMoveBoostRewValue() * Config.GetDistanceBoostKf();
+       totalDistance += deltaDistance;
+        // Обновляем значение плавно
+        
+        if (!valueClickAdded) // Проверяем, добавляли ли значение ранее
+        {
+            totalDistance += 0.1f; // Добавляем значение только один раз
+            valueClickAdded = true; // Устанавливаем флаг в true, чтобы больше не добавлять
+        }
 
         // Сохраняем значение в PlayerPrefs каждую секунду
         timeSinceLastSave += Time.deltaTime;

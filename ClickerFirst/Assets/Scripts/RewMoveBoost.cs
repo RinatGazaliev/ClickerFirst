@@ -46,9 +46,6 @@ public class RewMoveBoost : MonoBehaviour
     private IEnumerator StartAutoClickTimer()
     {
         //animContrCharacter.speed=1.3f;
-        OnRewardStarted();
-        
-        
         animContrCharacter.SetFloat("walkSpeed",1.3f);
         animContrCharacter.SetFloat("runSpeed",1.3f);
        // animContrCharacter.SetBool("isKicked", true);
@@ -57,7 +54,8 @@ public class RewMoveBoost : MonoBehaviour
         Debug.Log("Auto-click started");
         float elapsedTime = 0f;
         float timerKick = 0f;
-
+        OnRewardStarted();
+        
         while (elapsedTime < moveBoostDuration)
         {
             elapsedTime += Time.deltaTime;
