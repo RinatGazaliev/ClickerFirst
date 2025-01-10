@@ -195,7 +195,7 @@ public class ParallaxBGMove : MonoBehaviour
 
         if (currRoadTextureN+1 >= 0 && currRoadTextureN+1 < ScenesGameObjects.Count)
         {
-            GameObject objToCopy = ScenesGameObjects[currRoadTextureN];
+            GameObject objToCopy = ScenesGameObjects[currRoadTextureN + 1];
 
             if (objToCopy != null)
             {
