@@ -41,7 +41,43 @@ public class SoundManager : MonoBehaviour
         }
     }
     
+    [Header("Sosige Click")]
+    public AudioClip sos_click;
     
+    public void PlaySound_SosClick()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(sos_click);
+        }
+    }
+    
+    [Header("PortalGroup")]
+    public AudioClip kick;
+    public AudioClip portal_appear;
+    public AudioClip leg_appear;
+    
+    public void PlaySound_Kick()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(kick);
+        }
+    }
+    public void PlaySound_Portal()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(portal_appear);
+        }
+    }
+    public void PlaySound_leg()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(leg_appear);
+        }
+    }
     
     public void DisableSound()
     {

@@ -82,6 +82,7 @@ public class RewDoublePoints : MonoBehaviour
     }
     private void CallRewVideo()
     {
+        SoundManager.instance.PlaySound_ButtClick();
         YG2.RewardedAdvShow(YGRewardID);
     }
     private void OnRewardGain ()

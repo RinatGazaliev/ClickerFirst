@@ -17,6 +17,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     public void  OnMouseDown()
     {
         // Вызываем событие и передаем объект, на который кликнули
+        SoundManager.instance.PlaySound_SosClick();
         OnObjectClicked?.Invoke(gameObject);
         
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());

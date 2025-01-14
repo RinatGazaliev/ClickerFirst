@@ -69,11 +69,14 @@ public class ShowWgtManager : MonoBehaviour
 
    private void TouchCloseAttr()
    {
+       SoundManager.instance.PlaySound_ButtClick();
+      // SoundManager.instance.PlaySound_ButtClick();
        InitViews();
    }
    
    private void TouchEquipShop()
    {
+       SoundManager.instance.PlaySound_ButtClick();
        attrPopup.SetActive(true);
        partRoadWgt.gameObject.SetActive(false);
        rewZone.SetActive(false);
@@ -81,6 +84,7 @@ public class ShowWgtManager : MonoBehaviour
    
    private void TouchContinueRoad()
    {
+       SoundManager.instance.PlaySound_ButtClick();
        Time.timeScale = 1f;
         
        Debug.Log("AddInterHere");

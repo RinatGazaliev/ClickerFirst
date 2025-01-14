@@ -155,7 +155,7 @@ public class Boosters : MonoBehaviour
 
     private void BoosterTouch()
     {
-        
+        SoundManager.instance.PlaySound_ButtClick();
         Config.SetBoosterPushedN(boosterN);
         Config.SetDistanceBoostKf(Config.GetDistanceBoostKf()+distanceBoostValue);
 

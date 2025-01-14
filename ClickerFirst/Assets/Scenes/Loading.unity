@@ -916,7 +916,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3d7651093ac3a4fa145b53d82f6b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  butt_click: {fileID: 0}
+  butt_click: {fileID: 8300000, guid: f98b8244287fcbd4097eb9c41ff81699, type: 3}
+  sos_click: {fileID: 8300000, guid: 2b684c56c8115484ea7f1d044d382e9e, type: 3}
+  kick: {fileID: 8300000, guid: fd7e2d9827d1737478f20b29d5a02674, type: 3}
+  portal_appear: {fileID: 8300000, guid: ce8456874d89c5b44bd98bf4d77c8e26, type: 3}
+  leg_appear: {fileID: 8300000, guid: 5f6304553afbec74cb5b2fe77b8ad206, type: 3}
 --- !u!4 &1982019756
 Transform:
   m_ObjectHideFlags: 0

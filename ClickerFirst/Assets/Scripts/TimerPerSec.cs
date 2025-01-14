@@ -10,8 +10,8 @@ public class TimerPerSec : MonoBehaviour
     // Таймерная функция
     void Start()
     {
-        _scoreZone.AddTotalScoreOnSec();
-        _scoreZone.SpawnScorePerSec();
+        //_scoreZone.AddTotalScoreOnSec();
+        //_scoreZone.SpawnScorePerSec();
         StartTimer();
     }
 

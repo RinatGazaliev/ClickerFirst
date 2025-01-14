@@ -120,6 +120,7 @@ public class RewMoveBoost : MonoBehaviour
     }
     private void CallRewVideo()
     {
+        SoundManager.instance.PlaySound_ButtClick();
         YG2.RewardedAdvShow(YGRewardID);
     }
 
