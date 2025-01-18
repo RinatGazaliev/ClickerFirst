@@ -113,7 +113,7 @@ public class Config : MonoBehaviour
     #region ChangeRoadAbdHeavenTexture
 
     private const string CURRENTTEXTUREROADNUMBER = "TextureRoad_N";
-    public static readonly int[] DistanceToChangeTextureRoad = { 150, 300, 500, 800, 1050, 1200, 1300, 1400, 1800, 2250, 2750, 3300 };
+    public static readonly int[] DistanceToChangeTextureRoad = { 150, 300, 500, 800, 1050, 1200, 1300, 1400, 1750, 2250, 2750, 3300 };
     //private bool isHeavenMove = false;
     public static event Action<bool> OnChangeHeavenMove = delegate (bool _isHeaveMove) { };
 
