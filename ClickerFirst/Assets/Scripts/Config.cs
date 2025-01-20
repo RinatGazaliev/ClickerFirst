@@ -111,7 +111,6 @@ public class Config : MonoBehaviour
     #endregion
 
     #region ChangeRoadAbdHeavenTexture
-
     private const string CURRENTTEXTUREROADNUMBER = "TextureRoad_N";
     public static readonly int[] DistanceToChangeTextureRoad = { 150, 300, 500, 800, 1050, 1200, 1300, 1400, 1750, 2250, 2750, 3300 };
     //private bool isHeavenMove = false;
@@ -119,11 +118,11 @@ public class Config : MonoBehaviour
 
     public static void SetRoadTextureCurrN(int currTextNumber)
     {
+        //string CurrName = CURRENTTEXTUREROADNUMBER + LayerN;
         PlayerPrefs.SetInt(CURRENTTEXTUREROADNUMBER, currTextNumber);
         PlayerPrefs.Save();
         //OnChangeTotalScore(scoreValue);
     }
-
     public static int GetRoadTextureCurrN()
     {
         //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
@@ -140,8 +139,24 @@ public class Config : MonoBehaviour
     
 
     #endregion
+    #region ParallaxMove
+    private const string CURRENTTEXTUREPARALLAX = "TextureParallax_LayerN";
     
+    public static void SetParallaxTextureCurrN(int currTextNumber, int LayerN)
+    {
+        string CurrName = CURRENTTEXTUREPARALLAX + LayerN;
+        PlayerPrefs.SetInt(CurrName, currTextNumber);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    public static int GetParallaxTextureCurrN(int LayerN)
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        string CurrName = CURRENTTEXTUREPARALLAX + LayerN;
+        return PlayerPrefs.GetInt(CurrName, 0);
 
+    }
+    #endregion
     #region ForkParams
 
     public const string FORKADD = "ForkAddValue";
@@ -199,7 +214,7 @@ public class Config : MonoBehaviour
         
     }
     
-    private static List<int> boosterPrice = new List<int> {10, 10, 200, 500, 500, 10000 };
+    private static List<int> boosterPrice = new List<int> {10, 10, 200, 500, 500, 10000, 10000, 10000, 100000, 100000, 100000, 1000000, };
     public static int GetBoosterPrice(int boosterN) {
         return boosterPrice[boosterN];
     }

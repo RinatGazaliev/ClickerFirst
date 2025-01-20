@@ -56,29 +56,63 @@ public class SoundManager : MonoBehaviour
     public AudioClip kick;
     public AudioClip portal_appear;
     public AudioClip leg_appear;
+    public void PlaySoundByName(string soundName)
+    {
+        AudioClip clip = null;
+        switch (soundName)
+        {
+            case "KickAppear":
+                if (Config.isSound)
+                {
+                    audioSound.PlayOneShot(leg_appear);
+                }
+                break;
+            case "Punch":
+                if (Config.isSound)
+                {
+                    audioSound.PlayOneShot(kick);
+                }
+                break;
+            
+            case "PortalAppear":
+                if (Config.isSound)
+                {
+                    audioSound.PlayOneShot(portal_appear);
+                }
+                break;
+            
+            case "Ouch":
+                if (Config.isSound)
+                {
+                    PlayRandomOuchSound();
+                }
+                break;
+            // Добавь другие случаи
+            default:
+                Debug.LogWarning($"No clip found for sound: {soundName}");
+                return;
+        }
+
+    }
     
-    public void PlaySound_Kick()
+    [Header("Ouch!")]
+    public AudioClip ouch1;
+    public AudioClip ouch2;
+    public AudioClip ouch3;
+    public AudioClip ouch4;
+    public AudioClip ouch5;
+    public void PlayRandomOuchSound()
     {
-        if (Config.isSound)
+        if (audioSound == null)
         {
-            audioSound.PlayOneShot(kick);
+            Debug.LogWarning("AudioSource is missing!");
+            return;
         }
+
+        AudioClip[] ouchClips = { ouch1, ouch2, ouch3, ouch4, ouch5 };
+        AudioClip randomClip = ouchClips[Random.Range(0, ouchClips.Length)];  // Выбор случайного клипа
+        audioSound.PlayOneShot(randomClip);  // Проигрывание звука
     }
-    public void PlaySound_Portal()
-    {
-        if (Config.isSound)
-        {
-            audioSound.PlayOneShot(portal_appear);
-        }
-    }
-    public void PlaySound_leg()
-    {
-        if (Config.isSound)
-        {
-            audioSound.PlayOneShot(leg_appear);
-        }
-    }
-    
     public void DisableSound()
     {
         Config.SetSound(false);

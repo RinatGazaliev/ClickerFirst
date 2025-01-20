@@ -89,9 +89,9 @@ public class Boosters : MonoBehaviour
     private void GetPriceValue()
     {
         pushedN = Config.GetBoosterPushedN(boosterN);
-        int priceKf = (int)Math.Pow(2, (pushedN));
-        price = Config.GetBoosterPrice(boosterN) * priceKf;
-        Debug.Log("CurrPriceButtValue"+priceKf);
+       // int priceKf = (int)Math.Pow(2, (pushedN));
+        price = Config.GetBoosterPrice(boosterN) + GetBoosterPriceCumulative()*50;
+        //Debug.Log("CurrPriceButtValue"+priceKf);
     }
 
     // Update is called once per frame
@@ -156,12 +156,13 @@ public class Boosters : MonoBehaviour
     private void BoosterTouch()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        pushedN = pushedN + 1;
         Config.SetBoosterPushedN(boosterN);
         Config.SetDistanceBoostKf(Config.GetDistanceBoostKf()+distanceBoostValue);
 
-        Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
+       Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue*pushedN);
 
-        Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue);
+        Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue*pushedN);
         
         
 
@@ -176,5 +177,27 @@ public class Boosters : MonoBehaviour
 
         OnBoosterClick();
 
+    }
+
+    private int GetBoosterPriceCumulative()
+    {
+        int step = 0;
+        if (perClickBoostValue>0)
+        {
+            step = perClickBoostValue;
+        }
+        else if (perSecBoostValue>0)
+        {
+            step = perSecBoostValue;
+        }
+        else if (distanceBoostValue>0)
+        {
+            step = (int)(distanceBoostValue*100f);
+        }
+        
+        int cumulativeSum = CumulativeSumStepCalculator.GetCumulativeSum(step,pushedN);
+        
+        Debug.Log($"Кумулятивная сумма для последовательности с шагом 5 до индекса {pushedN} равна {cumulativeSum}");
+        return cumulativeSum;
     }
 }

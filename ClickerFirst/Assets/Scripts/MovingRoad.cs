@@ -206,7 +206,6 @@ public class MovingRoad : MonoBehaviour
             {
                 Debug.Log("shouldChangeText");
                 currRoadTextureN = currRoadTextureN + 1;
-                Config.SetRoadTextureCurrN(currRoadTextureN);
                 //wdgtPartRoad.gameObject.SetActive(true);
                 //showWdgManager.StartPartRoadWdg();
                 SetTextureObjectTwo();

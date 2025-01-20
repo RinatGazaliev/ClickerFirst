@@ -14,6 +14,7 @@ public class ParallaxBGMove : MonoBehaviour
     //[SerializeField] Text txtTotalDistance;
     [SerializeField] GameObject Part1;
     [SerializeField] GameObject Part2;
+    [SerializeField] int LayerN;
     //[SerializeField] GameObject Flag;
    //public Transform object1; // Первый объект
     //public Transform object2; 
@@ -40,7 +41,7 @@ public class ParallaxBGMove : MonoBehaviour
        
         totalDistance = Config.GetTotalDistance();
         //txtTotalDistance.text = $"{totalDistance:F2} m";
-        currRoadTextureN = Config.GetRoadTextureCurrN();
+        currRoadTextureN = Config.GetParallaxTextureCurrN(LayerN);
         SetSpriteTextureN();
 
     }
@@ -173,7 +174,7 @@ public class ParallaxBGMove : MonoBehaviour
         if (part1ChildToMove.transform.localPosition.x <= 0)
         {
             currRoadTextureN = currRoadTextureN + 1;
-            
+            Config.SetParallaxTextureCurrN(currRoadTextureN, LayerN);
 
             SetSpriteTextureN();
             //Time.timeScale = 0f;

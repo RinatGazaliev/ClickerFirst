@@ -921,6 +921,11 @@ MonoBehaviour:
   kick: {fileID: 8300000, guid: fd7e2d9827d1737478f20b29d5a02674, type: 3}
   portal_appear: {fileID: 8300000, guid: ce8456874d89c5b44bd98bf4d77c8e26, type: 3}
   leg_appear: {fileID: 8300000, guid: 5f6304553afbec74cb5b2fe77b8ad206, type: 3}
+  ouch1: {fileID: 8300000, guid: 64d77e05a1962c94289e45d2a2cec085, type: 3}
+  ouch2: {fileID: 8300000, guid: ec4375b742f711c44bedeeeebdf6e0d3, type: 3}
+  ouch3: {fileID: 8300000, guid: 4908df89eb2a0f349b22eca7b8dd99b2, type: 3}
+  ouch4: {fileID: 8300000, guid: 0175f92bb2c0976468f31da823de16d8, type: 3}
+  ouch5: {fileID: 8300000, guid: 48cc1148134cc6f408a9134dcf57fa6b, type: 3}
 --- !u!4 &1982019756
 Transform:
   m_ObjectHideFlags: 0
