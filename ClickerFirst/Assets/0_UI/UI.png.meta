@@ -932,10 +932,10 @@ TextureImporter:
       name: UI_24
       rect:
         serializedVersion: 2
-        x: 0
+        x: 14
         y: 969
-        width: 221
-        height: 319
+        width: 196
+        height: 289
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2218,7 +2218,7 @@ TextureImporter:
         width: 91
         height: 201
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
