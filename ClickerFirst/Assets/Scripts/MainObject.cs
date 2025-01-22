@@ -12,16 +12,39 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     
     // Событие, на которое могут подписаться другие объекты
     [SerializeField] private Animator animContrCharacter;
+    [SerializeField] private CoinsOnClick coinsOnClickPtr;
+   // [SerializeField] private BoxCollider2D bodyCollider;
     public static event Action <GameObject> OnObjectClicked;
 
     public void  OnMouseDown()
     {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+       // Вызываем событие и передаем объект, на который кликнули
+        CallMainObjClicked(mousePosition);
+   
+        
+    }// Start is called before the first frame update
+    
+    public void  CallMainObjClicked(Vector2 coordCoins)
+    {
+        /*Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (bodyCollider.OverlapPoint(mousePosition))
+        {
+
+        }
+        else
+        {
+            Debug.Log("Кликнул что-то другое!");
+        }*/
+
         // Вызываем событие и передаем объект, на который кликнули
+        coinsOnClickPtr.transform.position = coordCoins;
         SoundManager.instance.PlaySound_SosClick();
         OnObjectClicked?.Invoke(gameObject);
-        
+        // Если клик был на спрайте
+        Debug.Log("Спрайт был кликнут через родительский объект!");
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
-    }// Start is called before the first frame update
+    }
     
     public void OnPointerClick(PointerEventData eventData)
     {
