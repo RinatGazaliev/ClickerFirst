@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Boosters : MonoBehaviour
 {
-    
+    [SerializeField] private Text txtDescrBooster;
     public static event Action OnBoosterClick = delegate() { };
     
     
@@ -34,6 +34,7 @@ public class Boosters : MonoBehaviour
         pushedN = Config.GetBoosterPushedN(boosterN);
         GetPriceValue();
         SetTextPrice();
+        SetDescrText();
         
         btnBooster = GetComponentInChildren<Button>();
         //txtPrice = gameObject.tex.Find("Price");
@@ -78,6 +79,24 @@ public class Boosters : MonoBehaviour
 
                 }
             }
+
+    }
+    
+    private void SetDescrText()
+    {
+
+        if (perSecBoostValue>0)
+        {
+            txtDescrBooster.text = $"+{Config.GetScorePerSec()} sousagoids per second";
+        }
+        if (perClickBoostValue>0)
+        {
+            txtDescrBooster.text = $"+{Config.GetScorePerClick()} sousagoids per click";
+        }
+        if (distanceBoostValue>0f)
+        {
+            txtDescrBooster.text = $"+{Config.GetDistanceBoostKf()*100} cm to step lengh";
+        }
 
     }
 
@@ -174,6 +193,7 @@ public class Boosters : MonoBehaviour
         GetPriceValue();
         UpdateTextPriceValue();
         CheckState(currTotalScore);
+        SetDescrText();
 
         OnBoosterClick();
 

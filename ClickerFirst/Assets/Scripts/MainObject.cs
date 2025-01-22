@@ -18,9 +18,9 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
 
     public void  OnMouseDown()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
        // Вызываем событие и передаем объект, на который кликнули
-        CallMainObjClicked(mousePosition);
+        //CallMainObjClicked(mousePosition);
    
         
     }// Start is called before the first frame update

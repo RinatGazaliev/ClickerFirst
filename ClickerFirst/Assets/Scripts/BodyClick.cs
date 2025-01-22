@@ -15,9 +15,9 @@ public class BodyClick : MonoBehaviour
 
     void Start()
     {
-        polygonCollider = GetComponent<PolygonCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteSkin = GetComponent<SpriteSkin>();
+        //polygonCollider = GetComponent<PolygonCollider2D>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
+       // spriteSkin = GetComponent<SpriteSkin>();
     }
 
     void Update()
@@ -46,14 +46,11 @@ public class BodyClick : MonoBehaviour
     {
         
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (IsClickOnSprite(mousePosition))
-        {
-            Debug.Log("Клик на спрайте!");
-            // Вызываем событие и передаем объект, на который кликнули
-            mainCharacter.CallMainObjClicked(mousePosition);
-            //Debug.Log("Спрайт был кликнут через родительский объект!");
-            
-        }
+        Debug.Log("Клик на спрайте!");
+        // Вызываем событие и передаем объект, на который кликнули
+        mainCharacter.CallMainObjClicked(mousePosition);
+           
+    
 
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }// Start is called before the first frame update
