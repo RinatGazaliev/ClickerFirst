@@ -10,7 +10,7 @@ public class GameSceneManager : MonoBehaviour
     void Start()
     {
        // Config.isMusic = true;
-        MusicManager.instance.PlayMusicBGFadeIn(0,2);
+        MusicManager.instance.PlayMusicBGFadeIn(false,2);
         
     }
 
@@ -25,16 +25,7 @@ public class GameSceneManager : MonoBehaviour
 
     private void ChangeMusicRunning(bool isRunning)
     {
-        if (isRunning)
-        {
-            MusicManager.instance.PlayMusicBGFadeOut(0, 2);
-            MusicManager.instance.PlayMusicBGFadeIn(1,6);
-        }
-        else
-        {
-            MusicManager.instance.PlayMusicBGFadeOut(1, 2);
-            MusicManager.instance.PlayMusicBGFadeIn(0,6);
-        }
+        MusicManager.instance.SwapMusic(isRunning, 1);
     }
 
     // Update is called once per frame

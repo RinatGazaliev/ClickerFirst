@@ -5,27 +5,28 @@ using DG.Tweening;
 
 public class AnimMovingUp : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float delay;
-    // Start is called before the first frame update
+    [SerializeField] private float speed = 5f; // Задается в инспекторе скорость движения
+    [SerializeField] private float delay = 1f; // Задержка перед началом движения
+
+    private bool isMoving = false;
+
     void Start()
     {
-        MoveUp();
+        // Включаем движение с задержкой
+        Invoke(nameof(StartMoving), delay);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isMoving)
+        {
+            // Двигаем объект вверх в локальных координатах
+            transform.Translate(Vector3.up * speed * Time.deltaTime, Space.Self);
+        }
     }
-    
-    // Функция для начала анимации
-    public void MoveUp()
-    {
-        // Рассчитываем конечное положение объекта по оси Y
-        float targetY = transform.position.y + speed;
 
-        // Запускаем анимацию перемещения вверх с заданной задержкой
-        transform.DOMoveY(targetY, speed).SetDelay(delay).SetEase(Ease.Linear);
+    void StartMoving()
+    {
+        isMoving = true; // Запускаем движение
     }
 }
