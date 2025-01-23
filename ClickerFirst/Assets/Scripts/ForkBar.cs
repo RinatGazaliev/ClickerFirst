@@ -54,15 +54,22 @@ public class ForkBar : MonoBehaviour
                    
                 }
 
-                if (!isForkBarRunning)
+                if (!Config.isRunning)
                 {
                     OnForkBarIsRunning(true);
                     isForkBarRunning = true;
+                    Config.isRunning = true;
                 }
                 
                 if (sliderPork.value>1f)
                 {
                     sliderPork.value = 1;  
+                    if (!Config.isRunning)
+                    {
+                        OnForkBarIsRunning(true);
+                        isForkBarRunning = true;
+                        Config.isRunning = true;
+                    }
                 }
 
                 
@@ -73,15 +80,22 @@ public class ForkBar : MonoBehaviour
                 {
                     Config.SetPerClickScaleKf(1) ;
                 }
-                if (isForkBarRunning)
+                if (Config.isRunning)
                 {
                     OnForkBarIsRunning(false);
-                    isForkBarRunning = false;
+                    //isForkBarRunning = false;
+                    Config.isRunning = false;
                 }
 
                 if ( sliderPork.value<0)
                 {
                     sliderPork.value = 0f;
+                    if (Config.isRunning)
+                    {
+                        OnForkBarIsRunning(false);
+                        isForkBarRunning = false;
+                        Config.isRunning = false;
+                    }
                 }
             }
 

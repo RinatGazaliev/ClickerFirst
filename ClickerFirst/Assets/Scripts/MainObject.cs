@@ -39,6 +39,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
 
         // Вызываем событие и передаем объект, на который кликнули
         coinsOnClickPtr.transform.position = coordCoins;
+        OnChangeForkIsRunning(Config.isRunning);
         SoundManager.instance.PlaySound_SosClick();
         OnObjectClicked?.Invoke(gameObject);
         // Если клик был на спрайте
@@ -49,6 +50,8 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("MainObjClicked");
+        Debug.Log("ISRunning"+Config.isRunning);
+        OnChangeForkIsRunning(Config.isRunning);
         OnObjectClicked?.Invoke(gameObject);
         
     }

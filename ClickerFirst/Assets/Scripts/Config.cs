@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Config : MonoBehaviour
 {
+
+    public static bool isRunning = false;
+    
     // Start is called before the first frame update
 
     #region TotalScore
