@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2065951494012264223}
   - component: {fileID: 1660615456140200029}
   - component: {fileID: 4789534146321172888}
+  - component: {fileID: 6781029523458276316}
   m_Layer: 5
   m_Name: BalloonGrey
   m_TagString: Untagged
@@ -75,3 +76,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6781029523458276316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844452618979510206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff09bf1582ea7774b99e3e53b455cd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  delay: 0.1
