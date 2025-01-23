@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_UI/New/Atr.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_UI/New/Atr.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Loading.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Loading.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boosters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MusicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MusicManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,18 +24,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9ae153a4144543aca4f16814b7ce3264175e00/a0/e0ea810f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a0f48008d3514033961b6cfbfec6a87c178800/8f/40cbc37f/Button.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/1_Character/Character.psb.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/2_Animation/1_Idle_1.anim" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2_Animation/UI/UIAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ClearPrefsWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/Loading.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinsOnClick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CumulativeSumStepCalculator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/MainObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RewardManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -171,6 +173,8 @@
       <workItem from="1737374521267" duration="2004000" />
       <workItem from="1737449775354" duration="2732000" />
       <workItem from="1737531439649" duration="3269000" />
+      <workItem from="1737555584117" duration="5621000" />
+      <workItem from="1737615246351" duration="1986000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -452,7 +456,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737534293338</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="#BoosetrsTextUpdate">
+      <option name="closed" value="true" />
+      <created>1737558403082</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1737558403082</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +480,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#CharacterArchitectureImproveTest" />
     <MESSAGE value="#AddedCharAtributesLogic" />
     <MESSAGE value="#ButtEquipPrepared" />
     <MESSAGE value="#AttrWgtMechanicsFinished" />
@@ -493,6 +504,7 @@
     <MESSAGE value="#ParalaxSaveCorrection" />
     <MESSAGE value="#ScenePointersCorrection" />
     <MESSAGE value="#BoxCollisionCorrection" />
-    <option name="LAST_COMMIT_MESSAGE" value="#BoxCollisionCorrection" />
+    <MESSAGE value="#BoosetrsTextUpdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="#BoosetrsTextUpdate" />
   </component>
 </project>

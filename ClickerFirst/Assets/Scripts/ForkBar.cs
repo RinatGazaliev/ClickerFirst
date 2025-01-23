@@ -11,6 +11,7 @@ public class ForkBar : MonoBehaviour
     private Slider sliderPork;
     private float addBarValue;// Интервал времени между вычитаниями
     //private int perClickScaleKf;
+    private bool isForkBarRunning = false;
 
     private float timer = 0f;
     public static event Action<bool> OnForkBarIsRunning;
@@ -40,11 +41,49 @@ public class ForkBar : MonoBehaviour
                 sliderPork.value -= decrementB;
             }
 
-            if ( sliderPork.value<0)
-            {
-                sliderPork.value = 0f;
-            }
+
             timer = 0f; // Сбрасываем таймер   
+            
+            if (sliderPork.value>0.7f)
+            {
+                
+                if (Config.GetPerClickScaleKf() < 2)
+                {
+                    Config.SetPerClickScaleKf(2);
+                    
+                   
+                }
+
+                if (!isForkBarRunning)
+                {
+                    OnForkBarIsRunning(true);
+                    isForkBarRunning = true;
+                }
+                
+                if (sliderPork.value>1f)
+                {
+                    sliderPork.value = 1;  
+                }
+
+                
+            }
+            else
+            {
+                if (Config.GetPerClickScaleKf()  > 1)
+                {
+                    Config.SetPerClickScaleKf(1) ;
+                }
+                if (isForkBarRunning)
+                {
+                    OnForkBarIsRunning(false);
+                    isForkBarRunning = false;
+                }
+
+                if ( sliderPork.value<0)
+                {
+                    sliderPork.value = 0f;
+                }
+            }
 
                 //Debug.Log($"Текущее значение A: {sliderPork.value}");
         }
@@ -73,33 +112,6 @@ public class ForkBar : MonoBehaviour
             float currValueSlider = sliderPork.value;
             currValueSlider = currValueSlider + addBarValue;
             sliderPork.value = currValueSlider;
-            if (sliderPork.value>0.7f)
-            {
-                
-                if (Config.GetPerClickScaleKf() < 2)
-                {
-                    Config.SetPerClickScaleKf(2);
-                    
-                   
-                }
-                OnForkBarIsRunning(true);
-                if (sliderPork.value>1f)
-                {
-                    sliderPork.value = 1;  
-                }
-
-                
-            }
-            else
-            {
-                if (Config.GetPerClickScaleKf()  > 1)
-                {
-                    Config.SetPerClickScaleKf(1) ;
-                    
-                    
-                }
-                OnForkBarIsRunning(false);
-            }
             Debug.Log("CurrValueSlider"+currValueSlider);
         }
     }

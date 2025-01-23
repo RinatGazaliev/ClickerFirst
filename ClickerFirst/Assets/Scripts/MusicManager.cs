@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour
     
     public static MusicManager instance;
     [SerializeField] AudioSource audioMusic;
-    [SerializeField] AudioSource audioSoundEffect;
+    [SerializeField] AudioSource audioMusicRun;
     private Coroutine playAudioCoroutine;
 
     public List<AudioClip> listBgMusic;
@@ -16,7 +16,7 @@ public class MusicManager : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
-        audioMusic = GetComponent<AudioSource>();
+        //audioMusic = GetComponent<AudioSource>();
 
     }
     
@@ -52,12 +52,27 @@ public class MusicManager : MonoBehaviour
     }
     
     public void PlayMusicBGFadeIn(int musicN, float fadeDuratyion) {
+        Debug.Log("FadeInStarted");
         if (Config.isMusic)
         {
-            audioMusic.clip = listBgMusic[musicN];
-            audioMusic.volume=0;
-            audioMusic.Play();
-            audioMusic.DOFade(0.35f, fadeDuratyion);
+            if (musicN==0)
+            {
+                audioMusic.clip = listBgMusic[musicN];
+                audioMusic.volume=0;
+                audioMusic.Play();
+                audioMusic.DOFade(0.35f, fadeDuratyion);
+                Debug.Log("FadeMusicComplete");  
+            }
+            else
+            {
+                audioMusicRun.clip = listBgMusic[musicN];
+                audioMusicRun.volume=0;
+                audioMusicRun.Play();
+                audioMusicRun.DOFade(0.35f, fadeDuratyion);
+                Debug.Log("FadeMusicComplete");  
+                
+            }
+           
             /*if (musicN==0)
             {
                 PlaySound_Effect1();
@@ -72,21 +87,27 @@ public class MusicManager : MonoBehaviour
             }*/
         }
     }
-    public void PlayMusicBGFadeOut(float fadeDuration) {
+    public void PlayMusicBGFadeOut(int musicN,float fadeDuration) {
         if (Config.isMusic)
         {
-            if (audioMusic.clip != null)
+            if (musicN==0)
             {
                 audioMusic.volume = 0.35f;
                 audioMusic.Play();
                 audioMusic.DOFade(0f, fadeDuration);
+            }
+            else
+            {
+                audioMusicRun.volume = 0.35f;
+                audioMusicRun.Play();
+                audioMusicRun.DOFade(0f, fadeDuration);
             }
         }
     }
 
     public void StopMusicBG() {
         audioMusic.Stop();
-        audioSoundEffect.Stop();
+        audioMusicRun.Stop();
         StopAudioLoop();
         
     }
@@ -97,14 +118,14 @@ public class MusicManager : MonoBehaviour
         {
             StopCoroutine(playAudioCoroutine); // Останавливаем корутину
             playAudioCoroutine = null;
-            audioSoundEffect.Stop(); // Останавливаем текущий проигрываемый звук
+            audioMusicRun.Stop(); // Останавливаем текущий проигрываемый звук
         }
     }
     public void EnableMusic()
     {
         Config.SetMusic(true);
         audioMusic.volume=1;
-        audioSoundEffect.volume = 1;
+        audioMusicRun.volume = 1;
     }
     
     public void DisableMusic()
@@ -112,7 +133,7 @@ public class MusicManager : MonoBehaviour
         Config.SetMusic(false);
         
         audioMusic.volume=0;
-        audioSoundEffect.volume = 0;
+        audioMusicRun.volume = 0;
 
     }
     
