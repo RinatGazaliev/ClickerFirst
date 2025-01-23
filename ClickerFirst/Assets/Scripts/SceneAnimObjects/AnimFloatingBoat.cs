@@ -25,7 +25,7 @@ public class AnimFloatingBoat : MonoBehaviour
     private void FloatAnim()
     {
         // Анимация вертикального движения (вверх-вниз)
-        transform.DOLocalMoveY(transform.position.y + verticalAmplitude, verticalDuration)
+        transform.DOLocalMoveY(transform.localPosition.y + verticalAmplitude, verticalDuration)
             .SetDelay(startDelay)
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
