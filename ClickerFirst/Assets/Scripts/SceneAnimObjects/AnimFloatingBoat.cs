@@ -32,8 +32,10 @@ public class AnimFloatingBoat : MonoBehaviour
 
         // Анимация вращения (влево-вправо)
         transform.DORotate(new Vector3(0, 0, rotationAmplitude), rotationDuration, RotateMode.LocalAxisAdd)
+            .From(new Vector3(0, 0, -rotationAmplitude)) // Задаем начальное вращение от -rotationAmplitude
             .SetDelay(startDelay)
             .SetEase(Ease.InOutSine)
-            .SetLoops(-1, LoopType.Yoyo);  
+            .SetLoops(-1, LoopType.Yoyo);
     }
+
 }

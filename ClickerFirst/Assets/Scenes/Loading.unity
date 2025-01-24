@@ -588,6 +588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2089720185}
     m_Modifications:
+    - target: {fileID: 1138280368860287820, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551824147783899681, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -765,6 +769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2089720185}
     m_Modifications:
+    - target: {fileID: 1138280368860287820, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551824147783899681, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1170,6 +1178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2089720185}
     m_Modifications:
+    - target: {fileID: 1138280368860287820, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551824147783899681, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1324,7 +1336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMusic: {fileID: 1583360726}
-  audioMusicRun: {fileID: 1583360727}
   listBgMusic:
   - {fileID: 8300000, guid: d540b21badc6f7148839247a9b17946e, type: 3}
   - {fileID: 8300000, guid: 2d90322525f182e479441b0781cf6f5e, type: 3}
@@ -1618,6 +1629,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2089720185}
     m_Modifications:
+    - target: {fileID: 1138280368860287820, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551824147783899681, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1748,6 +1763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2089720185}
     m_Modifications:
+    - target: {fileID: 1138280368860287820, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551824147783899681, guid: 78f70956c431b234dad5d1c7cf4117ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2220,8 +2239,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -883649150, guid: 75bb51dc99a27394cb52c585fbe6fd4c, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ae8376aa4aa5e4d4c87da06e7a643508, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
