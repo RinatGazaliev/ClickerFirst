@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#MusicAndAnimSceneFinish">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/ServerInfoYG2.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/ServerInfoYG2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boosters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boosters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +179,8 @@
       <workItem from="1737555584117" duration="5621000" />
       <workItem from="1737615246351" duration="2717000" />
       <workItem from="1737626802415" duration="1839000" />
-      <workItem from="1737630275259" duration="7295000" />
+      <workItem from="1737630275259" duration="8205000" />
+      <workItem from="1737712687522" duration="2563000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -489,7 +494,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737642915067</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="#floatingBoatAnim">
+      <option name="closed" value="true" />
+      <created>1737646758361</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1737646758361</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +518,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#NoCoord_PointersAdded" />
     <MESSAGE value="#RewardEquipLogicFinished" />
     <MESSAGE value="#WgtPopUpEquipItemAdded" />
     <MESSAGE value="#LogicEquipRewardFinished" />
@@ -530,6 +542,7 @@
     <MESSAGE value="#MusicTransitionAdded" />
     <MESSAGE value="#AnimationSceneScriptsAdded" />
     <MESSAGE value="#MusicAndAnimSceneFinish" />
-    <option name="LAST_COMMIT_MESSAGE" value="#MusicAndAnimSceneFinish" />
+    <MESSAGE value="#floatingBoatAnim" />
+    <option name="LAST_COMMIT_MESSAGE" value="#floatingBoatAnim" />
   </component>
 </project>

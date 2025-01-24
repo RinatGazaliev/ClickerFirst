@@ -87,15 +87,15 @@ public class Boosters : MonoBehaviour
 
         if (perSecBoostValue>0)
         {
-            txtDescrBooster.text = $"+{perSecBoostValue*(pushedN+1)} sousagoids per second";
+            txtDescrBooster.text = $"+{perSecBoostValue} sousagoids per second";
         }
         if (perClickBoostValue>0)
         {
-            txtDescrBooster.text = $"+{perClickBoostValue*(pushedN+1)} sousagoids per click";
+            txtDescrBooster.text = $"+{perClickBoostValue} sousagoids per click";
         }
         if (distanceBoostValue>0f)
         {
-            txtDescrBooster.text = $"+{distanceBoostValue*(pushedN+1)*100} cm to step lengh";
+            txtDescrBooster.text = $"+{distanceBoostValue} cm to step lengh";
         }
 
     }
@@ -109,7 +109,8 @@ public class Boosters : MonoBehaviour
     {
         pushedN = Config.GetBoosterPushedN(boosterN);
        // int priceKf = (int)Math.Pow(2, (pushedN));
-        price =  Config.GetBoosterPrice(boosterN)*(pushedN+1) + GetBoosterPriceCumulative()*100;
+       float KfBoost = Mathf.Pow(1.3f, (pushedN));
+        price =  (int)(Config.GetBoosterPrice(boosterN)*KfBoost);
         //Debug.Log("CurrPriceButtValue"+priceKf);
     }
 
@@ -179,9 +180,9 @@ public class Boosters : MonoBehaviour
         Config.SetBoosterPushedN(boosterN);
         Config.SetDistanceBoostKf(Config.GetDistanceBoostKf()+distanceBoostValue);
 
-       Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue*pushedN);
+       Config.SetScorePerClick(Config.GetScorePerClick()+perClickBoostValue);
 
-        Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue*pushedN);
+        Config.SetScorePerSec(Config.GetScorePerSec()+perSecBoostValue);
         
         
 
