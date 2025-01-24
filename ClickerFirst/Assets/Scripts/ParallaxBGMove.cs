@@ -103,7 +103,7 @@ public class ParallaxBGMove : MonoBehaviour
     private void SetSpriteTextureN()
     {
         MoveObjectToPart1();
-        MoveObjectToPart2();
+        
       //  currRoadTextureN
     }
     
@@ -234,7 +234,21 @@ public class ParallaxBGMove : MonoBehaviour
             Destroy(child.gameObject);  // Удаление дочернего объекта
         }
 
-        if (currRoadTextureN >= 0 && currRoadTextureN < ScenesGameObjects.Count)
+        if (Part2.transform.childCount >0)
+        {
+            while (Part2.transform.childCount > 0)
+            {
+                part1ChildToMove = Part2.transform.GetChild(0).GameObject();
+                part1ChildToMove.transform.SetParent(Part1.transform); // Устанавливаем нового родителя
+                Vector3 localPosition = new Vector3(3572, 0, 0);
+                part1ChildToMove.transform.localPosition = localPosition;  // Сброс позиции
+                //part1ChildToMove.transform.localRotation = Quaternion.identity;  // Сброс поворота
+                part1ChildToMove.transform.localScale = Vector3.one;  
+            }
+           
+            
+        }
+        else if (currRoadTextureN >= 0 && currRoadTextureN < ScenesGameObjects.Count)
         {
             GameObject objToCopy = ScenesGameObjects[currRoadTextureN];
 
@@ -259,5 +273,6 @@ public class ParallaxBGMove : MonoBehaviour
         {
             Debug.LogWarning("Некорректный индекс currRoadTextureN.");
         }
+        MoveObjectToPart2();
     }
 }
