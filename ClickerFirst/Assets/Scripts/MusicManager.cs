@@ -117,7 +117,7 @@ public class MusicManager : MonoBehaviour
     public void EnableMusic()
     {
         Config.SetMusic(true);
-        audioMusic.volume=1;
+        audioMusic.volume=0.1f;
        // audioMusicRun.volume = 1;
     }
     

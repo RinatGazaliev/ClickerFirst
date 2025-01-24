@@ -14,6 +14,9 @@ public class AnimFloatingBoat : MonoBehaviour
     void Start()
     {
         FloatAnim();
+        Vector3 startRotation = transform.localEulerAngles;
+        startRotation.z = startRotation.z - rotationAmplitude;
+        transform.localEulerAngles = startRotation;
     }
 
     // Update is called once per frame
@@ -31,11 +34,47 @@ public class AnimFloatingBoat : MonoBehaviour
             .SetLoops(-1, LoopType.Yoyo);
 
         // Анимация вращения (влево-вправо)
-        transform.DORotate(new Vector3(0, 0, rotationAmplitude), rotationDuration, RotateMode.LocalAxisAdd)
-            .From(new Vector3(0, 0, -rotationAmplitude)) // Задаем начальное вращение от -rotationAmplitude
-            .SetDelay(startDelay)
+       
+        float startRotationZ = transform.localEulerAngles.z; // Сохраняем начальный угол
+        //LoopRotation(startRotationZ);
+        transform.DOLocalRotate(new Vector3(0, 0, rotationAmplitude*2), rotationDuration, RotateMode.LocalAxisAdd)
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
+
+
+
+
+
     }
 
+    private void LoopRotation(float _startRotationZ)
+    {
+        Debug.Log("Rotation"+_startRotationZ);
+        transform.DOLocalRotate(new Vector3(0, 0, rotationAmplitude*2), rotationDuration / 4, RotateMode.LocalAxisAdd)
+            .SetEase(Ease.InOutSine)
+            .OnComplete(() =>
+            {
+                transform.DOLocalRotate(new Vector3(0, 0, _startRotationZ), rotationDuration / 4, RotateMode.FastBeyond360)
+                    .SetEase(Ease.InOutSine)
+                    .OnComplete(() =>
+                    {
+                        transform.DOLocalRotate(new Vector3(0, 0, -rotationAmplitude), rotationDuration / 4,
+                                RotateMode.LocalAxisAdd)
+                            .SetEase(Ease.InOutSine)
+                            .OnComplete(() =>
+                            {
+                                transform.DOLocalRotate(new Vector3(0, 0, _startRotationZ), rotationDuration / 4,
+                                        RotateMode.FastBeyond360)
+                                    .SetEase(Ease.InOutSine)
+                                    .OnComplete(() =>
+                                    {
+                                        LoopRotation(_startRotationZ);
+
+                                    });
+
+                            });
+
+                    });
+            });
+    }
 }
