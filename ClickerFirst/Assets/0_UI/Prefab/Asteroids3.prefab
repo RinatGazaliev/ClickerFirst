@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4425418661362122430}
   - component: {fileID: 4532787202304565799}
   - component: {fileID: 3980270760520823100}
+  - component: {fileID: 7942392955527096933}
   m_Layer: 5
   m_Name: Asteroids3
   m_TagString: Untagged
@@ -75,3 +76,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7942392955527096933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310000528370571920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11cc1933c483064296d2561cb0752bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 360
+  startDelay: 0.5
