@@ -108,12 +108,13 @@ public class Config : MonoBehaviour
     #region TotalDistance
 
     private const string TOTALDISTANCE = "Distance_total";
-    //public static event Action<int> OnChangeTotalScore = delegate (int _scoreValue) { };
+    public static event Action OnChangeTotalDistance = delegate { };
 
     public static void SetTotalDistance(float distanceValue)
     {
         PlayerPrefs.SetFloat(TOTALDISTANCE, distanceValue);
         PlayerPrefs.Save();
+        OnChangeTotalDistance();
         //OnChangeTotalScore(scoreValue);
     }
 
@@ -127,23 +128,58 @@ public class Config : MonoBehaviour
     #endregion
 
     #region ChangeRoadAbdHeavenTexture
-    private const string CURRENTTEXTUREROADNUMBER = "TextureRoad_N";
+    private const string CURRENTTEXTUREROADNUMBERONE = "TextureRoadOne_N";
+    private const string CURRENTTEXTUREROADNUMBERTWO = "TextureRoadTwo_N";
+    
+    private const string ROADPOSITIONPART1_X = "RoadPart1_X";
+    private const string ROADPOSITIONPART1_Y = "RoadPart1_Y";
+    private const string ROADPOSITIONPART2_X = "RoadPart2_X";
+    private const string ROADPOSITIONPART2_Y = "RoadPart2_Y";
+    
+    private const string SAVEBLOCK = "Save_block";
     public static readonly int[] DistanceToChangeTextureRoad = { 150, 300, 500, 800, 1050, 1200, 1300, 1400, 1750, 2250, 2750, 3300 };
     //private bool isHeavenMove = false;
     public static event Action<bool> OnChangeHeavenMove = delegate (bool _isHeaveMove) { };
 
-    public static void SetRoadTextureCurrN(int currTextNumber)
+    public static void SetRoadOneTextureCurrN(int currTextNumber)
     {
         //string CurrName = CURRENTTEXTUREROADNUMBER + LayerN;
-        PlayerPrefs.SetInt(CURRENTTEXTUREROADNUMBER, currTextNumber);
+        PlayerPrefs.SetInt(CURRENTTEXTUREROADNUMBERONE, currTextNumber);
         PlayerPrefs.Save();
         //OnChangeTotalScore(scoreValue);
     }
-    public static int GetRoadTextureCurrN()
+
+    public static int GetRoadOneTextureCurrN()
     {
         //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
-        return PlayerPrefs.GetInt(CURRENTTEXTUREROADNUMBER, 0);
+        return PlayerPrefs.GetInt(CURRENTTEXTUREROADNUMBERONE, 0);
 
+    }
+    public static void SetRoadTwoTextureCurrN(int currTextNumber)
+    {
+        //string CurrName = CURRENTTEXTUREROADNUMBER + LayerN;
+        PlayerPrefs.SetInt(CURRENTTEXTUREROADNUMBERTWO, currTextNumber);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    public static int GetRoadTwoTextureCurrN()
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        return PlayerPrefs.GetInt(CURRENTTEXTUREROADNUMBERTWO, 0);
+
+    }
+    public static void SetSaveBlock(int Saveblock)
+    {
+        //string CurrName = CURRENTTEXTUREROADNUMBER + LayerN;
+        PlayerPrefs.SetInt(SAVEBLOCK, Saveblock);
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    public static int GetSaveBlock()
+    {
+      
+        return PlayerPrefs.GetInt(SAVEBLOCK, 0);
+  
     }
     public static void SetHeavenMove(bool _isHeavenMove)
     {
@@ -151,12 +187,37 @@ public class Config : MonoBehaviour
         OnChangeHeavenMove(_isHeavenMove);
         //OnChangeTotalScore(scoreValue);
     }
+    public static void SetRoadLastPosition(float part1, float part2)
+    {
+       
+        PlayerPrefs.SetFloat(ROADPOSITIONPART1_X, part1);
+        PlayerPrefs.SetFloat(ROADPOSITIONPART2_X, part2);
+        
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    
+    public static float GetRoadLastPositionPart1()
+    {
+
+        return PlayerPrefs.GetFloat(ROADPOSITIONPART1_X, 0);
+  
+    }
+    public static float GetRoadLastPositionPart2()
+    {
+        return PlayerPrefs.GetFloat(ROADPOSITIONPART2_X, 0);
+       
+    }
+    
     
     
 
     #endregion
     #region ParallaxMove
     private const string CURRENTTEXTUREPARALLAX = "TextureParallax_LayerN";
+    private const string PARRALAXPOSITIONPART1_X = "PostionParalaxPart1_X_LayerN";
+    private const string PARRALAXPOSITIONPART2_X = "PostionParalaxPart2_X_LayerN";
+    
     
     public static void SetParallaxTextureCurrN(int currTextNumber, int LayerN)
     {
@@ -171,6 +232,32 @@ public class Config : MonoBehaviour
         string CurrName = CURRENTTEXTUREPARALLAX + LayerN;
         return PlayerPrefs.GetInt(CurrName, 0);
 
+    }
+    
+    public static void SetParallaxLastPosition(float part1, float part2, int LayerN)
+    {
+        string CurrNamePart1_X = PARRALAXPOSITIONPART1_X + LayerN;
+        string CurrNamePart2_X = PARRALAXPOSITIONPART2_X + LayerN;
+        
+        PlayerPrefs.SetFloat(CurrNamePart1_X, part1);
+        PlayerPrefs.SetFloat(CurrNamePart2_X, part2);
+       
+        PlayerPrefs.Save();
+        //OnChangeTotalScore(scoreValue);
+    }
+    
+    public static float GetParalaxLastPositionPart1(int LayerN)
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        string CurrNamePart1_X = PARRALAXPOSITIONPART1_X + LayerN;
+        return PlayerPrefs.GetFloat(CurrNamePart1_X, 0);
+    }
+    public static float GetParalaxLastPositionPart2(int LayerN)
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        string CurrNamePart2_X = PARRALAXPOSITIONPART2_X + LayerN;
+        return PlayerPrefs.GetFloat(CurrNamePart2_X, 0);
+      
     }
     #endregion
     #region ForkParams

@@ -43,6 +43,7 @@ public class ParallaxBGMove : MonoBehaviour
         //txtTotalDistance.text = $"{totalDistance:F2} m";
         currRoadTextureN = Config.GetParallaxTextureCurrN(LayerN);
         SetSpriteTextureN();
+        GetCurrLocalPosition();
 
     }
 
@@ -90,14 +91,16 @@ public class ParallaxBGMove : MonoBehaviour
     {
         // Подписываемся на событие
         MainObject.OnObjectClicked += StartTimerWalkCoroutine;
+        Config.OnChangeTotalDistance += SaveCurrLocalPosition;
         
     }
+    
 
     void OnDisable()
     {
         // Отписываемся от события
         MainObject.OnObjectClicked -= StartTimerWalkCoroutine;
-      
+        Config.OnChangeTotalDistance -= SaveCurrLocalPosition;
     }
 
     private void SetSpriteTextureN()
@@ -106,7 +109,25 @@ public class ParallaxBGMove : MonoBehaviour
         
       //  currRoadTextureN
     }
+
+    private void SaveCurrLocalPosition()
+    {
+        Vector3 currPart1LocPosition = Part1.transform.GetChild(0).transform.localPosition;
+        Vector3 currPart2LocPosition = Part2.transform.GetChild(0).transform.localPosition;
+        
+        Config.SetParallaxLastPosition(currPart1LocPosition.x, currPart2LocPosition.x, LayerN);
+        Debug.Log("currPart1LocPosition"+currPart1LocPosition);
+    }
     
+    private void GetCurrLocalPosition()
+    {
+        float currPart1LocPosition = Config.GetParalaxLastPositionPart1(LayerN);
+        float currPart2LocPosition = Config.GetParalaxLastPositionPart2(LayerN);
+
+        Part1.transform.GetChild(0).transform.localPosition = new Vector3 (currPart1LocPosition,0,0);
+        Part2.transform.GetChild(0).transform.localPosition = new Vector3 (currPart2LocPosition,0,0);
+    }
+
     private void SetTextureObjectOne()
     {
         //Part1.
@@ -174,12 +195,24 @@ public class ParallaxBGMove : MonoBehaviour
         if (part1ChildToMove.transform.localPosition.x <= 0)
         {
             currRoadTextureN = currRoadTextureN + 1;
-            Config.SetParallaxTextureCurrN(currRoadTextureN, LayerN);
+            SaveCurrParallax();
+            
 
             SetSpriteTextureN();
             //Time.timeScale = 0f;
         }
     }
+
+    private void SaveCurrParallax()
+    {
+        int cantSave = Config.GetSaveBlock();
+        if (cantSave!=1)
+        {
+            Config.SetParallaxTextureCurrN(currRoadTextureN, LayerN); 
+        }
+        
+    }
+
     private void MoveObjectToPart2()
     {
         if (Part2 == null)

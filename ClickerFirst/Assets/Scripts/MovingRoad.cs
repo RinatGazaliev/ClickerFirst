@@ -28,7 +28,8 @@ public class MovingRoad : MonoBehaviour
     [SerializeField] private List<Color> SpriteRoadDown;
     private bool valueClickAdded = false;
     
-    private int currRoadTextureN;
+    private int currRoadTextureN_1;
+    private int currRoadTextureN_2;
     public static event Action<bool> OnIsWalkingChange;
 
     void Start()
@@ -42,8 +43,10 @@ public class MovingRoad : MonoBehaviour
        
         totalDistance = Config.GetTotalDistance();
         txtTotalDistance.text = $"{totalDistance:F2} m";
-        currRoadTextureN = Config.GetRoadTextureCurrN();
+        currRoadTextureN_1 = Config.GetRoadOneTextureCurrN();
+        currRoadTextureN_2 = Config.GetRoadTwoTextureCurrN();
         SetSpriteTextureN();
+        GetCurrLocalPosition();
 
     }
 
@@ -104,8 +107,9 @@ public class MovingRoad : MonoBehaviour
         // Подписываемся на событие
         MainObject.OnObjectClicked += StartTimerWalkCoroutine;
         PartRoadCompleted.OnPartRoadCompletedClosed += InactivateFlag;
-        
-        
+        Config.OnChangeTotalDistance += SaveCurrLocalPosition;
+
+
     }
 
     void OnDisable()
@@ -113,6 +117,7 @@ public class MovingRoad : MonoBehaviour
         // Отписываемся от события
         MainObject.OnObjectClicked -= StartTimerWalkCoroutine;
         PartRoadCompleted.OnPartRoadCompletedClosed -= InactivateFlag;
+        Config.OnChangeTotalDistance -= SaveCurrLocalPosition;
     }
 
     private void InactivateFlag()
@@ -128,13 +133,31 @@ public class MovingRoad : MonoBehaviour
       //  currRoadTextureN
     }
     
+    private void SaveCurrLocalPosition()
+    {
+        Vector3 currPart1LocPosition = Part1.transform.transform.localPosition;
+        Vector3 currPart2LocPosition = Part2.transform.transform.localPosition;
+        
+        Config.SetRoadLastPosition(currPart1LocPosition.x, currPart2LocPosition.x);
+        Debug.Log("currPart1LocPosition"+currPart1LocPosition);
+    }
+    
+    private void GetCurrLocalPosition()
+    {
+        float currPart1LocPosition = Config.GetRoadLastPositionPart1();
+        float currPart2LocPosition = Config.GetRoadLastPositionPart2();
+
+        Part1.transform.transform.localPosition = new Vector3 (currPart1LocPosition,-409,0);
+        Part2.transform.transform.localPosition = new Vector3 (currPart2LocPosition,-409,0);
+    }
+    
     private void SetTextureObjectOne()
     {
         Transform child = Part1.transform.Find("SpriteDown");
 
         if (child != null)
         {
-            child.GetComponent<Image>().color = SpriteRoadDown[currRoadTextureN];
+            child.GetComponent<Image>().color = SpriteRoadDown[currRoadTextureN_1];
         }
         else
         {
@@ -144,7 +167,7 @@ public class MovingRoad : MonoBehaviour
 
         if (child2 != null)
         {
-            child2.GetComponent<Image>().sprite = SpriteRoadUp[currRoadTextureN];
+            child2.GetComponent<Image>().sprite = SpriteRoadUp[currRoadTextureN_1];
         }
         else
         {
@@ -157,7 +180,7 @@ public class MovingRoad : MonoBehaviour
 
         if (child3 != null)
         {
-            child3.GetComponent<Image>().color = SpriteRoadDown[currRoadTextureN];
+            child3.GetComponent<Image>().color = SpriteRoadDown[currRoadTextureN_2];
         }
         else
         {
@@ -168,7 +191,7 @@ public class MovingRoad : MonoBehaviour
 
         if (child4 != null)
         {
-            child4.GetComponent<Image>().sprite = SpriteRoadUp[currRoadTextureN];
+            child4.GetComponent<Image>().sprite = SpriteRoadUp[currRoadTextureN_2];
         }
         else
         {
@@ -205,18 +228,29 @@ public class MovingRoad : MonoBehaviour
             var object2Position = Part2.transform.localPosition;
             object2Position.x = startPositionPart2;
             Part2.transform.localPosition = object2Position;
-            if (totalDistance>Config.DistanceToChangeTextureRoad[currRoadTextureN])
+            if (totalDistance>Config.DistanceToChangeTextureRoad[currRoadTextureN_2])
             {
-                Debug.Log("shouldChangeText");
-                currRoadTextureN = currRoadTextureN + 1;
+ 
+                currRoadTextureN_2 = currRoadTextureN_2 + 1;
                 //wdgtPartRoad.gameObject.SetActive(true);
                 //showWdgManager.StartPartRoadWdg();
+                Config.SetRoadTwoTextureCurrN(currRoadTextureN_2);
+                //Debug.Log("currRoadTextureN"+currRoadTextureN_2);
                 SetTextureObjectTwo();
+                Config.SetSaveBlock(1);
                 Config.SetHeavenMove(true);
                 Flag.SetActive(true);
             }
             else
             {
+                Debug.Log("currRoadTextureN"+currRoadTextureN_1);
+                Debug.Log("currRoadTextureN"+currRoadTextureN_2);
+                if (currRoadTextureN_1!=currRoadTextureN_2)
+                {
+                    currRoadTextureN_1 = currRoadTextureN_2;
+                    Config.SetRoadOneTextureCurrN(currRoadTextureN_1);
+                    Config.SetSaveBlock(0);
+                }
                 SetSpriteTextureN();
             }
         }

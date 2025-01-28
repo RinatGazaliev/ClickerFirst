@@ -20,7 +20,7 @@ public class MovingHeaven : MonoBehaviour
     {
         startPositionPart1 = Part1.transform.localPosition.y;
         startPositionPart2 = Part2.transform.localPosition.y; 
-        currRoadTextureN = Config.GetRoadTextureCurrN();
+        currRoadTextureN = Config.GetRoadOneTextureCurrN();
         SetTextures();
     }
 
