@@ -250,13 +250,13 @@ public class Config : MonoBehaviour
     {
         //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
         string CurrNamePart1_X = PARRALAXPOSITIONPART1_X + LayerN;
-        return PlayerPrefs.GetFloat(CurrNamePart1_X, 0);
+        return PlayerPrefs.GetFloat(CurrNamePart1_X, 3572);
     }
     public static float GetParalaxLastPositionPart2(int LayerN)
     {
         //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
         string CurrNamePart2_X = PARRALAXPOSITIONPART2_X + LayerN;
-        return PlayerPrefs.GetFloat(CurrNamePart2_X, 0);
+        return PlayerPrefs.GetFloat(CurrNamePart2_X, 3572);
       
     }
     #endregion
