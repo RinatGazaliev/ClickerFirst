@@ -10,6 +10,10 @@ public class PartRoadCompleted : MonoBehaviour
     public static event Action OnPartRoadCompletedActive;
     public static event Action OnPartRoadCompletedClosed;
     [SerializeField] private Button btnContinue;
+    [SerializeField] public GameObject defaultView;
+    [SerializeField] public GameObject Tut1;
+    [SerializeField] public GameObject Tut2;
+    [SerializeField] public GameObject Tut3;
     
     // Start is called before the first frame update
     void Start()

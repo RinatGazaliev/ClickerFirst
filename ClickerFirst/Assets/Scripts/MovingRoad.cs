@@ -59,6 +59,9 @@ public class MovingRoad : MonoBehaviour
             {
                 if (Part2.transform.localPosition.x*2<=startPositionPart2)
                 {
+                    int tutN = Config.GetTutN();
+                    tutN = tutN+1;
+                    Config.SetTutN(tutN);
                     showWdgManager.StartPartRoadWdg();
                 }
             }

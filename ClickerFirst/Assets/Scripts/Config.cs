@@ -5,6 +5,19 @@ using UnityEngine;
 
 public class Config : MonoBehaviour
 {
+    
+    private const string TUTNUMBER = "TutN";
+    public static void SetTutN(int scoreValue)
+    {
+        PlayerPrefs.SetInt(TUTNUMBER, scoreValue);
+        PlayerPrefs.Save();
+       
+    }
+    
+    public static int GetTutN()
+    {
+        return PlayerPrefs.GetInt(TUTNUMBER,0);
+    }
 
     public static bool isRunning = false;
     

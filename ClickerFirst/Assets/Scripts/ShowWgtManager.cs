@@ -93,8 +93,28 @@ public class ShowWgtManager : MonoBehaviour
    }
    public void StartPartRoadWdg()
    {
-       Time.timeScale = 0f; 
+       Time.timeScale = 0f;
+       int tutN = Config.GetTutN();
        partRoadWgt.gameObject.SetActive(true);
+       if (tutN==1)
+       {
+           partRoadWgt.Tut1.SetActive(true);
+           partRoadWgt.defaultView.SetActive(false);
+       }
+       else if (tutN==2)
+       {
+           partRoadWgt.Tut2.SetActive(true);
+           partRoadWgt.defaultView.SetActive(false);
+       }
+       else if (tutN==3)
+       {
+           partRoadWgt.Tut3.SetActive(true);
+           partRoadWgt.defaultView.SetActive(false);
+       }
+       else
+       {
+           partRoadWgt.defaultView.SetActive(true); 
+       }
        // OnPartRoadCompletedActive();
    }
 
