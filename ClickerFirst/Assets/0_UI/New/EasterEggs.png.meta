@@ -160,7 +160,7 @@ TextureImporter:
         width: 106
         height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 82
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 184
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 179
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
         width: 67
         height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
         width: 81
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +273,321 @@ TextureImporter:
       bones: []
       spriteID: fd11efcde6900e54f970e5a4e86ade2c
       internalID: -1580104640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_8
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 1826
+        width: 151
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfad46f5a9ab243468b84cc65eaab039
+      internalID: 1447680029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_9
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1802
+        width: 123
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ff39a2b13342e419302219c51db02a
+      internalID: 2123850395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_10
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1820
+        width: 226
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6214061477d76134a87081fde07a3fb1
+      internalID: -35856883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_11
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1833
+        width: 128
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db97be880740746478d19523b2d88c8a
+      internalID: -2065576703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_12
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 1837
+        width: 127
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b66619378c7ef498f1631ab3662dcd
+      internalID: -1630330677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_13
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 1828
+        width: 111
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c07e1d7c450ed34d9ff93c07b166247
+      internalID: -202268727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_14
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 1812
+        width: 175
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ad9a7bc0be01a46b7e2420250f3386
+      internalID: -877512767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_15
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1811
+        width: 131
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef356feb7f186a469929995df97e161
+      internalID: 90954135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_16
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1663
+        width: 145
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332b3a8cb955da94d95c38b0344e325a
+      internalID: 509107278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1555
+        width: 195
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d85cca15dc90f4ca09c0677fd6a5fe
+      internalID: -143029211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1540
+        width: 148
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef949ef8a9b6fe64c847624a9820a96d
+      internalID: -1584084919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_19
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1540
+        width: 128
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59114083dc2b8e74c80561bed83de948
+      internalID: 1651625133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_20
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1560
+        width: 177
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182b4bcade11866438b28e06cdc42702
+      internalID: -1985480229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_21
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 1501
+        width: 180
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38427371bf7cd574294be629eceb28f0
+      internalID: -387222168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1559
+        width: 73
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff289f900a45bd458f2d9b8a51da91f
+      internalID: 1818208718
       vertices: []
       indices: 
       edges: []
@@ -290,12 +605,27 @@ TextureImporter:
     nameFileIdTable:
       EasterEggs_0: -1271923709
       EasterEggs_1: 765529310
+      EasterEggs_10: -35856883
+      EasterEggs_11: -2065576703
+      EasterEggs_12: -1630330677
+      EasterEggs_13: -202268727
+      EasterEggs_14: -877512767
+      EasterEggs_15: 90954135
+      EasterEggs_16: 509107278
+      EasterEggs_17: -143029211
+      EasterEggs_18: -1584084919
+      EasterEggs_19: 1651625133
       EasterEggs_2: 159616325
+      EasterEggs_20: -1985480229
+      EasterEggs_21: -387222168
+      EasterEggs_22: 1818208718
       EasterEggs_3: -2047939938
       EasterEggs_4: -1390463556
       EasterEggs_5: 2141886954
       EasterEggs_6: -667349925
       EasterEggs_7: -1580104640
+      EasterEggs_8: 1447680029
+      EasterEggs_9: 2123850395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
