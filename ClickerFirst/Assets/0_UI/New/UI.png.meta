@@ -1121,10 +1121,10 @@ TextureImporter:
       name: UI_52
       rect:
         serializedVersion: 2
-        x: 1924
-        y: 1276
+        x: 1929
+        y: 1275
         width: 74
-        height: 87
+        height: 89
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
