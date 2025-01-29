@@ -20,7 +20,9 @@ public class RewMoveBoost : MonoBehaviour
     
     public static event Action OnRewardMoveBoostTimeFinish;
     public static event Action OnRewardStarted;
+    public static event Action <bool> OnRewardTimerUpdate;
     public static event Action OnKickCalled;
+    
     
     //public static event Action OnAutoClickerClick;
     // Start is called before the first frame update
@@ -43,7 +45,7 @@ public class RewMoveBoost : MonoBehaviour
    
     }
     
-    private IEnumerator StartAutoClickTimer()
+    private IEnumerator StartAutoClickTimer(bool _isRewardUpdate)
     {
         //animContrCharacter.speed=1.3f;
         animContrCharacter.SetFloat("walkSpeed",1.3f);
@@ -86,36 +88,50 @@ public class RewMoveBoost : MonoBehaviour
         //animContrCharacter.SetBool("isKicked", false);
        // animContrCharacter.Play("1_Idle_1");
         //animContrCharacter.speed=1f;
-        OnRewardMoveBoostTimeFinish();
+        OnRewardMoveBoostTimeFinish(); 
+        OnRewardTimerUpdate(_isRewardUpdate);
+        
+       
         
         Debug.Log("Auto-click ended");
     }
     
-    private void OnRewardGain ()
+    private void OnRewardGain (bool _isRewardUpdate)
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
         
         if (!isMoveBoostRunning) // Если таймер ещё не запущен
         {
-            StartCoroutine(StartAutoClickTimer());
+            StartCoroutine(StartAutoClickTimer(_isRewardUpdate));
         }
     }
-
+    private void OnTutAnimFinishedMoveBoost(string tutName)
+    {
+        if (tutName == "Tut2")
+        {
+            OnRewardGain(false);
+        }
+    }
     public void InitViews()
     {
         timerSlider.gameObject.SetActive(false);
         btnSelf.interactable = true;
     }
-    
+    private void GetRewardFinish()
+    {
+        OnRewardGain(true);
+    }
     private void OnEnable()
     {
-        YG2RewardManager.instance.RewMoveBoosterFinish += OnRewardGain;
+        YG2RewardManager.instance.RewMoveBoosterFinish += GetRewardFinish;
+        LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedMoveBoost;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
-        YG2RewardManager.instance.RewMoveBoosterFinish -= OnRewardGain;
+        YG2RewardManager.instance.RewMoveBoosterFinish -= GetRewardFinish;
+        LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedMoveBoost;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
     private void CallRewVideo()

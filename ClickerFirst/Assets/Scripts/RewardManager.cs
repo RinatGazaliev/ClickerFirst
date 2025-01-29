@@ -15,6 +15,7 @@ public class RewardManager : MonoBehaviour
         totalTimerAutoclick = timerAutoclick;
         totalTimerDoublePoints = timerDoublePoints;
         totalTimerMoveBoost = timerMoveBoosts;
+        
     }
 
     // Update is called once per frame
@@ -100,17 +101,17 @@ public class RewardManager : MonoBehaviour
     private void OnEnable()
     {
        RewAutoClicker.OnRewardAutoClickTimeFinish+=UpdateAutoClickRewardTimer;
-       RewDoublePoints.OnRewardDoublePointsTimeFinish+=UpdateDoublePointsRewardTimer;
-       RewMoveBoost.OnRewardMoveBoostTimeFinish+=UpdateMoveBoostRewardTimer;
-       RewGetEquip.OnRewardGetEquipTimeFinish+=UpdateGetEquipRewardTimer;
+       RewDoublePoints.OnRewardTimerUpdate+=UpdateDoublePointsRewardTimer;
+       RewMoveBoost.OnRewardTimerUpdate+=UpdateMoveBoostRewardTimer;
+       RewGetEquip.OnRewardTimerUpdate+=UpdateGetEquipRewardTimer;
     }
 
     private void OnDisable()
     {
         RewAutoClicker.OnRewardAutoClickTimeFinish-=UpdateAutoClickRewardTimer;
-        RewDoublePoints.OnRewardDoublePointsTimeFinish-=UpdateDoublePointsRewardTimer;
-        RewMoveBoost.OnRewardMoveBoostTimeFinish-=UpdateMoveBoostRewardTimer;
-        RewGetEquip.OnRewardGetEquipTimeFinish -= UpdateGetEquipRewardTimer;
+        RewDoublePoints.OnRewardTimerUpdate-=UpdateDoublePointsRewardTimer;
+        RewMoveBoost.OnRewardTimerUpdate-=UpdateMoveBoostRewardTimer;
+        RewGetEquip.OnRewardTimerUpdate -= UpdateGetEquipRewardTimer;
     }
 
     private void UpdateAutoClickRewardTimer()
@@ -118,20 +119,48 @@ public class RewardManager : MonoBehaviour
         btnReward_Autoclick.gameObject.SetActive(false);
         isTimerAutoClickRunning = true;
     }
-    private void UpdateDoublePointsRewardTimer()
+    private void UpdateDoublePointsRewardTimer(bool _isRewardUpdate)
     {
-        btnReward_DoublePoints.gameObject.SetActive(false);
-        isTimerDoubleCoinsRunning = true;
+        if (_isRewardUpdate)
+        {
+            btnReward_DoublePoints.gameObject.SetActive(false);
+            isTimerDoubleCoinsRunning = true;
+            
+        }
+        else
+        {
+            btnReward_DoublePoints.gameObject.SetActive(true);
+            btnReward_DoublePoints.InitViews();
+        }
+
     }
-    private void UpdateMoveBoostRewardTimer()
+    private void UpdateMoveBoostRewardTimer(bool _isRewardUpdate)
     {
-        btnReward_MoveBoost.gameObject.SetActive(false);
-        isTimerMoveBoostRunning = true;
+        if (_isRewardUpdate)
+        {
+            btnReward_MoveBoost.gameObject.SetActive(false);
+            isTimerMoveBoostRunning = true;
+        }
+        else
+        {
+            btnReward_MoveBoost.gameObject.SetActive(true);
+            btnReward_MoveBoost.InitViews();
+        }
+
     }
     
-    private void UpdateGetEquipRewardTimer()
+    private void UpdateGetEquipRewardTimer(bool _isRewardUpdate)
     {
-        btnReward_GetEquip.gameObject.SetActive(false);
-        isTimerGetEquipRunning = true;
+        if (_isRewardUpdate)
+        {
+            btnReward_GetEquip.gameObject.SetActive(false);
+            isTimerGetEquipRunning = true;
+            
+        }
+        else
+        {
+            btnReward_GetEquip.gameObject.SetActive(true);
+        }
+
     }
 }

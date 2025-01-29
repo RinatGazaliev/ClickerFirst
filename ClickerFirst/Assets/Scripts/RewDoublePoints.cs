@@ -16,7 +16,8 @@ public class RewDoublePoints : MonoBehaviour
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
     [SerializeField] private string YGRewardID;
     
-    public static event Action OnRewardDoublePointsTimeFinish;
+   // public static event Action OnRewardDoublePointsTimeFinish;
+    public static event Action <bool> OnRewardTimerUpdate;
     //public static event Action OnAutoClickerClick;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class RewDoublePoints : MonoBehaviour
    
     }
     
-    private IEnumerator StartAutoClickTimer()
+    private IEnumerator StartAutoClickTimer(bool _isUpdateReward)
     {
         isDoublePointsRunning = true;
         Config.SetDoublePointsRewValue(2);
@@ -65,19 +66,36 @@ public class RewDoublePoints : MonoBehaviour
         
         Config.SetDoublePointsRewValue(1);
         isDoublePointsRunning = false;
-        OnRewardDoublePointsTimeFinish();
+        //OnRewardDoublePointsTimeFinish();
+        OnRewardTimerUpdate(_isUpdateReward);
+      
+       
         
         Debug.Log("Auto-click ended");
     }
-    
+    private void OnTutAnimFinishedDoubleCoins(string tutName)
+    {
+        if (tutName == "Tut1")
+        {
+            OnRewardGain(false);
+        }
+    }
+
+    private void GetRewardFinish()
+    {
+        OnRewardGain(true);
+    }
+
     private void OnEnable()
     {
-        YG2RewardManager.instance.RewDoubleCoinsFinish += OnRewardGain;
+        YG2RewardManager.instance.RewDoubleCoinsFinish += GetRewardFinish;
+        LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedDoubleCoins;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
-        YG2RewardManager.instance.RewDoubleCoinsFinish -= OnRewardGain;
+        YG2RewardManager.instance.RewDoubleCoinsFinish -= GetRewardFinish;
+        LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedDoubleCoins;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
     private void CallRewVideo()
@@ -85,14 +103,14 @@ public class RewDoublePoints : MonoBehaviour
         SoundManager.instance.PlaySound_ButtClick();
         YG2.RewardedAdvShow(YGRewardID);
     }
-    private void OnRewardGain ()
+    private void OnRewardGain (bool _isUpdateReward)
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
         
         if (!isDoublePointsRunning) // Если таймер ещё не запущен
         {
-            StartCoroutine(StartAutoClickTimer());
+            StartCoroutine(StartAutoClickTimer(_isUpdateReward));
         }
     }
 

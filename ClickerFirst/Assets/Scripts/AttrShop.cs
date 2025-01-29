@@ -44,7 +44,7 @@ public class AttrShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitFunct();
+        //InitFunct();
         UpdateViews();
         btnHatGroup.onClick.AddListener(BtnHatClicked);
         btnJewelryGroup.onClick.AddListener(BtnJewelryClicked);

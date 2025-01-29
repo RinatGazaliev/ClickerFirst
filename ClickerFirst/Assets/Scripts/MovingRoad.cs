@@ -30,6 +30,8 @@ public class MovingRoad : MonoBehaviour
     
     private int currRoadTextureN_1;
     private int currRoadTextureN_2;
+
+    public bool isTutLocked = false;
     public static event Action<bool> OnIsWalkingChange;
 
     void Start()
@@ -60,12 +62,14 @@ public class MovingRoad : MonoBehaviour
             UpdateDistanceValue();
             if (Flag.activeSelf)
             {
-                if (Part2.transform.localPosition.x*2<=startPositionPart2)
+                if (Part2.transform.localPosition.x*2<=startPositionPart2&&!isTutLocked)
                 {
+                    isTutLocked = true;
                     int tutN = Config.GetTutN();
                     tutN = tutN+1;
                     Config.SetTutN(tutN);
                     showWdgManager.StartPartRoadWdg();
+                    //Flag.SetActive(false);
                 }
             }
 
@@ -108,7 +112,7 @@ public class MovingRoad : MonoBehaviour
         MainObject.OnObjectClicked += StartTimerWalkCoroutine;
         PartRoadCompleted.OnPartRoadCompletedClosed += InactivateFlag;
         Config.OnChangeTotalDistance += SaveCurrLocalPosition;
-
+        LeftButtZoneManager.OnTutAnimFinished += OnTutWgtAnimFinished;
 
     }
 
@@ -118,6 +122,13 @@ public class MovingRoad : MonoBehaviour
         MainObject.OnObjectClicked -= StartTimerWalkCoroutine;
         PartRoadCompleted.OnPartRoadCompletedClosed -= InactivateFlag;
         Config.OnChangeTotalDistance -= SaveCurrLocalPosition;
+        LeftButtZoneManager.OnTutAnimFinished -= OnTutWgtAnimFinished;
+    }
+
+    private void OnTutWgtAnimFinished(string noMatter)
+    {
+        InactivateFlag();
+        isTutLocked = false;
     }
 
     private void InactivateFlag()

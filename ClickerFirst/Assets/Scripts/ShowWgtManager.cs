@@ -93,6 +93,7 @@ public class ShowWgtManager : MonoBehaviour
    }
    public void StartPartRoadWdg()
    {
+       Debug.Log("setPartRoadActive");
        Time.timeScale = 0f;
        int tutN = Config.GetTutN();
        partRoadWgt.gameObject.SetActive(true);

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 using YG;
 using Random = UnityEngine.Random;
@@ -14,7 +15,8 @@ public class RewGetEquip : MonoBehaviour
     [SerializeField] private string YGRewardID;
     
     public static event Action OnEquipRewPressed;
-    public static event Action OnRewardGetEquipTimeFinish;
+   // public static event Action OnRewardGetEquipTimeFinish;
+    public static event Action <bool> OnRewardTimerUpdate;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,10 @@ public class RewGetEquip : MonoBehaviour
         {
            btnGetEquip.onClick.AddListener(CallRewVideo); 
         }
-
+        attrShop.InitFunct();
+        attrShop.CollectChildNames();
         
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -35,7 +36,7 @@ public class RewGetEquip : MonoBehaviour
         
     }
 
-    private void OnRewardGain()
+    private void OnRewardGain(bool _isRewardUpdate)
     {
        
         Debug.Log("OpenRandomLocked");
@@ -98,23 +99,39 @@ public class RewGetEquip : MonoBehaviour
         PlayerPrefs.SetInt(nameToSave,1);
         attrShop.InitFunct();
         showWgtManager.ShowNewItemPopUp(groupName,randomElement);
-        OnRewardGetEquipTimeFinish();
+       // OnRewardGetEquipTimeFinish();
+        OnRewardTimerUpdate(_isRewardUpdate);
+      
+        
         //if (OnEquipRewPressed != null) OnEquipRewPressed();
     }
-    
+
+    private void OnTutAnimFinishedGetEquip(string tutName)
+    {
+        if (tutName == "Tut3")
+        {
+            OnRewardGain(false);
+        }
+    }
+
     public void SelectRandomElement()
     {
   
     }
-    
+    private void GetRewardFinish()
+    {
+        OnRewardGain(true);
+    }
     private void OnEnable()
     {
-        YG2RewardManager.instance.RewGetEquipFinish += OnRewardGain;
+        YG2RewardManager.instance.RewGetEquipFinish += GetRewardFinish;
+        LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedGetEquip;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
-        YG2RewardManager.instance.RewGetEquipFinish -= OnRewardGain;
+        YG2RewardManager.instance.RewGetEquipFinish -= GetRewardFinish;
+        LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedGetEquip;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
     private void CallRewVideo()
