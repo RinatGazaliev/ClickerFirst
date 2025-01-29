@@ -8,7 +8,7 @@ public class MovingHeaven : MonoBehaviour
 {
     private float currSpeedKf = 300f;
     
-    [SerializeField] private List<Sprite> SpriteHeaven;
+    [SerializeField] private List<Material> MaterialsHeaven;
     private bool isHeavenMove = false;
     private float startPositionPart1;
     private float startPositionPart2;
@@ -76,8 +76,8 @@ public class MovingHeaven : MonoBehaviour
 
     private void SetTextures()
     {
-       Part1.GetComponent<Image>().sprite = SpriteHeaven[currRoadTextureN];
-       Part2.GetComponent<Image>().sprite = SpriteHeaven[currRoadTextureN+1];
+       Part1.GetComponent<Image>().material = MaterialsHeaven[currRoadTextureN];
+       Part2.GetComponent<Image>().material = MaterialsHeaven[currRoadTextureN+1];
     }
 
     private void UpdateHeavenMove(bool _isHeavenMove)
