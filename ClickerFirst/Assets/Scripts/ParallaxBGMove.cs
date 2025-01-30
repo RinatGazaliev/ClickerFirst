@@ -29,6 +29,7 @@ public class ParallaxBGMove : MonoBehaviour
     private bool valueClickAdded = false;
     
     private int currRoadTextureN;
+    private int maxTextN;
     public static event Action<bool> OnIsWalkingChange;
 
     void Start()
@@ -37,8 +38,8 @@ public class ParallaxBGMove : MonoBehaviour
         startPositionPart2 = Part2.transform.localPosition;*/
 
        // Debug.Log("startPositionPart1"+startPositionPart1);
-        
-       
+        maxTextN = ScenesGameObjects.Count;
+        Debug.Log("maxTextN"+maxTextN);
         totalDistance = Config.GetTotalDistance();
         //txtTotalDistance.text = $"{totalDistance:F2} m";
         currRoadTextureN = Config.GetParallaxTextureCurrN(LayerN);
@@ -227,8 +228,12 @@ public class ParallaxBGMove : MonoBehaviour
             Destroy(child.gameObject);  // Удаление дочернего объекта
         }
 
-        if (currRoadTextureN+1 >= 0 && currRoadTextureN+1 < ScenesGameObjects.Count)
+        if (currRoadTextureN+1 >= 0)
         {
+            if (currRoadTextureN+1 >= maxTextN)
+            {
+                currRoadTextureN = maxTextN - 2;
+            }
             GameObject objToCopy = ScenesGameObjects[currRoadTextureN + 1];
 
             if (objToCopy != null)
@@ -281,8 +286,14 @@ public class ParallaxBGMove : MonoBehaviour
            
             
         }
-        else if (currRoadTextureN >= 0 && currRoadTextureN < ScenesGameObjects.Count)
+        else if (currRoadTextureN >= 0 )
         {
+            if (currRoadTextureN >= maxTextN)
+            {
+                currRoadTextureN = maxTextN-1;
+            }
+
+            
             GameObject objToCopy = ScenesGameObjects[currRoadTextureN];
 
             if (objToCopy != null)

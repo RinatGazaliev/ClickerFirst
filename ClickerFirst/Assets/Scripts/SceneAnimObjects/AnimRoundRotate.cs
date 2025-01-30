@@ -19,6 +19,6 @@ public class AnimRoundRotate : MonoBehaviour
         transform.DORotate(new Vector3(0, 0, -360), fullAnimCycleTime, RotateMode.FastBeyond360)
             .SetDelay(startDelay)
             .SetEase(Ease.Linear)
-            .SetLoops(-1, LoopType.Restart);
+            .SetLoops(-1, LoopType.Incremental);
     }
 }

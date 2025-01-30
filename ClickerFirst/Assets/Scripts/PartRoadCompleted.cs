@@ -39,7 +39,7 @@ public class PartRoadCompleted : MonoBehaviour
       //  bgImg = GetComponent<Image>();
         Vector3 coordTut1FinalPosition = rewardZone.rewDoublePoints.transform.position;
         
-        btnOkTut1.onClick.AddListener(() => MoveToTarget(10,coinAnimate, rewardZone.rewDoublePoints.transform.position, 0.5f , rewardZone.rewDoublePoints.gameObject, Tut1, btnOkTut1));
+        btnOkTut1.onClick.AddListener(() => MoveToTarget(3,coinAnimate, rewardZone.rewDoublePoints.transform.position, 0.5f , rewardZone.rewDoublePoints.gameObject, Tut1, btnOkTut1));
         btnOkTut2.onClick.AddListener(() => MoveToTarget(2, kickAnimate, rewardZone.rewMoveBoost.transform.position, 0.5f , rewardZone.rewMoveBoost.gameObject, Tut2, btnOkTut2));
         btnOkTut3.onClick.AddListener(() => MoveToTarget(1, clothesAnimate, rewardZone.rewGetEquip.transform.position, 0.5f , rewardZone.rewGetEquip.gameObject, Tut3, btnOkTut3));
        

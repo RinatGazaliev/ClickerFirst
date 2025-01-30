@@ -110,6 +110,7 @@ public class RewGetEquip : MonoBehaviour
     {
         if (tutName == "Tut3")
         {
+            attrShop.gameObject.SetActive(true);
             OnRewardGain(false);
         }
     }

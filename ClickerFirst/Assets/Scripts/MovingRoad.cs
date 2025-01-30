@@ -31,6 +31,7 @@ public class MovingRoad : MonoBehaviour
     private int currRoadTextureN_1;
     private int currRoadTextureN_2;
 
+    private int maxTextN;
     public bool isTutLocked = false;
     public static event Action<bool> OnIsWalkingChange;
 
@@ -41,8 +42,8 @@ public class MovingRoad : MonoBehaviour
         startPositionPart1 = Part1.transform.localPosition.x;
         startPositionPart2 = Part2.transform.localPosition.x;
         Debug.Log("startPositionPart1"+startPositionPart1);
-        
-       
+
+        maxTextN = SpriteRoadUp.Count;
         totalDistance = Config.GetTotalDistance();
         txtTotalDistance.text = $"{totalDistance:F2} m";
         currRoadTextureN_1 = Config.GetRoadOneTextureCurrN();
@@ -64,10 +65,15 @@ public class MovingRoad : MonoBehaviour
             {
                 if (Part2.transform.localPosition.x*2<=startPositionPart2&&!isTutLocked)
                 {
-                    isTutLocked = true;
                     int tutN = Config.GetTutN();
-                    tutN = tutN+1;
-                    Config.SetTutN(tutN);
+                    Debug.Log("tutN"+tutN);
+                    if (tutN<=3)
+                    {
+                        isTutLocked = true;
+                        tutN = tutN+1;
+                        Config.SetTutN(tutN);
+                    }
+
                     showWdgManager.StartPartRoadWdg();
                     //Flag.SetActive(false);
                 }
@@ -164,10 +170,16 @@ public class MovingRoad : MonoBehaviour
     
     private void SetTextureObjectOne()
     {
+        if (currRoadTextureN_1>=maxTextN)
+        {
+            currRoadTextureN_1 = maxTextN-1;
+        }
+        
         Transform child = Part1.transform.Find("SpriteDown");
 
         if (child != null)
         {
+
             child.GetComponent<Image>().color = SpriteRoadDown[currRoadTextureN_1];
         }
         else
@@ -187,6 +199,11 @@ public class MovingRoad : MonoBehaviour
     }
     private void SetTextureObjectTwo()
     {
+        if (currRoadTextureN_2>=maxTextN)
+        {
+            currRoadTextureN_2 = maxTextN-1;
+        }
+        
         Transform child3 = Part2.transform.Find("SpriteDown");
 
         if (child3 != null)

@@ -15,12 +15,15 @@ public class MovingHeaven : MonoBehaviour
     [SerializeField] GameObject Part1;
     [SerializeField] GameObject Part2;
     private int currRoadTextureN;
+
+    private int maxTextN;
     // Start is called before the first frame update
     void Start()
     {
         startPositionPart1 = Part1.transform.localPosition.y;
         startPositionPart2 = Part2.transform.localPosition.y; 
         currRoadTextureN = Config.GetRoadOneTextureCurrN();
+        maxTextN = MaterialsHeaven.Count;
         SetTextures();
     }
 
@@ -76,7 +79,12 @@ public class MovingHeaven : MonoBehaviour
 
     private void SetTextures()
     {
-       Part1.GetComponent<Image>().material = MaterialsHeaven[currRoadTextureN];
+        Part1.GetComponent<Image>().material = MaterialsHeaven[currRoadTextureN];
+        if (currRoadTextureN>=maxTextN)
+        {
+            currRoadTextureN = maxTextN - 2;
+        }
+     
        Part2.GetComponent<Image>().material = MaterialsHeaven[currRoadTextureN+1];
     }
 
