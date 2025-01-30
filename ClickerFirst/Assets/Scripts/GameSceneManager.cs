@@ -11,7 +11,7 @@ public class GameSceneManager : MonoBehaviour
     {
        // Config.isMusic = true;
         MusicManager.instance.PlayMusicBGFadeIn(false,2);
-        
+       //Config.SetTutN(0);
     }
 
     private void OnEnable()

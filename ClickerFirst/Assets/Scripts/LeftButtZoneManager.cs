@@ -11,13 +11,15 @@ public class LeftButtZoneManager : MonoBehaviour
     [SerializeField] public RewMoveBoost rewMoveBoost;
     [SerializeField] public RewGetEquip rewGetEquip;
     [SerializeField] public  GameObject equipShop;
-
+    private int isRewardEnded;
     private int tutN;
     // Start is called before the first frame update
     
     public static event Action<string> OnTutAnimFinished = delegate (string _tutName) { };
     void Start()
     {
+        isRewardEnded=PlayerPrefs.GetInt("AllEquipWatched", 0);
+        Debug.Log("isRewardEnded"+isRewardEnded);
         tutN = Config.GetTutN();
         InitViews();
         StartCoroutine(StartAnim());
@@ -64,10 +66,12 @@ public class LeftButtZoneManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             equipShop.GetComponent<UIAnimation>().CallAnimationFunct();
             equipShop.SetActive(true);
-
-            yield return new WaitForSeconds(0.1f);
-            rewGetEquip.GetComponent<UIAnimation>().CallAnimationFunct();
-            rewGetEquip.gameObject.SetActive(true);
+            if (isRewardEnded==0)
+            {
+                yield return new WaitForSeconds(0.1f);
+                rewGetEquip.GetComponent<UIAnimation>().CallAnimationFunct();
+                rewGetEquip.gameObject.SetActive(true);
+            }
         }
 
     }

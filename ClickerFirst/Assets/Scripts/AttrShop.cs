@@ -56,8 +56,8 @@ public class AttrShop : MonoBehaviour
 
     private void Awake()
     {
-        InitFunct();
-        CollectChildNames();
+        //InitFunct();
+        //CollectChildNames();
         //  InitFunct();
         // RewGetEquip.OnEquipRewPressed  += InitFunct;
     }
@@ -222,16 +222,16 @@ public class AttrShop : MonoBehaviour
         elementNumbers.AddRange(Enumerable.Range(0, childCount));
 
         // Исключение сохранённых чисел из PlayerPrefs
-        string groupKey = $"Group_{groupObject.name}_";
+       // string groupKey = $"Group_{groupObject.name}_";
         
         for (int i = elementNumbers.Count - 1; i >= 0; i--)
         {
             string nameToCheck = $"Equip_{groupObject.name}_N_{elementNumbers[i]}";
-            Debug.Log("nameToCheck"+nameToCheck);
+            //ebug.Log("nameToCheck"+nameToCheck);
             if (PlayerPrefs.GetInt(nameToCheck,0)==1)
             {
                 elementNumbers.RemoveAt(i);
-               
+                Debug.Log("nameToCheck"+nameToCheck);
             }
         }
 

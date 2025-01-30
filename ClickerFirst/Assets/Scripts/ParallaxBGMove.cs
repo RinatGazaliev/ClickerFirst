@@ -25,6 +25,7 @@ public class ParallaxBGMove : MonoBehaviour
     private float elapsedTime = 0f; // Общий накопленный таймер
     private float totalDistance;
     [SerializeField] private List<GameObject> ScenesGameObjects;
+    [SerializeField] private List<GameObject> ToShowFlagGameObjects;
     //[SerializeField] private List<Color> SpriteRoadDown;
     private bool valueClickAdded = false;
     
@@ -238,6 +239,12 @@ public class ParallaxBGMove : MonoBehaviour
 
             if (objToCopy != null)
             {
+                int currShowFlagN = Config.GetFlagShowN();
+                if (ToShowFlagGameObjects.Count>0&&objToCopy==ToShowFlagGameObjects[currShowFlagN])
+                {
+                    Config.SetFlagCanShow(1);
+                    Config.SetFlagShowN(currShowFlagN+1);
+                }
                 Vector3 localPosition = new Vector3(3572, 0, 0);
            
                 part2ChildToMove = Instantiate(objToCopy);

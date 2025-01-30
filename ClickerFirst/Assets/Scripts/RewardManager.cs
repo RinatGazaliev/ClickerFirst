@@ -10,12 +10,13 @@ public class RewardManager : MonoBehaviour
     private float totalTimerAutoclick;
     private float totalTimerDoublePoints;
     private float totalTimerMoveBoost;
+    private float totalTimerGetEquip;
     void Start()
     {
         totalTimerAutoclick = timerAutoclick;
         totalTimerDoublePoints = timerDoublePoints;
         totalTimerMoveBoost = timerMoveBoosts;
-        
+        timerGetEquip = totalTimerGetEquip;
     }
 
     // Update is called once per frame
@@ -66,7 +67,7 @@ public class RewardManager : MonoBehaviour
             {
                 //timerMoveBoosts = 0f;
                 isTimerGetEquipRunning = false;
-                timerGetEquip = totalTimerMoveBoost;
+                timerGetEquip = totalTimerGetEquip;
                 btnReward_GetEquip.gameObject.SetActive(true);
                 //btnReward_GetEquip.InitViews();
             }

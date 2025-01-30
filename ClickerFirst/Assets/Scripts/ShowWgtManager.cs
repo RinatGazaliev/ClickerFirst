@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class ShowWgtManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static ShowWgtManager instance;
+    
+    
     void Start()
     {
+        instance = this;
         btnCloseAttrPopup.onClick.AddListener(TouchCloseAttr);
         btnEquipShop.onClick.AddListener(TouchEquipShop);
         btnContinuePartRoad.onClick.AddListener(TouchContinueRoad);
@@ -59,7 +63,7 @@ public class ShowWgtManager : MonoBehaviour
    [SerializeField] Button btnCLoseNewItem;
 
 
-   private void InitViews()
+   public void InitViews()
    {
        attrPopup.SetActive(false);
        partRoadWgt.gameObject.SetActive(false);
@@ -99,22 +103,26 @@ public class ShowWgtManager : MonoBehaviour
        partRoadWgt.gameObject.SetActive(true);
        if (tutN==1)
        {
-           partRoadWgt.Tut1.SetActive(true);
+           //partRoadWgt.Tut1.SetActive(true);
            partRoadWgt.defaultView.SetActive(false);
+           partRoadWgt.AnimateAppearance(partRoadWgt.Tut1, 900, new Vector3(-600,100,0), 0.3f);
        }
        else if (tutN==2)
        {
-           partRoadWgt.Tut2.SetActive(true);
+           // partRoadWgt.Tut2.SetActive(true);
            partRoadWgt.defaultView.SetActive(false);
+           partRoadWgt.AnimateAppearance(partRoadWgt.Tut2, 900, new Vector3(-600,100,0), 0.3f);
        }
        else if (tutN==3)
        {
-           partRoadWgt.Tut3.SetActive(true);
+           //partRoadWgt.Tut3.SetActive(true);
            partRoadWgt.defaultView.SetActive(false);
+           partRoadWgt.AnimateAppearance(partRoadWgt.Tut3, 900, new Vector3(-600,100,0), 0.3f);
        }
        else
        {
-           partRoadWgt.defaultView.SetActive(true); 
+          // partRoadWgt.defaultView.SetActive(true); 
+           partRoadWgt.AnimateAppearance(partRoadWgt.defaultView, 900, new Vector3(-600,100,0), 0.3f);
        }
        // OnPartRoadCompletedActive();
    }

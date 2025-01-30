@@ -52,6 +52,17 @@ public class SoundManager : MonoBehaviour
         }
     }
     
+    [Header("FlagWgt")]
+    public AudioClip flag_wgt;
+    
+    public void PlaySound_FlagWgt()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(flag_wgt);
+        }
+    }
+    
     [Header("PortalGroup")]
     public AudioClip kick;
     public AudioClip portal_appear;

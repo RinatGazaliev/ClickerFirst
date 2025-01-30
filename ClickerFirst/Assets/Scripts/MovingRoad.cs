@@ -256,7 +256,7 @@ public class MovingRoad : MonoBehaviour
             var object2Position = Part2.transform.localPosition;
             object2Position.x = startPositionPart2;
             Part2.transform.localPosition = object2Position;
-            if (totalDistance>Config.DistanceToChangeTextureRoad[currRoadTextureN_2])
+            if (Config.GetFlagCanShow()==1)
             {
  
                 currRoadTextureN_2 = currRoadTextureN_2 + 1;
@@ -268,6 +268,7 @@ public class MovingRoad : MonoBehaviour
                 Config.SetSaveBlock(1);
                 Config.SetHeavenMove(true);
                 Flag.SetActive(true);
+                Config.SetFlagCanShow(0);
             }
             else
             {

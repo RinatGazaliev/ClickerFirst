@@ -32,9 +32,12 @@ public class PartRoadCompleted : MonoBehaviour
     
     
     [SerializeField] private Image bgImg;
+
+    [SerializeField] private CanvasGroup canvasGroup;
     // Start is called before the first frame update
     void Start()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
         btnContinue.onClick.AddListener(ContinuePressed);
       //  bgImg = GetComponent<Image>();
         Vector3 coordTut1FinalPosition = rewardZone.rewDoublePoints.transform.position;
@@ -94,4 +97,55 @@ public class PartRoadCompleted : MonoBehaviour
                 gameObject.SetActive(false);
                 });
     }
+
+    public void AnimateAppearance(GameObject obj, float arcHeight, Vector3 offset, float animationTime)
+    {
+        //gameObject.SetActive(true);
+        SoundManager.instance.PlaySound_FlagWgt();
+        canvasGroup.alpha = 0;
+        canvasGroup.DOFade(1f, 0.3f).
+            SetUpdate(true)
+            .OnComplete(() =>     {
+                Debug.Log($"animStarted for {obj?.name}");
+
+                if (obj == null)
+                {
+                    Debug.Log("animQuitted - obj is null");
+                    return;
+                }
+                // Сохраняем финальную позицию
+                Vector3 finalPosition = obj.transform.position;
+
+                // Выбираем стартовую точку (ниже и левее финальной)
+                Vector3 startPosition = finalPosition + offset;
+                startPosition.y -= arcHeight;
+
+                // Скрываем объект и уменьшаем масштаб
+                obj.transform.position = startPosition;
+                obj.transform.localScale = Vector3.zero;
+                obj.SetActive(true);
+        
+        
+                obj.SetActive(true);
+                DOTween.Init();
+                obj.transform.DOKill(false);
+
+                Debug.Log($"Before scaling: {obj.name}, scale: {obj.transform.localScale}");
+
+                // Двигаем объект по дуге (если нужно)
+                obj.transform.DOJump(finalPosition, arcHeight, 1, animationTime)
+                    .SetEase(Ease.OutQuad)
+                    .SetUpdate(true) // ✅ Игнорирует Time.timeScale
+                    .OnComplete(() => Debug.Log($"DOJump finished for {obj.name}"));
+
+                // Увеличиваем масштаб
+                obj.transform.DOScale(Vector3.one, animationTime * 0.8f)
+                    .SetEase(Ease.OutBack)
+                    .SetUpdate(true) // ✅ Игнорирует Time.timeScale
+                    .OnStart(() => Debug.Log($"DOScale started for {obj.name}"))
+                    .OnComplete(() => Debug.Log($"DOScale finished for {obj.name}, final scale: {obj.transform.localScale}"));
+            });
+    }
+
+
 }

@@ -12,6 +12,7 @@ public class GetNewItemPopUp : MonoBehaviour
 
     [SerializeField] private Image imgSpriteEquip; // Теперь можно задать через инспектор
     [SerializeField] private Button btnEquipItem;
+    [SerializeField] private Button btnClose;
 
     private string isItemEquippedName;
 
@@ -37,9 +38,10 @@ public class GetNewItemPopUp : MonoBehaviour
         {
             btnEquipItem.onClick.AddListener(SaveDataAndEquip);
         }
-        else
+        
+        if (btnClose != null)
         {
-            Debug.LogError("btnEquipItem не назначен в инспекторе.");
+            btnClose.onClick.AddListener(TouchCloseBtn);
         }
     }
 
@@ -77,5 +79,14 @@ public class GetNewItemPopUp : MonoBehaviour
         isItemEquippedName = $"ItemEquipped_{currGroup}_N_";
         PlayerPrefs.SetInt(isItemEquippedName, currEquipN);
         OnItemEquipped(currGroup, currEquipN);
+    }
+    
+    private void TouchCloseBtn()
+    {
+        SoundManager.instance.PlaySound_ButtClick();
+        // SoundManager.instance.PlaySound_ButtClick();
+        
+        ShowWgtManager.instance.InitViews();
+        gameObject.SetActive(false);
     }
 }

@@ -136,11 +136,41 @@ public class Config : MonoBehaviour
     private const string ROADPOSITIONPART2_X = "RoadPart2_X";
     private const string ROADPOSITIONPART2_Y = "RoadPart2_Y";
     
+    private const string FLAGSHOWNUMBER = "FlagShow_N";
+    private const string CANSHOWFLAG = "FlagCanShow";
+    
     private const string SAVEBLOCK = "Save_block";
-    public static readonly int[] DistanceToChangeTextureRoad = { 150, 300, 500, 800, 1050, 1200, 1300, 1400, 1750, 2250, 2750, 3300 };
+    public static readonly int[] DistanceToChangeTextureRoad = { 10, 300, 500, 800, 1050, 1200, 1300, 1400, 1750, 2250, 2750, 3300 };
     //private bool isHeavenMove = false;
     public static event Action<bool> OnChangeHeavenMove = delegate (bool _isHeaveMove) { };
 
+    public static void SetFlagShowN(int currFlagShowN)
+    {
+        PlayerPrefs.SetInt(FLAGSHOWNUMBER, currFlagShowN);
+        PlayerPrefs.Save();
+       
+    }
+
+    public static int GetFlagShowN()
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        return PlayerPrefs.GetInt(FLAGSHOWNUMBER, 0);
+
+    }
+    public static void SetFlagCanShow(int currFlagCanShowN)
+    {
+        PlayerPrefs.SetInt(CANSHOWFLAG, currFlagCanShowN);
+        PlayerPrefs.Save();
+       
+    }
+
+    public static int GetFlagCanShow()
+    {
+        //Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(TOTALDISTANCE, 0));
+        return PlayerPrefs.GetInt(CANSHOWFLAG, 0);
+
+    }
+    
     public static void SetRoadOneTextureCurrN(int currTextNumber)
     {
         //string CurrName = CURRENTTEXTUREROADNUMBER + LayerN;
