@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RunButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RunButton.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxBGMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxBGMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewGetEquip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewGetEquip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimRoundRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimRoundRotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinsOnClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinsOnClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +199,7 @@
       <workItem from="1738047201852" duration="2898000" />
       <workItem from="1738061086282" duration="17087000" />
       <workItem from="1738142288193" duration="18170000" />
-      <workItem from="1738217676579" duration="3173000" />
+      <workItem from="1738217676579" duration="8392000" />
     </task>
     <task id="LOCAL-00001" summary="#AddPointsPerSecAndPerClickFunctions">
       <option name="closed" value="true" />
@@ -587,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738163906074</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="#RotateBagFixedINotInfinityBugFixed">
+      <option name="closed" value="true" />
+      <created>1738223765537</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1738223765537</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +609,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#MusicAndSoundsMechAdded" />
     <MESSAGE value="#LegPortalAnimSyncrhonized" />
     <MESSAGE value="#YGAdded" />
     <MESSAGE value="#YGIntegratedRewAndInter" />
@@ -628,6 +633,7 @@
     <MESSAGE value="#HeavenMaterial" />
     <MESSAGE value="#RewardsTutFinished" />
     <MESSAGE value="#AnimRotateSomeCorrection" />
-    <option name="LAST_COMMIT_MESSAGE" value="#AnimRotateSomeCorrection" />
+    <MESSAGE value="#RotateBagFixedINotInfinityBugFixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="#RotateBagFixedINotInfinityBugFixed" />
   </component>
 </project>

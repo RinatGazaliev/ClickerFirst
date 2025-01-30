@@ -15,12 +15,11 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private CoinsOnClick coinsOnClickPtr;
    // [SerializeField] private BoxCollider2D bodyCollider;
     public static event Action <GameObject> OnObjectClicked;
+    public static event Action  OnCallCoins;
 
     public void  OnMouseDown()
     {
-        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       // Вызываем событие и передаем объект, на который кликнули
-        //CallMainObjClicked(mousePosition);
+        OnObjectClicked?.Invoke(gameObject);
    
         
     }// Start is called before the first frame update
@@ -42,6 +41,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         OnChangeForkIsRunning(Config.isRunning);
         SoundManager.instance.PlaySound_SosClick();
         OnObjectClicked?.Invoke(gameObject);
+        OnCallCoins.Invoke();
         // Если клик был на спрайте
         Debug.Log("Спрайт был кликнут через родительский объект!");
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
@@ -53,7 +53,8 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         Debug.Log("ISRunning"+Config.isRunning);
         OnChangeForkIsRunning(Config.isRunning);
         OnObjectClicked?.Invoke(gameObject);
-        
+        OnCallCoins.Invoke();
+
     }
     void Start()
     {

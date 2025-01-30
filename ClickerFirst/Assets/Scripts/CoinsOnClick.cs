@@ -16,16 +16,16 @@ public class CoinsOnClick : MonoBehaviour
 
     private void OnEnable()
     {
-        MainObject.OnObjectClicked += ExplodeCoins;
+        MainObject.OnCallCoins += ExplodeCoins;
         
     }
 
     private void OnDisable()
     {
-        MainObject.OnObjectClicked -= ExplodeCoins;
+        MainObject.OnCallCoins -= ExplodeCoins;
     }
 
-    void ExplodeCoins(GameObject clickedObject)
+    void ExplodeCoins()
     {
         for (int i = 0; i < coinCount; i++)
         {
