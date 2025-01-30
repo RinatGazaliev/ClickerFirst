@@ -592,6 +592,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EasterEggs_23
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1614
+        width: 253
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101978811f845d3478b6ac2d3db7c7dc
+      internalID: -67629028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -619,6 +640,7 @@ TextureImporter:
       EasterEggs_20: -1985480229
       EasterEggs_21: -387222168
       EasterEggs_22: 1818208718
+      EasterEggs_23: -67629028
       EasterEggs_3: -2047939938
       EasterEggs_4: -1390463556
       EasterEggs_5: 2141886954
