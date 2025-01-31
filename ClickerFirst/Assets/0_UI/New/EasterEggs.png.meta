@@ -601,7 +601,7 @@ TextureImporter:
         width: 253
         height: 173
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,6 +609,27 @@ TextureImporter:
       bones: []
       spriteID: 101978811f845d3478b6ac2d3db7c7dc
       internalID: -67629028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EasterEggs_24
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1534
+        width: 214
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c00a493fff6f54a91a2cf18c43a3a1
+      internalID: -1976427927
       vertices: []
       indices: 
       edges: []
@@ -641,6 +662,7 @@ TextureImporter:
       EasterEggs_21: -387222168
       EasterEggs_22: 1818208718
       EasterEggs_23: -67629028
+      EasterEggs_24: -1976427927
       EasterEggs_3: -2047939938
       EasterEggs_4: -1390463556
       EasterEggs_5: 2141886954

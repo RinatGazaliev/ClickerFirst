@@ -16,10 +16,10 @@ public class LoadSceneManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(LoadMenuScene_IEnumerator());
-        if (Config.GetTutN()<2)
+        /*if (Config.GetTutN()<2)
         {
             Config.SetTutN(2);
-        }
+        }*/
 
         
     }
