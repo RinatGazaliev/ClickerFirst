@@ -391,6 +391,7 @@ public class Config : MonoBehaviour
     
     public const string SOUND = "sound";
     public static bool isSound = true;
+    public static event Action<bool> OnChangeIsSound = delegate (bool _isSound) { };
     public static void SetSound(bool _isSound) {
         isSound = _isSound;
         if (_isSound)
@@ -401,16 +402,19 @@ public class Config : MonoBehaviour
             PlayerPrefs.SetInt(SOUND, 0);
         }
         PlayerPrefs.Save();
+        OnChangeIsSound(isSound);
     }
 
-    public static void GetSound() {
+    public static bool GetSound() {
         int soundInt = PlayerPrefs.GetInt(SOUND, 1);
         if (soundInt == 1)
         {
             isSound = true;
+            return true;
         }
         else {
             isSound = false;
+            return false;
         }
     }
 

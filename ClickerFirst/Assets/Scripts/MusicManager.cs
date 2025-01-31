@@ -123,6 +123,7 @@ public class MusicManager : MonoBehaviour
     
     public void DisableMusic()
     {
+        audioMusic.DOComplete();
         Config.SetMusic(false);
         
         audioMusic.volume=0;
