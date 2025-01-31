@@ -12,6 +12,7 @@ public class RewMoveBoost : MonoBehaviour
     //private float autoClickInterval = 0.5f; // Интервал между событиями OnAutoClick
     //private float autoClickTimer = 0f;
     private Button btnSelf;
+    [SerializeField] private Image imgTV;
 
     [SerializeField] private float kickInterval = 5f;
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
@@ -100,6 +101,7 @@ public class RewMoveBoost : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
+        imgTV.gameObject.SetActive(false);
         
         if (!isMoveBoostRunning) // Если таймер ещё не запущен
         {
@@ -117,6 +119,7 @@ public class RewMoveBoost : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(false);
         btnSelf.interactable = true;
+        imgTV.gameObject.SetActive(true);
     }
     private void GetRewardFinish()
     {

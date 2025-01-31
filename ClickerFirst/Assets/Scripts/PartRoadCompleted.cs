@@ -61,8 +61,11 @@ public class PartRoadCompleted : MonoBehaviour
     }
     private void ContinuePressed()
     {
+        SoundManager.instance.PlaySound_ButtClick();
+        Time.timeScale = 1f;
         Debug.Log("AddInterHere");
         YG2.InterstitialAdvShow();
+        
         OnPartRoadCompletedClosed();
         gameObject.SetActive(false);
 
@@ -91,8 +94,8 @@ public class PartRoadCompleted : MonoBehaviour
             .SetEase(Ease.InQuad)
             .OnComplete(() =>
             {
-                rewardZone.AppearWithScale(finalBtnReward, 0.5f, thisTut.name);
-                thisTut.SetActive(false);
+                rewardZone.AppearWithScale(finalBtnReward, 0.5f, thisTut);
+                //thisTut.SetActive(false);
                 bgImg.gameObject.SetActive(true);
                 gameObject.SetActive(false);
                 });

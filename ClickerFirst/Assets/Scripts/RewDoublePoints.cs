@@ -15,6 +15,7 @@ public class RewDoublePoints : MonoBehaviour
     private Button btnSelf;
     [SerializeField] private Slider timerSlider;// Таймер для события OnAutoClick
     [SerializeField] private string YGRewardID;
+    [SerializeField] private Image imgTV;
     
    // public static event Action OnRewardDoublePointsTimeFinish;
     public static event Action <bool> OnRewardTimerUpdate;
@@ -107,6 +108,7 @@ public class RewDoublePoints : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
+        imgTV.gameObject.SetActive(false);
         
         if (!isDoublePointsRunning) // Если таймер ещё не запущен
         {
@@ -118,5 +120,6 @@ public class RewDoublePoints : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(false);
         btnSelf.interactable = true;
+        imgTV.gameObject.SetActive(true);
     }
 }

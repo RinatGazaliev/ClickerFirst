@@ -16,6 +16,12 @@ public class LoadSceneManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(LoadMenuScene_IEnumerator());
+        if (Config.GetTutN()<2)
+        {
+            Config.SetTutN(2);
+        }
+
+        
     }
 
     // Update is called once per frame

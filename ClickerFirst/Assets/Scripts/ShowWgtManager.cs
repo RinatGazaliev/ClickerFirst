@@ -15,7 +15,7 @@ public class ShowWgtManager : MonoBehaviour
         instance = this;
         btnCloseAttrPopup.onClick.AddListener(TouchCloseAttr);
         btnEquipShop.onClick.AddListener(TouchEquipShop);
-        btnContinuePartRoad.onClick.AddListener(TouchContinueRoad);
+        //btnContinuePartRoad.onClick.AddListener(TouchContinueRoad);
         btnCLoseNewItem.onClick.AddListener(TouchCloseAttr);
         InitViews();
     }
@@ -88,8 +88,7 @@ public class ShowWgtManager : MonoBehaviour
    
    private void TouchContinueRoad()
    {
-       SoundManager.instance.PlaySound_ButtClick();
-       Time.timeScale = 1f;
+
         
        Debug.Log("AddInterHere");
        partRoadWgt.gameObject.SetActive(false);
@@ -122,6 +121,7 @@ public class ShowWgtManager : MonoBehaviour
        else
        {
           // partRoadWgt.defaultView.SetActive(true); 
+          partRoadWgt.defaultView.SetActive(false);
            partRoadWgt.AnimateAppearance(partRoadWgt.defaultView, 900, new Vector3(-600,100,0), 0.3f);
        }
        // OnPartRoadCompletedActive();

@@ -126,7 +126,7 @@ public class SoundManager : MonoBehaviour
     }
     public void DisableSound()
     {
-        Config.SetSound(false);
+        //Config.SetSound(false);
         
         audioSound.volume=0; 
 
@@ -134,7 +134,7 @@ public class SoundManager : MonoBehaviour
 
     public void EnableSound()
     {
-        Config.SetSound(true);
+        //Config.SetSound(true);
         audioSound.volume=1; 
     }
     

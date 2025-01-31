@@ -69,11 +69,11 @@ public class MovingRoad : MonoBehaviour
                     Debug.Log("tutN"+tutN);
                     if (tutN<=3)
                     {
-                        isTutLocked = true;
                         tutN = tutN+1;
                         Config.SetTutN(tutN);
+                        Debug.Log("tutN"+tutN);
                     }
-
+                    isTutLocked = true;
                     showWdgManager.StartPartRoadWdg();
                     //Flag.SetActive(false);
                 }
@@ -134,12 +134,13 @@ public class MovingRoad : MonoBehaviour
     private void OnTutWgtAnimFinished(string noMatter)
     {
         InactivateFlag();
-        isTutLocked = false;
+        //isTutLocked = false;
     }
 
     private void InactivateFlag()
     {
         Flag.SetActive(false);
+        isTutLocked = false;
         Time.timeScale = 1f;
     }
 

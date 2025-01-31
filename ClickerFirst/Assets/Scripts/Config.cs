@@ -97,8 +97,8 @@ public class Config : MonoBehaviour
 
     public static int GetScorePerSec()
     {
-        Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(SCOREPERSEC, 1));
-        return PlayerPrefs.GetInt(SCOREPERSEC, 1);
+        Debug.Log("ScorePerClick" + PlayerPrefs.GetInt(SCOREPERSEC, 0));
+        return PlayerPrefs.GetInt(SCOREPERSEC, 0);
 
     }
 

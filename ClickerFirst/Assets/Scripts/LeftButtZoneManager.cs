@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LeftButtZoneManager : MonoBehaviour
 {
+    public static LeftButtZoneManager instance;
     [SerializeField] public RewAutoClicker rewAutoClicker;
     [SerializeField] public RewDoublePoints rewDoublePoints;
     [SerializeField] public RewMoveBoost rewMoveBoost;
@@ -18,6 +19,7 @@ public class LeftButtZoneManager : MonoBehaviour
     public static event Action<string> OnTutAnimFinished = delegate (string _tutName) { };
     void Start()
     {
+        instance = this;
         isRewardEnded=PlayerPrefs.GetInt("AllEquipWatched", 0);
         Debug.Log("isRewardEnded"+isRewardEnded);
         tutN = Config.GetTutN();
@@ -31,7 +33,7 @@ public class LeftButtZoneManager : MonoBehaviour
         
     }
 
-    private void InitViews()
+    public void InitViews()
     {
         rewAutoClicker.gameObject.SetActive(false);
         rewDoublePoints.gameObject.SetActive(false);
@@ -76,12 +78,17 @@ public class LeftButtZoneManager : MonoBehaviour
 
     }
     
-    public void AppearWithScale(GameObject obj, float duration, string tutName)
+    public void AppearWithScale(GameObject obj, float duration,GameObject thisTut)
     {
+        
         Vector3 finalScale = obj.transform.localScale;
         obj.transform.localScale = Vector3.zero;
         obj.SetActive(true);
         obj.transform.DOScale(finalScale, duration).SetEase(Ease.OutBack)
-            .OnComplete(() => OnTutAnimFinished(tutName));
+            .OnComplete(() =>
+            {
+                OnTutAnimFinished(thisTut.name);
+                thisTut.SetActive(false);
+            });
     }
 }

@@ -11,8 +11,10 @@ public class RewGetEquip : MonoBehaviour
 
     private Button btnGetEquip;
     [SerializeField] private AttrShop attrShop;
+    [SerializeField] private GameObject attrButtonPtr;
     [SerializeField] private ShowWgtManager showWgtManager;
     [SerializeField] private string YGRewardID;
+    [SerializeField] private Image imgTV;
     public List<int> arrayIndices = new List<int>();
     public static event Action OnEquipRewPressed;
    // public static event Action OnRewardGetEquipTimeFinish;
@@ -46,6 +48,7 @@ public class RewGetEquip : MonoBehaviour
 
     private void OnRewardGain(bool _isRewardUpdate)
     {
+        attrButtonPtr.SetActive(true);
         attrShop.InitFunct();
        
         Debug.Log("OpenRandomLocked");
@@ -139,7 +142,7 @@ public class RewGetEquip : MonoBehaviour
     {
         if (tutName == "Tut3")
         {
-            attrShop.gameObject.SetActive(true);
+            attrButtonPtr.SetActive(true);
             OnRewardGain(false);
         }
     }

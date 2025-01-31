@@ -15,6 +15,7 @@ public class RewAutoClicker : MonoBehaviour
     [SerializeField] private Slider timerSlider;
     [SerializeField] private MainObject sausageObject;// Таймер для события OnAutoClick
     [SerializeField] private string YGRewardID;
+    [SerializeField] private Image imgTV;
     
     public static event Action OnRewardAutoClickTimeFinish;
     public static event Action OnAutoClickerClick;
@@ -98,6 +99,7 @@ public class RewAutoClicker : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
+        imgTV.gameObject.SetActive(false);
         
         if (!isAutoClickRunning) // Если таймер ещё не запущен
         {
@@ -109,6 +111,7 @@ public class RewAutoClicker : MonoBehaviour
     {
         timerSlider.gameObject.SetActive(false);
         btnSelf.interactable = true;
+        imgTV.gameObject.SetActive(true);
     }
 
 

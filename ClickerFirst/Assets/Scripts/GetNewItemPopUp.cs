@@ -79,6 +79,8 @@ public class GetNewItemPopUp : MonoBehaviour
         isItemEquippedName = $"ItemEquipped_{currGroup}_N_";
         PlayerPrefs.SetInt(isItemEquippedName, currEquipN);
         OnItemEquipped(currGroup, currEquipN);
+        ShowWgtManager.instance.InitViews();
+        gameObject.SetActive(false);
     }
     
     private void TouchCloseBtn()
