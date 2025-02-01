@@ -90,7 +90,7 @@ public class ScoreZone : MonoBehaviour
     {
         int currScore = Config.GetTotalScore();
         Debug.Log("PointsToAdd");
-        Config.SetTotalScore(currScore+GetScoreToAddClick()*scalePerClickKf*Config.GetDoublePointsRewValue());
+        Config.SetTotalScore(currScore+GetScoreToAddClick()*Config.GetDoublePointsRewValue());
         //TODO AddAnimate And Spawn Object txtPerClick
     }
     
