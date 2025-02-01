@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gley.Localization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,15 +88,15 @@ public class Boosters : MonoBehaviour
 
         if (perSecBoostValue>0)
         {
-            txtDescrBooster.text = $"+{perSecBoostValue} sousagoids per second";
+            txtDescrBooster.text = $"+{perSecBoostValue} {API.GetText(WordIDs.UI_Booster_persec_desc)}";
         }
         if (perClickBoostValue>0)
         {
-            txtDescrBooster.text = $"+{perClickBoostValue} sousagoids per click";
+            txtDescrBooster.text = $"+{perClickBoostValue} {API.GetText(WordIDs.UI_Booster_perclick_desc)}";
         }
         if (distanceBoostValue>0f)
         {
-            txtDescrBooster.text = $"+{distanceBoostValue} cm to step lengh";
+            txtDescrBooster.text = $"+{distanceBoostValue} {API.GetText(WordIDs.UI_Booster_steplenght_desc)}";
         }
 
     }
