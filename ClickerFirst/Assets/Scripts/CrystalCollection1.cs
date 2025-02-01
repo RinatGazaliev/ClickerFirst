@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class CrystalCollection : MonoBehaviour
 {
+    private int multiplierKF = 5;
     [SerializeField] private Button triggerButton; // Кнопка для запуска анимации
     [SerializeField] private GameObject PileOfCrystalParent;
     [SerializeField] private ParticleSystem vfxEffect; // 🎇 Ссылка на VFX
@@ -17,12 +18,16 @@ public class CrystalCollection : MonoBehaviour
     [SerializeField] private Vector3 FinalPositionVert; // Теперь в мировых координатах
     [SerializeField] private Vector3 FinalPositionHor;  // Теперь в мировых координатах
     [SerializeField] private int CrystalNo;
+    [SerializeField] private Text txtValueReward;
+    private int currRewValue;
 
     private Vector3 endWorldPos; // Конечная точка в мировых координатах
     public Ease moveEase;
 
     void Start()
     {
+        currRewValue = Config.GetScorePerClick() * multiplierKF;
+        txtValueReward.text = currRewValue.ToString();
         InitialPos1 = new Vector3[CrystalNo];
         InitialRotation1 = new Quaternion[CrystalNo];
 
@@ -149,6 +154,7 @@ public class CrystalCollection : MonoBehaviour
                 .OnComplete(() =>
                 {
                     crystal.gameObject.SetActive(false);
+                    Config.SetTotalScore(Config.GetTotalScore()+currRewValue);
                 });
 
             delay += 0.1f;
