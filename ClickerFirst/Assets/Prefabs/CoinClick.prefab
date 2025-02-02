@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3352803422133612813}
   - component: {fileID: 3774175154057475599}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 321582000992259830}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CoinClick
   m_TagString: Untagged
   m_Icon: {fileID: 0}

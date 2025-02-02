@@ -7,6 +7,7 @@ public class LegInPortal : MonoBehaviour
 {
     
     public static event Action OnLegHidden;
+    public static event Action OnKickedAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,9 @@ public class LegInPortal : MonoBehaviour
     {
         OnLegHidden();
         gameObject.SetActive(false);
+    }
+    public void CallKickEvent()
+    {
+        OnKickedAnim();
     }
 }
