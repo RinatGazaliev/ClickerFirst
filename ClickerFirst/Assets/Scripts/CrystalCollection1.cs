@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class CrystalCollection : MonoBehaviour
 {
-    private int multiplierKF = 5;
+    private int multiplierKF;
     [SerializeField] private Button triggerButton; // Кнопка для запуска анимации
     [SerializeField] private GameObject PileOfCrystalParent;
     [SerializeField] private ParticleSystem vfxEffect; // 🎇 Ссылка на VFX
@@ -26,6 +26,7 @@ public class CrystalCollection : MonoBehaviour
 
     void Start()
     {
+        multiplierKF = Random.Range(1,5);
         currRewValue = Config.GetScorePerClick() * multiplierKF;
         txtValueReward.text = currRewValue.ToString();
         InitialPos1 = new Vector3[CrystalNo];
@@ -154,11 +155,12 @@ public class CrystalCollection : MonoBehaviour
                 .OnComplete(() =>
                 {
                     crystal.gameObject.SetActive(false);
-                    Config.SetTotalScore(Config.GetTotalScore()+currRewValue);
+                    
                 });
 
             delay += 0.1f;
         }
+        Config.SetTotalScore(Config.GetTotalScore()+currRewValue);
     }
 
     public void SetStartPositionCryst()
