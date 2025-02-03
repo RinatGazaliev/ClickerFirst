@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ParallaxBGMove : MonoBehaviour
 {
+    [SerializeField] private bool isTest=false;
     [SerializeField] private int slowerSpeedKf = 4;
     private bool isParallaxMove = false;
     private float currSpeedKf = 500f;
@@ -48,9 +49,9 @@ public class ParallaxBGMove : MonoBehaviour
         totalDistance = Config.GetTotalDistance();
         //txtTotalDistance.text = $"{totalDistance:F2} m";
         currRoadTextureN = Config.GetParallaxTextureCurrN(LayerN);
-        if (LayerN==3)
+        if (LayerN==3&&isTest)
         {
-            currRoadTextureN = maxTextN-2;
+            currRoadTextureN = maxTextN-3;
         }
            
         SetSpriteTextureN();
@@ -219,7 +220,7 @@ private void SetSpriteTextureN()
         position.x = position.x - (currSpeedKf * Time.deltaTime * Config.GetPerClickScaleKf() *
                                    Config.GetMoveBoostRewValue() * Config.GetMoveBoostTut())/slowerSpeedKf;;
         part1ChildToMove.transform.localPosition = position;
-        if (LayerN==3&&part2ChildToMove.transform.localPosition.x<=StartFinalTutCoordX&&!isFinalTutStarted)
+        if (LayerN==3&&part2ChildToMove.transform.localPosition.x<=StartFinalTutCoordX&&!isFinalTutStarted&&currRoadTextureN==maxTextN-3)
         {
             float updateSpeedValue = Config.GetMoveBoostTut();
             updateSpeedValue = updateSpeedValue / 3;
@@ -246,7 +247,7 @@ private void SetSpriteTextureN()
             currRoadTextureN = currRoadTextureN + 1;
             SaveCurrParallax();
             
-
+            Debug.Log("currRoadTextureN"+currRoadTextureN);
             SetSpriteTextureN();
             //Time.timeScale = 0f;
         }
