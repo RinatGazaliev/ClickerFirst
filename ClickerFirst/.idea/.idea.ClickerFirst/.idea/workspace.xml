@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/GameSceneDima01-02.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/GameSceneDima01-02.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/2_Kick.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/2_Kick.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CoinClick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CoinClick.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LegInPortal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LegInPortal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScoreZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameSceneRinat02-02.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameSceneRinat02-02.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxBGMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxBGMove.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +29,20 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c648d86e9013479d818310c5918e31a4176600/ac/b2e8d80e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2_Animation/UI/UIAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ClearPrefsWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/GameScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinsOnClick.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/Config.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CumulativeSumStepCalculator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/MovingRoad.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/MovingRoad.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/ParallaxBGMove.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/ParallaxBGMove.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RewardManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimFloatingBoat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimMovingUp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -224,14 +227,8 @@
       <workItem from="1738302261974" duration="17657000" />
       <workItem from="1738397735981" duration="6236000" />
       <workItem from="1738436007868" duration="4061000" />
-    </task>
-    <task id="LOCAL-00007" summary="#LittleSceneCorrection">
-      <option name="closed" value="true" />
-      <created>1734424784501</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1734424784501</updated>
+      <workItem from="1738499098527" duration="9394000" />
+      <workItem from="1738571943930" duration="2914000" />
     </task>
     <task id="LOCAL-00008" summary="#Rewarard_MoveBooster_DoubleCoins_Autoclicker">
       <option name="closed" value="true" />
@@ -617,7 +614,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738401001860</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="#AddedFeelAnimationsRun&amp;Kick">
+      <option name="closed" value="true" />
+      <created>1738499252863</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1738499252864</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +638,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#ParallaxPrototype" />
     <MESSAGE value="#SoundsAdded" />
     <MESSAGE value="#ParalaxSaveCorrection" />
     <MESSAGE value="#ScenePointersCorrection" />
@@ -658,6 +662,7 @@
     <MESSAGE value="#AnimCharCorrection" />
     <MESSAGE value="#LocalizationFinished" />
     <MESSAGE value="#someLocalizationCorrection" />
-    <option name="LAST_COMMIT_MESSAGE" value="#someLocalizationCorrection" />
+    <MESSAGE value="#AddedFeelAnimationsRun&amp;Kick" />
+    <option name="LAST_COMMIT_MESSAGE" value="#AddedFeelAnimationsRun&amp;Kick" />
   </component>
 </project>

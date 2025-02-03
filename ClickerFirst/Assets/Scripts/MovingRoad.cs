@@ -9,6 +9,7 @@ public class MovingRoad : MonoBehaviour
     // Start is called before the first frame update
     private float currSpeedKf = 500f;
     private bool isWalkActive = false;
+    [SerializeField] private ParticleSystem vfxFinal;
     
     [SerializeField] ShowWgtManager showWdgManager;
    
@@ -119,7 +120,8 @@ public class MovingRoad : MonoBehaviour
         PartRoadCompleted.OnPartRoadCompletedClosed += InactivateFlag;
         Config.OnChangeTotalDistance += SaveCurrLocalPosition;
         LeftButtZoneManager.OnTutAnimFinished += OnTutWgtAnimFinished;
-
+        ParallaxBGMove.OnStartFinalTut += StartFinalTut;
+        ParallaxBGMove.OnFinishFinalTut += FinishFinalTut;
     }
 
     void OnDisable()
@@ -129,6 +131,18 @@ public class MovingRoad : MonoBehaviour
         PartRoadCompleted.OnPartRoadCompletedClosed -= InactivateFlag;
         Config.OnChangeTotalDistance -= SaveCurrLocalPosition;
         LeftButtZoneManager.OnTutAnimFinished -= OnTutWgtAnimFinished;
+        ParallaxBGMove.OnStartFinalTut -= StartFinalTut;
+        ParallaxBGMove.OnFinishFinalTut -= FinishFinalTut;
+    }
+
+    private void StartFinalTut()
+    {
+     //   currSpeedKf = currSpeedKf / 3;
+    }
+    private void FinishFinalTut()
+    {
+      //  currSpeedKf = currSpeedKf * 3 * 3;
+        vfxFinal.gameObject.SetActive(true);
     }
 
     private void OnTutWgtAnimFinished(string noMatter)
@@ -232,13 +246,13 @@ public class MovingRoad : MonoBehaviour
     {
         var vector3 = Part2.transform.localPosition;
         Debug.Log("Part2.transform.localPosition"+vector3.x);
-        vector3.x = vector3.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue();
+        vector3.x = vector3.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue()*Config.GetMoveBoostTut();
         Part2.transform.localPosition = vector3;
         // Debug.Log("Part2.transform.localPosition"+vector3.x);
 
         // Двигаем объект 1 с такой же разницей
         var position = Part1.transform.localPosition;
-        position.x = position.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue();
+        position.x = position.x - currSpeedKf * Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue()*Config.GetMoveBoostTut();
         Part1.transform.localPosition = position;
         //Debug.Log("Part2.transform.localPosition"+Part2.transform.localPosition);
 

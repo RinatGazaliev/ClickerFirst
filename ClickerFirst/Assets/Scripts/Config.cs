@@ -384,6 +384,23 @@ public class Config : MonoBehaviour
     {
         return rewMoveBoost;
     }
+    
+    #endregion
+    
+    #region FinalTutBoost
+
+    private const string TUTBOOST = "FinalTutBoost";
+    
+    public static void SetMoveBoostTut(float value)
+    {
+        PlayerPrefs.SetFloat(TUTBOOST, value);
+    }
+
+    public static float GetMoveBoostTut()
+    {
+        float returnValue=PlayerPrefs.GetFloat(TUTBOOST, 1f);
+        return returnValue;
+    }
 
     #endregion
     

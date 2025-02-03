@@ -10,7 +10,8 @@ public class ParallaxBGMove : MonoBehaviour
     [SerializeField] private int slowerSpeedKf = 4;
     private bool isParallaxMove = false;
     private float currSpeedKf = 500f;
-    
+    [SerializeField] float StartFinalTutCoordX;
+    [SerializeField] float DistanceFinalTut=1000f;
     //[SerializeField] Text txtTotalDistance;
     [SerializeField] GameObject Part1;
     [SerializeField] GameObject Part2;
@@ -29,9 +30,12 @@ public class ParallaxBGMove : MonoBehaviour
     //[SerializeField] private List<Color> SpriteRoadDown;
     private bool valueClickAdded = false;
     
+    private bool isFinalTutStarted = false;
     private int currRoadTextureN;
     private int maxTextN;
     public static event Action<bool> OnIsWalkingChange;
+    public static event Action OnStartFinalTut;
+    public static event Action OnFinishFinalTut;
 
     void Start()
     {
@@ -44,6 +48,11 @@ public class ParallaxBGMove : MonoBehaviour
         totalDistance = Config.GetTotalDistance();
         //txtTotalDistance.text = $"{totalDistance:F2} m";
         currRoadTextureN = Config.GetParallaxTextureCurrN(LayerN);
+        if (LayerN==3)
+        {
+            currRoadTextureN = maxTextN-2;
+        }
+           
         SetSpriteTextureN();
         GetCurrLocalPosition();
 
@@ -94,7 +103,9 @@ public class ParallaxBGMove : MonoBehaviour
         // Подписываемся на событие
         MainObject.OnObjectClicked += StartTimerWalkCoroutine;
         Config.OnChangeTotalDistance += SaveCurrLocalPosition;
-        
+        OnStartFinalTut += StartFinalTut;
+        OnFinishFinalTut += FinishFinalTut;
+
     }
     
 
@@ -103,9 +114,22 @@ public class ParallaxBGMove : MonoBehaviour
         // Отписываемся от события
         MainObject.OnObjectClicked -= StartTimerWalkCoroutine;
         Config.OnChangeTotalDistance -= SaveCurrLocalPosition;
+        OnStartFinalTut -= StartFinalTut;
+        OnFinishFinalTut -= FinishFinalTut;
+    }
+    private void StartFinalTut()
+    {
+        isFinalTutStarted = true;
     }
 
-    private void SetSpriteTextureN()
+    private void FinishFinalTut()
+    {
+        Debug.Log("TutFinished");
+        isFinalTutStarted = false;
+        
+    }
+
+private void SetSpriteTextureN()
     {
         MoveObjectToPart1();
         
@@ -185,15 +209,38 @@ public class ParallaxBGMove : MonoBehaviour
     {
         var vector3 = part2ChildToMove.transform.localPosition;
         Debug.Log("Part2.transform.localPosition"+vector3.x);
-        vector3.x = vector3.x - (currSpeedKf*Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue())/slowerSpeedKf;
+        vector3.x = vector3.x - (currSpeedKf * Time.deltaTime * Config.GetPerClickScaleKf() *
+                                 Config.GetMoveBoostRewValue() * Config.GetMoveBoostTut())/slowerSpeedKf;;
         part2ChildToMove.transform.localPosition = vector3;
         // Debug.Log("Part2.transform.localPosition"+vector3.x);
 
         // Двигаем объект 1 с такой же разницей
         var position = part1ChildToMove.transform.localPosition;
-        position.x = position.x - (currSpeedKf*Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue())/slowerSpeedKf;
+        position.x = position.x - (currSpeedKf * Time.deltaTime * Config.GetPerClickScaleKf() *
+                                   Config.GetMoveBoostRewValue() * Config.GetMoveBoostTut())/slowerSpeedKf;;
         part1ChildToMove.transform.localPosition = position;
-
+        if (LayerN==3&&part2ChildToMove.transform.localPosition.x<=StartFinalTutCoordX&&!isFinalTutStarted)
+        {
+            float updateSpeedValue = Config.GetMoveBoostTut();
+            updateSpeedValue = updateSpeedValue / 3;
+            Config.SetMoveBoostTut(updateSpeedValue);
+            Debug.Log("LowSpeed");
+            OnStartFinalTut();
+        }
+        if (LayerN==3&&isFinalTutStarted)
+        {
+            DistanceFinalTut = DistanceFinalTut-(currSpeedKf*Time.deltaTime*Config.GetPerClickScaleKf()*Config.GetMoveBoostRewValue()*Config.GetMoveBoostTut()*Config.GetMoveBoostTut())/slowerSpeedKf;;
+            if (DistanceFinalTut<=0)
+            {
+                float updateSpeedValue = Config.GetMoveBoostTut();
+                updateSpeedValue = updateSpeedValue * 3*3;
+                Config.SetMoveBoostTut(updateSpeedValue);
+                Debug.Log("FastSpeed");
+                OnFinishFinalTut();
+            }
+           
+            
+        }
         if (part1ChildToMove.transform.localPosition.x <= 0)
         {
             currRoadTextureN = currRoadTextureN + 1;
@@ -219,7 +266,7 @@ public class ParallaxBGMove : MonoBehaviour
     {
         if (Part2 == null)
         {
-            Debug.LogWarning("Контейнер Part1 не найден.");
+            Debug.LogWarning("Контейнер Part2 не найден.");
             return;
         }
 
