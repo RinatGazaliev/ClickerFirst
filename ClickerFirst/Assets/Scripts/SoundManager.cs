@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    private AudioSource audioSound;
+    [SerializeField] private AudioSource audioSound;
+    [SerializeField]private AudioSource audioSoundLoop;
     //  private Coroutine playAudioCoroutine;
     
 
@@ -15,7 +16,7 @@ public class SoundManager : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
-        audioSound = GetComponent<AudioSource>();
+       // audioSound = GetComponent<AudioSource>();
 
     }
     
@@ -105,6 +106,20 @@ public class SoundManager : MonoBehaviour
         }
 
     }
+    public void PlaySound_portalAppear()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(portal_appear);
+        }
+    }
+    public void PlaySound_punchLeg()
+    {
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(kick);
+        }
+    }
     
     [Header("Ouch!")]
     public AudioClip ouch1;
@@ -124,6 +139,58 @@ public class SoundManager : MonoBehaviour
         AudioClip randomClip = ouchClips[Random.Range(0, ouchClips.Length)];  // Выбор случайного клипа
         audioSound.PlayOneShot(randomClip);  // Проигрывание звука
     }
+    
+    
+    [Header("Character!")]
+    public AudioClip blackHoleLoop;
+    public AudioClip getEquip;
+    public AudioClip hardBreath;
+    public AudioClip stepsLoop;
+   // public AudioClip ouch5;
+   public void PlaySound_getEquip()
+   {
+       if (Config.isSound)
+       {
+           audioSound.PlayOneShot(getEquip);
+       }
+   }
+   public void PlaySound_hardBreath()
+   {
+       if (Config.isSound)
+       {
+           audioSound.PlayOneShot(hardBreath);
+       }
+   }
+
+   private bool isRunningLoopActive = false;
+   public void PlaySound_stepsLoop()
+   {
+       if (Config.isSound)
+       {
+           if (!isRunningLoopActive)
+           {
+               audioSoundLoop.clip = stepsLoop;
+               audioSoundLoop.Play();
+               isRunningLoopActive = true;
+           }
+
+       }
+   }
+   public void PlaySound_blackHoleLoop()
+   {
+       if (Config.isSound)
+       {
+           Debug.Log("BlackHolePlaying");
+           audioSoundLoop.clip = blackHoleLoop;
+           audioSoundLoop.Play();
+       }
+   }
+   public void StopLoopSound()
+   {
+      audioSoundLoop.Stop();
+      isRunningLoopActive = false;
+    }
+   
     public void DisableSound()
     {
         //Config.SetSound(false);
@@ -143,4 +210,7 @@ public class SoundManager : MonoBehaviour
         audioSound.Stop();
         //StopAudioLoop();
     }
+    
+ 
+    
 }

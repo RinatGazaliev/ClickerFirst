@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.U2D.Animation;
 
-public class MainObject : MonoBehaviour, IPointerClickHandler
+public class MainObject : MonoBehaviour
 {
     
     // Событие, на которое могут подписаться другие объекты
@@ -47,7 +47,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }
     
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick()
     {
         Debug.Log("MainObjClicked");
         Debug.Log("ISRunning"+Config.isRunning);

@@ -42,7 +42,7 @@ public class RewAutoClicker : MonoBehaviour
             if (autoClickTimer >= autoClickInterval)
             {
                 autoClickTimer = 0f;
-                sausageObject.OnMouseDown();
+                sausageObject.OnPointerClick();
             }
         }
 

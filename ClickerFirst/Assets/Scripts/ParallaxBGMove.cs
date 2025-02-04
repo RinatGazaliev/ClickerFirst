@@ -226,6 +226,7 @@ private void SetSpriteTextureN()
             updateSpeedValue = updateSpeedValue / 3;
             Config.SetMoveBoostTut(updateSpeedValue);
             Debug.Log("LowSpeed");
+            SoundManager.instance.PlaySound_blackHoleLoop();
             OnStartFinalTut();
         }
         if (LayerN==3&&isFinalTutStarted)
@@ -237,6 +238,7 @@ private void SetSpriteTextureN()
                 updateSpeedValue = updateSpeedValue * 3*3;
                 Config.SetMoveBoostTut(updateSpeedValue);
                 Debug.Log("FastSpeed");
+                SoundManager.instance.StopLoopSound();
                 OnFinishFinalTut();
             }
            

@@ -39,6 +39,9 @@ public class Portal : MonoBehaviour
         animatorPortal.SetTrigger("PortalDisappear");
     }
     
-    
+    public void PlayPortalAppear()
+    {
+        SoundManager.instance.PlaySound_portalAppear();
+    }
     
 }

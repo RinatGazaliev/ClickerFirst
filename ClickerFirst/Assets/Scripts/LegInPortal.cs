@@ -29,4 +29,8 @@ public class LegInPortal : MonoBehaviour
     {
         OnKickedAnim();
     }
+    public void PlayPunchLeg()
+    {
+        SoundManager.instance.PlaySound_punchLeg();
+    }
 }

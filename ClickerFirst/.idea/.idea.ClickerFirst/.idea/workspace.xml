@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#Polishing_1">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/1_KickAppear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/1_KickAppear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/1_PortalAppear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/1_PortalAppear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/2_Kick.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/2_Kick.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/2_Walking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/2_Walking.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/3_Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/3_Run.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2_Animation/6_HardBreath.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2_Animation/6_HardBreath.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Loading.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Loading.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationsSoundController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationsSoundController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BodyClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BodyClick.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LegInPortal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LegInPortal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RunButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RunButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxBGMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxBGMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Portal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewAutoClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewAutoClicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,14 +243,7 @@
       <workItem from="1738436007868" duration="4061000" />
       <workItem from="1738499098527" duration="9394000" />
       <workItem from="1738571943930" duration="15560000" />
-    </task>
-    <task id="LOCAL-00012" summary="#AddedCharAtributesLogic">
-      <option name="closed" value="true" />
-      <created>1734610896886</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1734610896886</updated>
+      <workItem from="1738670082546" duration="3424000" />
     </task>
     <task id="LOCAL-00013" summary="#ButtEquipPrepared">
       <option name="closed" value="true" />
@@ -623,7 +629,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738662384435</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="#CharClickActivationSystem">
+      <option name="closed" value="true" />
+      <created>1738664932611</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1738664932611</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +653,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#BoosetrsTextUpdate" />
     <MESSAGE value="#MusicTransitionAdded" />
     <MESSAGE value="#AnimationSceneScriptsAdded" />
     <MESSAGE value="#MusicAndAnimSceneFinish" />
@@ -664,6 +677,7 @@
     <MESSAGE value="#GameRdyToTest" />
     <MESSAGE value="#MergeConflictsTryToFix" />
     <MESSAGE value="#Polishing_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Polishing_1" />
+    <MESSAGE value="#CharClickActivationSystem" />
+    <option name="LAST_COMMIT_MESSAGE" value="#CharClickActivationSystem" />
   </component>
 </project>

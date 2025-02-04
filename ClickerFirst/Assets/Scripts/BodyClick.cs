@@ -93,5 +93,17 @@ public class BodyClick : MonoBehaviour
     {
         polygonCollider.enabled=false;
     }
-
+    
+    public void PlayKickAppearSound()
+    {
+        SoundManager.instance.PlayRandomOuchSound();
+    }
+    public void PlayRunSounds()
+    {
+        SoundManager.instance.PlaySound_stepsLoop();
+    }
+    public void StopLoopSounds()
+    {
+        SoundManager.instance.StopLoopSound();
+    }
 }

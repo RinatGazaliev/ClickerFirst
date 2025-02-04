@@ -81,6 +81,7 @@ public class GetNewItemPopUp : MonoBehaviour
         PlayerPrefs.SetInt(isItemEquippedName, currEquipN);
         OnItemEquipped(currGroup, currEquipN);
         ShowWgtManager.instance.InitViews();
+        SoundManager.instance.PlaySound_getEquip();
         OnCloseNewItemPopUp();
         gameObject.SetActive(false);
     }
