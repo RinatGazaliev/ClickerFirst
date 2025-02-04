@@ -19,7 +19,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
 
     public void  OnMouseDown()
     {
-        OnObjectClicked?.Invoke(gameObject);
+        //OnObjectClicked?.Invoke(gameObject);
    
         
     }// Start is called before the first frame update
@@ -87,6 +87,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         MovingRoad.OnIsWalkingChange += OnChangeIsWalking;
         ForkBar.OnForkBarIsRunning += OnChangeForkIsRunning;
         RewMoveBoost.OnKickCalled += CallKick;
+        
 
 
     }
@@ -99,6 +100,7 @@ public class MainObject : MonoBehaviour, IPointerClickHandler
         ForkBar.OnForkBarIsRunning -= OnChangeForkIsRunning;
         RewMoveBoost.OnKickCalled -= CallKick;
     }
+
 
     private void OnChangeIsWalking(bool _isWalking)
     {

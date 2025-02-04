@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#MergeConflictsTryToFix">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#Polishing_1">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Gley/Localization/Resources/LocalizationFile.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Gley/Localization/Resources/LocalizationFile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Gley/Localization/Scripts/ToUse/WordIDs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Gley/Localization/Scripts/ToUse/WordIDs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BodyClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BodyClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RunButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RunButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c648d86e9013479d818310c5918e31a4176600/ac/b2e8d80e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2_Animation/UI/UIAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ClearPrefsWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/BodyClick.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/Boosters.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boosters.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinsOnClick.cs" root0="FORCE_HIGHLIGHTING" />
@@ -228,14 +230,6 @@
       <workItem from="1738436007868" duration="4061000" />
       <workItem from="1738499098527" duration="9394000" />
       <workItem from="1738571943930" duration="15560000" />
-    </task>
-    <task id="LOCAL-00011" summary="#CharacterArchitectureImproveTest">
-      <option name="closed" value="true" />
-      <created>1734599846937</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1734599846937</updated>
     </task>
     <task id="LOCAL-00012" summary="#AddedCharAtributesLogic">
       <option name="closed" value="true" />
@@ -621,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738658744953</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="#Polishing_1">
+      <option name="closed" value="true" />
+      <created>1738662384435</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1738662384435</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +639,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#BoxCollisionCorrection" />
     <MESSAGE value="#BoosetrsTextUpdate" />
     <MESSAGE value="#MusicTransitionAdded" />
     <MESSAGE value="#AnimationSceneScriptsAdded" />
@@ -662,6 +663,7 @@
     <MESSAGE value="#FinalTutDemo" />
     <MESSAGE value="#GameRdyToTest" />
     <MESSAGE value="#MergeConflictsTryToFix" />
-    <option name="LAST_COMMIT_MESSAGE" value="#MergeConflictsTryToFix" />
+    <MESSAGE value="#Polishing_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Polishing_1" />
   </component>
 </project>

@@ -18,6 +18,7 @@ public class GetNewItemPopUp : MonoBehaviour
 
     public static event Action<string, int> OnItemEquipped = delegate (string _equipGroup, int _equipN) { };
     public static event Action<string, int, Image> OnNeedFindSprite = delegate (string _equipGroup, int _equipN, Image _imageSprite) { };
+    public static event Action OnCloseNewItemPopUp;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +81,7 @@ public class GetNewItemPopUp : MonoBehaviour
         PlayerPrefs.SetInt(isItemEquippedName, currEquipN);
         OnItemEquipped(currGroup, currEquipN);
         ShowWgtManager.instance.InitViews();
+        OnCloseNewItemPopUp();
         gameObject.SetActive(false);
     }
     
@@ -87,7 +89,7 @@ public class GetNewItemPopUp : MonoBehaviour
     {
         SoundManager.instance.PlaySound_ButtClick();
         // SoundManager.instance.PlaySound_ButtClick();
-        
+        OnCloseNewItemPopUp();
         ShowWgtManager.instance.InitViews();
         gameObject.SetActive(false);
     }

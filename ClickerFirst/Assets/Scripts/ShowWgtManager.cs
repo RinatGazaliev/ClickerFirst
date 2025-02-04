@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,6 +9,7 @@ public class ShowWgtManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static ShowWgtManager instance;
+    public static event Action OnDisableCharClick;
     
     
     void Start()
@@ -96,6 +98,7 @@ public class ShowWgtManager : MonoBehaviour
    }
    public void StartPartRoadWdg()
    {
+       OnDisableCharClick();
        Debug.Log("setPartRoadActive");
        Time.timeScale = 0f;
        int tutN = Config.GetTutN();
@@ -129,6 +132,7 @@ public class ShowWgtManager : MonoBehaviour
 
    public void ShowNewItemPopUp(string group, int equipN)
    {
+       OnDisableCharClick();
        rewZone.gameObject.SetActive(false);
        newItemPopup.gameObject.SetActive(true);
        newItemPopup.ShowGetNewItemPopUp(group,equipN);

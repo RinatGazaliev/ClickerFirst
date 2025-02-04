@@ -28,5 +28,27 @@ public class RunButton : MonoBehaviour
         mainChar.CallMainObjClicked(mousePosition);
     }
     
+    private void OnEnable()
+    {
+        PartRoadCompleted.OnPartRoadCompletedClosed += ActivateMainObjClick;
+        ShowWgtManager.OnDisableCharClick += InactivateMainObjClick;
+        GetNewItemPopUp.OnCloseNewItemPopUp += ActivateMainObjClick;
+    }
+    private void OnDisable()
+    {
+        PartRoadCompleted.OnPartRoadCompletedClosed -= ActivateMainObjClick;
+        ShowWgtManager.OnDisableCharClick -= InactivateMainObjClick;
+        GetNewItemPopUp.OnCloseNewItemPopUp -= ActivateMainObjClick;
+    }
+
+    private void ActivateMainObjClick()
+    {
+        btnRun.interactable=true;
+    }
+    private void InactivateMainObjClick()
+    {
+        btnRun.interactable=false;
+    }
+    
 
 }

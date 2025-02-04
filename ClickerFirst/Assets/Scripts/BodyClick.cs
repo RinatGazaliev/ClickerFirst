@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D.Animation;
@@ -9,13 +11,13 @@ public class BodyClick : MonoBehaviour
     [SerializeField] private MainObject mainCharacter;
     // Start is called before the first frame update
     private SpriteRenderer spriteRenderer;
-    private PolygonCollider2D polygonCollider;
+    private BoxCollider2D polygonCollider;
     private SpriteSkin spriteSkin;
 
 
     void Start()
     {
-        //polygonCollider = GetComponent<PolygonCollider2D>();
+        polygonCollider = GetComponent<BoxCollider2D>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
        // spriteSkin = GetComponent<SpriteSkin>();
     }
@@ -26,20 +28,6 @@ public class BodyClick : MonoBehaviour
  
     }
 
-    private void UpdateColliderWithDeformation()
-    {
-        List<Vector2> path = new List<Vector2>();
-
-        // Получаем форму спрайта с учетом костей
-        if (spriteRenderer.sprite.GetPhysicsShapeCount() > 0)
-        {
-            // Получаем деформированную форму с учетом костей
-            spriteRenderer.sprite.GetPhysicsShape(0, path);
-
-            // Обновляем коллайдер на основе деформированной формы
-            polygonCollider.SetPath(0, path.ToArray());
-        }
-    }
 
     // Update is called once per frame
     public void  OnMouseDown()
@@ -83,6 +71,27 @@ public class BodyClick : MonoBehaviour
         // Проверяем альфа-пиксель
         return pixelColor.a > 0.1f;  // Порог для видимых пикселей
     }
-    
-    
+
+    private void OnEnable()
+    {
+        PartRoadCompleted.OnPartRoadCompletedClosed += ActivateMainObjClick;
+        ShowWgtManager.OnDisableCharClick += InactivateMainObjClick;
+        GetNewItemPopUp.OnCloseNewItemPopUp += ActivateMainObjClick;
+    }
+    private void OnDisable()
+    {
+        PartRoadCompleted.OnPartRoadCompletedClosed -= ActivateMainObjClick;
+        ShowWgtManager.OnDisableCharClick -= InactivateMainObjClick;
+        GetNewItemPopUp.OnCloseNewItemPopUp -= ActivateMainObjClick;
+    }
+
+    private void ActivateMainObjClick()
+    {
+        polygonCollider.enabled=true;
+    }
+    private void InactivateMainObjClick()
+    {
+        polygonCollider.enabled=false;
+    }
+
 }
