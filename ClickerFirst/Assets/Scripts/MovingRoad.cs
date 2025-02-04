@@ -35,7 +35,6 @@ public class MovingRoad : MonoBehaviour
     private int maxTextN;
     public bool isTutLocked = false;
     public static event Action<bool> OnIsWalkingChange;
-    public static event Action OnFlagWgtShown;
 
     void Start()
     {
@@ -77,7 +76,6 @@ public class MovingRoad : MonoBehaviour
                     }
                     isTutLocked = true;
                     showWdgManager.StartPartRoadWdg();
-                    
                     //Flag.SetActive(false);
                 }
             }
@@ -124,7 +122,6 @@ public class MovingRoad : MonoBehaviour
         LeftButtZoneManager.OnTutAnimFinished += OnTutWgtAnimFinished;
         ParallaxBGMove.OnStartFinalTut += StartFinalTut;
         ParallaxBGMove.OnFinishFinalTut += FinishFinalTut;
-        TimerShowFlag.OnTimerEnd += ActivateFlag;
     }
 
     void OnDisable()
@@ -136,7 +133,6 @@ public class MovingRoad : MonoBehaviour
         LeftButtZoneManager.OnTutAnimFinished -= OnTutWgtAnimFinished;
         ParallaxBGMove.OnStartFinalTut -= StartFinalTut;
         ParallaxBGMove.OnFinishFinalTut -= FinishFinalTut;
-        TimerShowFlag.OnTimerEnd -= ActivateFlag;
     }
 
     private void StartFinalTut()
@@ -147,12 +143,6 @@ public class MovingRoad : MonoBehaviour
     {
       //  currSpeedKf = currSpeedKf * 3 * 3;
         vfxFinal.gameObject.SetActive(true);
-    }
-
-    private void ActivateFlag()
-    {
-        Flag.SetActive(true);
-        isTutLocked = false;
     }
 
     private void OnTutWgtAnimFinished(string noMatter)

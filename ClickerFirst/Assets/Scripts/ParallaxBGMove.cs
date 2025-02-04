@@ -288,14 +288,10 @@ private void SetSpriteTextureN()
             if (objToCopy != null)
             {
                 int currShowFlagN = Config.GetFlagShowN();
-                if (ToShowFlagGameObjects.Count>0&&ToShowFlagGameObjects.Count>currShowFlagN)
+                if (ToShowFlagGameObjects.Count>0&&objToCopy==ToShowFlagGameObjects[currShowFlagN])
                 {
-                    if (objToCopy==ToShowFlagGameObjects[currShowFlagN])
-                    {
-                        Config.SetFlagCanShow(1);
-                        Config.SetFlagShowN(currShowFlagN+1); 
-                    }
-                
+                    Config.SetFlagCanShow(1);
+                    Config.SetFlagShowN(currShowFlagN+1);
                 }
                 Vector3 localPosition = new Vector3(3572, 0, 0);
            
