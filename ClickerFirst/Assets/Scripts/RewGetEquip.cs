@@ -48,7 +48,7 @@ public class RewGetEquip : MonoBehaviour
 
     private void OnRewardGain(bool _isRewardUpdate)
     {
-        attrButtonPtr.SetActive(true);
+        //attrButtonPtr.SetActive(true);
         attrShop.InitFunct();
        
         Debug.Log("OpenRandomLocked");

@@ -133,6 +133,7 @@ public class ShowWgtManager : MonoBehaviour
    public void ShowNewItemPopUp(string group, int equipN)
    {
        OnDisableCharClick();
+       attrPopup.gameObject.SetActive(false);
        rewZone.gameObject.SetActive(false);
        newItemPopup.gameObject.SetActive(true);
        newItemPopup.ShowGetNewItemPopUp(group,equipN);
