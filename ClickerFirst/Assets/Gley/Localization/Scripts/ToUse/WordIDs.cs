@@ -9,6 +9,7 @@ namespace Gley.Localization
 		Scene_Grilltown = 19,
 		Scene_nowhereville = 21,
 		Scene_NowherevilleSign = 20,
+		Scene_Wanted = 0,
 		UI_Auto = 6,
 		UI_Booster_perclick_desc = 9,
 		UI_Booster_persec_desc = 10,
