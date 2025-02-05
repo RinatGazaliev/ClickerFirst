@@ -388,7 +388,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1626
         y: 1849
-        width: 111
+        width: 109
         height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -407,9 +407,9 @@ TextureImporter:
       name: EasterEggs_14
       rect:
         serializedVersion: 2
-        x: 1735
+        x: 1736
         y: 1833
-        width: 175
+        width: 174
         height: 214
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -748,7 +748,7 @@ TextureImporter:
         width: 179
         height: 219
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -769,7 +769,7 @@ TextureImporter:
         width: 210
         height: 243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
