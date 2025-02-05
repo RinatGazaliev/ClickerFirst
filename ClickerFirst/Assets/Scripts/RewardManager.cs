@@ -11,12 +11,14 @@ public class RewardManager : MonoBehaviour
     private float totalTimerDoublePoints;
     private float totalTimerMoveBoost;
     private float totalTimerGetEquip;
+  
     void Start()
     {
         totalTimerAutoclick = timerAutoclick;
         totalTimerDoublePoints = timerDoublePoints;
         totalTimerMoveBoost = timerMoveBoosts;
-        timerGetEquip = totalTimerGetEquip;
+        totalTimerGetEquip = timerGetEquip;
+       // btnReward_GetEquip.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -63,13 +65,17 @@ public class RewardManager : MonoBehaviour
         if (isTimerGetEquipRunning)
         {
             timerGetEquip -= Time.deltaTime;
+            
+            // Обновляем UI-текст
+            UpdateTimerText();
+
             if (timerGetEquip <= 0f)
             {
-                //timerMoveBoosts = 0f;
                 isTimerGetEquipRunning = false;
                 timerGetEquip = totalTimerGetEquip;
-                btnReward_GetEquip.gameObject.SetActive(true);
-                //btnReward_GetEquip.InitViews();
+               // btnReward_GetEquip.gameObject.SetActive(true);
+                timerText.text = "00:00"; // Показываем 00:00 после завершения
+                UpdateGetEquipRewardTimer(false);
             }
         }
         
@@ -97,8 +103,8 @@ public class RewardManager : MonoBehaviour
     [Header("RewardEquip")] 
     [SerializeField] private RewGetEquip btnReward_GetEquip;
     [SerializeField] private float timerGetEquip;
+    public Text timerText;
     private bool isTimerGetEquipRunning = false;
-
     private void OnEnable()
     {
        RewAutoClicker.OnRewardAutoClickTimeFinish+=UpdateAutoClickRewardTimer;
@@ -154,14 +160,32 @@ public class RewardManager : MonoBehaviour
     {
         if (_isRewardUpdate)
         {
-            btnReward_GetEquip.gameObject.SetActive(false);
+            btnReward_GetEquip.gameObject.SetActive(true);
+            btnReward_GetEquip.GetComponent<Button>().interactable=false;
+            var color = btnReward_GetEquip.imgTV.color;
+            color.a = 0.5f;
+            btnReward_GetEquip.imgTV.color = color;
             isTimerGetEquipRunning = true;
+            //totalTimerGetEquip=timerGetEquip;
+            Debug.Log("RewardGetEquipUpdated");
             
         }
         else
         {
             btnReward_GetEquip.gameObject.SetActive(true);
+            var color = btnReward_GetEquip.imgTV.color;
+            color.a = 1f;
+            btnReward_GetEquip.imgTV.color = color;
+            btnReward_GetEquip.GetComponent<Button>().interactable=true;
         }
 
+    }
+    
+    // Метод для обновления текста таймера в формате "MM:SS"
+    void UpdateTimerText()
+    {
+        int minutes = Mathf.FloorToInt(timerGetEquip / 60);
+        int seconds = Mathf.FloorToInt(timerGetEquip % 60);
+        timerText.text = $"{minutes:D2}:{seconds:D2}";
     }
 }

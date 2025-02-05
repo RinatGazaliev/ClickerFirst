@@ -38,7 +38,7 @@ public class LeftButtZoneManager : MonoBehaviour
         rewAutoClicker.gameObject.SetActive(false);
         rewDoublePoints.gameObject.SetActive(false);
         rewMoveBoost.gameObject.SetActive(false);
-        rewGetEquip.gameObject.SetActive(false);
+       // rewGetEquip.gameObject.SetActive(false);
         equipShop.SetActive(false);
     }
 

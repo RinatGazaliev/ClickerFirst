@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - MainScene
-  - 
+  - LegPortal
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3891320149
+    locked: 0
+  - name: LegPortal
+    uniqueID: 822240923
     locked: 0

@@ -27,6 +27,7 @@ public class LegInPortal : MonoBehaviour
     }
     public void CallKickEvent()
     {
+        PlayPunchLeg();
         OnKickedAnim();
     }
     public void PlayPunchLeg()

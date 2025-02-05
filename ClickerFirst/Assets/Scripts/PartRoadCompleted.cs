@@ -20,6 +20,7 @@ public class PartRoadCompleted : MonoBehaviour
     [SerializeField] public GameObject Tut1;
     [SerializeField] public GameObject Tut2;
     [SerializeField] public GameObject Tut3;
+    [SerializeField] public GameObject EquipShopIcon;
 
     [SerializeField] private Image coinAnimate;
     [SerializeField] private Image kickAnimate;
@@ -44,7 +45,7 @@ public class PartRoadCompleted : MonoBehaviour
         
         btnOkTut1.onClick.AddListener(() => MoveToTarget(3,coinAnimate, rewardZone.rewDoublePoints.transform.position, 0.5f , rewardZone.rewDoublePoints.gameObject, Tut1, btnOkTut1));
         btnOkTut2.onClick.AddListener(() => MoveToTarget(2, kickAnimate, rewardZone.rewMoveBoost.transform.position, 0.5f , rewardZone.rewMoveBoost.gameObject, Tut2, btnOkTut2));
-        btnOkTut3.onClick.AddListener(() => MoveToTarget(1, clothesAnimate, rewardZone.rewGetEquip.transform.position, 0.5f , rewardZone.rewGetEquip.gameObject, Tut3, btnOkTut3));
+        btnOkTut3.onClick.AddListener(() => MoveToTarget(1, clothesAnimate, EquipShopIcon.transform.position, 0.5f , EquipShopIcon, Tut3, btnOkTut3));
        
     }
 

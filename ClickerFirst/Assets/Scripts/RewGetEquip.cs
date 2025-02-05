@@ -14,7 +14,7 @@ public class RewGetEquip : MonoBehaviour
     [SerializeField] private GameObject attrButtonPtr;
     [SerializeField] private ShowWgtManager showWgtManager;
     [SerializeField] private string YGRewardID;
-    [SerializeField] private Image imgTV;
+    [SerializeField] public Image imgTV;
     public List<int> arrayIndices = new List<int>();
     public static event Action OnEquipRewPressed;
    // public static event Action OnRewardGetEquipTimeFinish;
@@ -35,7 +35,7 @@ public class RewGetEquip : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
         
     }

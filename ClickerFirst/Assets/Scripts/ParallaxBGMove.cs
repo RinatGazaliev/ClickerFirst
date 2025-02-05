@@ -54,8 +54,7 @@ public class ParallaxBGMove : MonoBehaviour
             currRoadTextureN = maxTextN-3;
         }
            
-        SetSpriteTextureN();
-        GetCurrLocalPosition();
+
 
     }
 
@@ -98,7 +97,13 @@ public class ParallaxBGMove : MonoBehaviour
         isParallaxMove = false;
         Debug.Log("myBool is now FALSE");
     }
-    
+
+    private void StartParrallaxAfterTranslate()
+    {
+        SetSpriteTextureN();
+        GetCurrLocalPosition();
+    }
+
     void OnEnable()
     {
         // Подписываемся на событие
@@ -106,6 +111,7 @@ public class ParallaxBGMove : MonoBehaviour
         Config.OnChangeTotalDistance += SaveCurrLocalPosition;
         OnStartFinalTut += StartFinalTut;
         OnFinishFinalTut += FinishFinalTut;
+        MyLocalizationManager.OnTranslateEnds += StartParrallaxAfterTranslate;
 
     }
     
@@ -117,6 +123,7 @@ public class ParallaxBGMove : MonoBehaviour
         Config.OnChangeTotalDistance -= SaveCurrLocalPosition;
         OnStartFinalTut -= StartFinalTut;
         OnFinishFinalTut -= FinishFinalTut;
+        MyLocalizationManager.OnTranslateEnds -= StartParrallaxAfterTranslate;
     }
     private void StartFinalTut()
     {
