@@ -15,7 +15,7 @@ public class MyLocalizationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        API.SetCurrentLanguage(selectedLanguage);
+        API.SetCurrentLanguage(API.GetCurrentLanguage());
         TranslateAllText();
     }
 
