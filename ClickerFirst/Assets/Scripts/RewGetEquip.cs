@@ -40,6 +40,17 @@ public class RewGetEquip : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedGetEquip;
+        
+    }
+
+    private void OnDestroy()
+    {
+        LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedGetEquip;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -142,6 +153,7 @@ public class RewGetEquip : MonoBehaviour
     {
         if (tutName == "Tut3")
         {
+            Debug.Log("GetRewardTut3");
             attrButtonPtr.SetActive(true);
             OnRewardGain(false);
         }
@@ -158,13 +170,13 @@ public class RewGetEquip : MonoBehaviour
     private void OnEnable()
     {
         YG2RewardManager.instance.RewGetEquipFinish += GetRewardFinish;
-        LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedGetEquip;
+       // LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedGetEquip;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
         YG2RewardManager.instance.RewGetEquipFinish -= GetRewardFinish;
-        LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedGetEquip;
+       // LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedGetEquip;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
     private void CallRewVideo()

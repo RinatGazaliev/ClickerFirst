@@ -80,13 +80,14 @@ public class LeftButtZoneManager : MonoBehaviour
     
     public void AppearWithScale(GameObject obj, float duration,GameObject thisTut)
     {
-        
+        Debug.Log("appearWithScaleStart");
         Vector3 finalScale = obj.transform.localScale;
         obj.transform.localScale = Vector3.zero;
         obj.SetActive(true);
         obj.transform.DOScale(finalScale, duration).SetEase(Ease.OutBack)
             .OnComplete(() =>
             {
+                Debug.Log("appearWithScaleFinish");
                 OnTutAnimFinished(thisTut.name);
                 thisTut.SetActive(false);
             });

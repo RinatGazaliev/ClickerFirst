@@ -52,6 +52,10 @@ public class MovingRoad : MonoBehaviour
         currRoadTextureN_2 = Config.GetRoadTwoTextureCurrN();
         SetSpriteTextureN();
         GetCurrLocalPosition();
+        if (Config.GetMoveBoostTut()>1f)
+        {
+            vfxFinal.gameObject.SetActive(true); 
+        }
 
     }
 
