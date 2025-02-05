@@ -95,6 +95,7 @@ public class PartRoadCompleted : MonoBehaviour
             .SetEase(Ease.InQuad)
             .OnComplete(() =>
             {
+                //ShowWgtManager.instance.ShowNewItemPopUp();
                 rewardZone.AppearWithScale(finalBtnReward, 0.5f, thisTut);
                 //thisTut.SetActive(false);
                 bgImg.gameObject.SetActive(true);
