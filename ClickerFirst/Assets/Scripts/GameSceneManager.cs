@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameSceneManager : MonoBehaviour
     void Start()
     {
        // Config.isMusic = true;
+        YG2.GameReadyAPI();
+        YG2.GameplayStart();
         MusicManager.instance.PlayMusicBGFadeIn(false,2);
        //Config.SetTutN(0);
     }

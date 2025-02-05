@@ -1,3 +1,0 @@
-Build path: C:/Users/DimaD/Desktop/ZoraJoy/5. Clicker/BuildTest
-Build number: 9
-PluginYG version: 2.002
