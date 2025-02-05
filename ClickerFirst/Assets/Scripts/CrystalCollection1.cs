@@ -181,11 +181,12 @@ public class CrystalCollection : MonoBehaviour
                 .OnComplete(() =>
                 {
                     crystal.gameObject.SetActive(false);
-                    Config.SetTotalScore(Config.GetTotalScore() + currRewValue);
+                    
                 });
 
             delay += 0.1f;
         }
+        Config.SetTotalScore(Config.GetTotalScore() + currRewValue);
     }
 
     public void SetStartPositionCryst()

@@ -193,8 +193,8 @@ public class MovingRoad : MonoBehaviour
         float currPart1LocPosition = Config.GetRoadLastPositionPart1();
         float currPart2LocPosition = Config.GetRoadLastPositionPart2();
 
-        Part1.transform.transform.localPosition = new Vector3 (currPart1LocPosition,-409,0);
-        Part2.transform.transform.localPosition = new Vector3 (currPart2LocPosition,-409,0);
+        Part1.transform.transform.localPosition = new Vector3 (currPart1LocPosition,-325,0);
+        Part2.transform.transform.localPosition = new Vector3 (currPart2LocPosition,-325,0);
     }
     
     private void SetTextureObjectOne()
