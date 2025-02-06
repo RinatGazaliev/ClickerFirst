@@ -63,6 +63,7 @@ public class YG2RewardManager : MonoBehaviour
     // Метод подписан на событие OnReward (ивент вознаграждения)
     private void OnRewardFinish(string id)
     {
+        
         // Проверяем ID вознаграждения. Если совпадает с тем ID, с которым вызывали рекламу, то вознаграждаем.
         if (id == "AutoClick")
         {
@@ -70,6 +71,7 @@ public class YG2RewardManager : MonoBehaviour
             RewAutoClickFinish?.Invoke();
             MusicManager.instance.EnableMusic();
             SoundManager.instance.EnableSound();
+            MusicManager.instance.isSwapLocked = false;
         }
         if (id == "DoubleCoins")
         {
@@ -77,6 +79,7 @@ public class YG2RewardManager : MonoBehaviour
             RewDoubleCoinsFinish?.Invoke();
             MusicManager.instance.EnableMusic();
             SoundManager.instance.EnableSound();
+            MusicManager.instance.isSwapLocked = false;
         }
         if (id == "MoveBoost")
         {
@@ -84,6 +87,7 @@ public class YG2RewardManager : MonoBehaviour
             RewMoveBoosterFinish?.Invoke();
             MusicManager.instance.EnableMusic();
             SoundManager.instance.EnableSound();
+            MusicManager.instance.isSwapLocked = false;
         }
         if (id == "GetEquip")
         {
@@ -91,6 +95,7 @@ public class YG2RewardManager : MonoBehaviour
             RewGetEquipFinish?.Invoke();
             MusicManager.instance.EnableMusic();
             SoundManager.instance.EnableSound();
+            MusicManager.instance.isSwapLocked = false;
         }
    
     }
@@ -129,6 +134,7 @@ public class YG2RewardManager : MonoBehaviour
     {
         MusicManager.instance.EnableMusic();
         SoundManager.instance.EnableSound();
+        MusicManager.instance.isSwapLocked = false;
     }
     void Start()
     {

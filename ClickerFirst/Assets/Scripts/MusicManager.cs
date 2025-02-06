@@ -7,6 +7,7 @@ public class MusicManager : MonoBehaviour
 {
     
     public static MusicManager instance;
+    public bool isSwapLocked=false;
     [SerializeField] AudioSource audioMusic;
     //[SerializeField] AudioSource audioMusicRun;
     private Coroutine playAudioCoroutine;
@@ -90,7 +91,7 @@ public class MusicManager : MonoBehaviour
     
     public void SwapMusic(bool isRunning, float fadeDuration) {
         Debug.Log("FadeInStarted");
-        if (Config.isSound)
+        if (Config.isSound&&!isSwapLocked)
         { 
             audioMusic.DOFade(0f, fadeDuration)
                 .OnComplete(() => PlayMusicBGFadeIn(isRunning, fadeDuration));

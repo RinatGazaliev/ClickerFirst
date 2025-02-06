@@ -64,6 +64,7 @@ public class RewAutoClicker : MonoBehaviour
         SoundManager.instance.PlaySound_ButtClick();
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
+        MusicManager.instance.isSwapLocked = true;
         YG2.RewardedAdvShow(YGRewardID);
     }
 
@@ -93,7 +94,11 @@ public class RewAutoClicker : MonoBehaviour
 
        
         isAutoClickRunning = false;// Выключаем авто-клик
-        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);
+        if (Config.GetTutN()>=3)
+        {
+            LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);  
+        }
+        
         OnRewardAutoClickTimeFinish();
         Debug.Log("Auto-click ended");
     }

@@ -185,6 +185,7 @@ public class RewGetEquip : MonoBehaviour
         SoundManager.instance.PlaySound_ButtClick();
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
+        MusicManager.instance.isSwapLocked = true;
         YG2.RewardedAdvShow(YGRewardID);
     }
 }

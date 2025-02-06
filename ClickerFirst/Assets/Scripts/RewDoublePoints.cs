@@ -68,7 +68,10 @@ public class RewDoublePoints : MonoBehaviour
         Config.SetDoublePointsRewValue(1);
         isDoublePointsRunning = false;
         //OnRewardDoublePointsTimeFinish();
-        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);
+        if (Config.GetTutN()>=3)
+        {
+            LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);  
+        }
         OnRewardTimerUpdate(_isUpdateReward);
       
        
@@ -105,6 +108,7 @@ public class RewDoublePoints : MonoBehaviour
         SoundManager.instance.PlaySound_ButtClick();
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
+        MusicManager.instance.isSwapLocked = true;
         YG2.RewardedAdvShow(YGRewardID);
     }
     private void OnRewardGain (bool _isUpdateReward)

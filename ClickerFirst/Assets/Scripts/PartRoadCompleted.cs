@@ -47,8 +47,7 @@ public class PartRoadCompleted : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int findJoke = Random.Range(0, nameJokeLocalization.Count);
-        txtJoke.text = API.GetText(nameJokeLocalization[findJoke]);
+       
         canvasGroup = GetComponent<CanvasGroup>();
         btnContinue.onClick.AddListener(ContinuePressed);
       //  bgImg = GetComponent<Image>();
@@ -57,7 +56,7 @@ public class PartRoadCompleted : MonoBehaviour
         btnOkTut1.onClick.AddListener(() => MoveToTarget(3,coinAnimate, rewardZone.rewDoublePoints.transform.position, 0.5f , rewardZone.rewDoublePoints.gameObject, Tut1, btnOkTut1));
         btnOkTut2.onClick.AddListener(() => MoveToTarget(2, kickAnimate, rewardZone.rewMoveBoost.transform.position, 0.5f , rewardZone.rewMoveBoost.gameObject, Tut2, btnOkTut2));
         btnOkTut3.onClick.AddListener(() => MoveToTarget(1, clothesAnimate, EquipShopIcon.transform.position, 0.5f , EquipShopIcon, Tut3, btnOkTut3));
-       
+        SetJokeText();
     }
 
     // Update is called once per frame
@@ -79,6 +78,7 @@ public class PartRoadCompleted : MonoBehaviour
         YG2.InterstitialAdvShow();
         
         OnPartRoadCompletedClosed();
+        SetJokeText();
         gameObject.SetActive(false);
 
         // OnPartRoadCompletedActive();
@@ -112,6 +112,12 @@ public class PartRoadCompleted : MonoBehaviour
                 bgImg.gameObject.SetActive(true);
                 gameObject.SetActive(false);
                 });
+    }
+
+    private void SetJokeText()
+    {
+        int findJoke = Random.Range(0, nameJokeLocalization.Count);
+        txtJoke.text = API.GetText(nameJokeLocalization[findJoke]);
     }
 
     public void AnimateAppearance(GameObject obj, float arcHeight, Vector3 offset, float animationTime)
