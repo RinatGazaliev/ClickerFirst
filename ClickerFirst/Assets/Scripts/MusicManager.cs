@@ -34,7 +34,7 @@ public class MusicManager : MonoBehaviour
     
     
     public void PlayMusicBG() {
-        if (Config.isMusic)
+        if (Config.isSound)
         {
             if (audioMusic.clip == null)
             {
@@ -53,7 +53,7 @@ public class MusicManager : MonoBehaviour
     
     public void PlayMusicBGFadeIn(bool isRunning, float fadeDuration) {
         Debug.Log("FadeInStarted");
-        if (Config.isMusic)
+        if (Config.isSound)
         {
             if (isRunning)
             {
@@ -90,7 +90,7 @@ public class MusicManager : MonoBehaviour
     
     public void SwapMusic(bool isRunning, float fadeDuration) {
         Debug.Log("FadeInStarted");
-        if (Config.isMusic)
+        if (Config.isSound)
         { 
             audioMusic.DOFade(0f, fadeDuration)
                 .OnComplete(() => PlayMusicBGFadeIn(isRunning, fadeDuration));

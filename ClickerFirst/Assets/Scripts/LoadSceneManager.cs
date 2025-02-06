@@ -20,7 +20,8 @@ public class LoadSceneManager : MonoBehaviour
         {
             Config.SetTutN(2);
         }*/
-      //  Config.SetTutN(3);
+        //Config.SetTutN(3);
+        //Config.SetTotalScore(10000000);
         
     }
 

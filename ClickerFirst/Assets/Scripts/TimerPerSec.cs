@@ -48,11 +48,13 @@ public class TimerPerSec : MonoBehaviour
     {
         while (timerRunning)
         {
-            // Ждем 1 секунду
             yield return new WaitForSeconds(1f);
-
-            // Вызываем функцию каждую секунду
-            TimerFunction();
+            if (Config.GetScorePerSec()>0)
+            {
+                
+                // Вызываем функцию каждую секунду
+                TimerFunction();
+            }
         }
     }
 }
