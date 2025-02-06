@@ -91,6 +91,7 @@ public class RewAutoClicker : MonoBehaviour
 
        
         isAutoClickRunning = false;// Выключаем авто-клик
+        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);
         OnRewardAutoClickTimeFinish();
         Debug.Log("Auto-click ended");
     }
@@ -100,6 +101,8 @@ public class RewAutoClicker : MonoBehaviour
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
         imgTV.gameObject.SetActive(false);
+        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
+        
         
         if (!isAutoClickRunning) // Если таймер ещё не запущен
         {

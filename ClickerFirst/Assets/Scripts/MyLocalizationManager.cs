@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Gley.Localization;
+using Gley.Localization.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MyLocalizationManager : MonoBehaviour
 {
-    [SerializeField] private SupportedLanguages selectedLanguage = SupportedLanguages.English;
+   // [SerializeField] private SupportedLanguages selectedLanguage = SupportedLanguages.English;
     [SerializeField] private List<Text> arrayTextToTranslate; 
     [SerializeField] private List<string> arrayNameInLocManager;
     public static event Action  OnTranslateEnds;
@@ -15,7 +16,7 @@ public class MyLocalizationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        API.SetCurrentLanguage(API.GetCurrentLanguage());
+       // API.SetCurrentLanguage(API.GetCurrentLanguage());
         TranslateAllText();
     }
 
@@ -27,6 +28,7 @@ public class MyLocalizationManager : MonoBehaviour
 
     private void TranslateAllText()
     {
+        Debug.Log("StartTranslation");
         int i = 0;
         foreach (var textToTranslate in arrayTextToTranslate)
         {
@@ -37,5 +39,14 @@ public class MyLocalizationManager : MonoBehaviour
         }
 
         OnTranslateEnds();
+    }
+
+    private void OnEnable()
+    {
+        //LocalizationManager.OnTranslateStarts += TranslateAllText;
+    }
+    private void OnDisable()
+    {
+        //LocalizationManager.OnTranslateStarts -= TranslateAllText;
     }
 }

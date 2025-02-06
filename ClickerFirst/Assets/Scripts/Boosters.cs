@@ -96,7 +96,7 @@ public class Boosters : MonoBehaviour
         }
         if (distanceBoostValue>0f)
         {
-            txtDescrBooster.text = $"+{distanceBoostValue/2} {API.GetText(WordIDs.UI_Booster_steplenght_desc)}";
+            txtDescrBooster.text = $"+{distanceBoostValue/2f} {API.GetText(WordIDs.UI_Booster_steplenght_desc)}";
         }
 
     }

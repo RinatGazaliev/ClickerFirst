@@ -71,7 +71,7 @@ public class LeftButtZoneManager : MonoBehaviour
             if (isRewardEnded==0)
             {
                 yield return new WaitForSeconds(0.1f);
-                rewGetEquip.GetComponent<UIAnimation>().CallAnimationFunct();
+//                rewGetEquip.GetComponent<UIAnimation>().CallAnimationFunct();
                 rewGetEquip.gameObject.SetActive(true);
             }
         }

@@ -129,6 +129,7 @@ namespace YG.Insides
 
         private static void OnRewardedEvent()
         {
+            Message("Reward Adv");
 #if InterstitialAdv_yg
             if (YG2.infoYG.RewardedAdv.skipInterAdvAfterReward)
                 YG2.SkipNextInterAdCall();

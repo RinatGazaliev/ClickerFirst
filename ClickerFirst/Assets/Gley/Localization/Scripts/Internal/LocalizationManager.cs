@@ -15,6 +15,7 @@ namespace Gley.Localization.Internal
         const string languageSaveFile = "LanguageSaveFile";
 
         static LocalizationManager instance;
+        public static event Action  OnTranslateStarts;
         public static LocalizationManager Instance
         {
             get
@@ -139,6 +140,7 @@ namespace Gley.Localization.Internal
                 Debug.Log("yourLanguage is"+language);
             }
             SetCurrentLanguage((SupportedLanguages)language);
+           // OnTranslateStarts();
         }
 
 
