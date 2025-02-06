@@ -62,6 +62,8 @@ public class RewAutoClicker : MonoBehaviour
     private void CallRewVideo()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        MusicManager.instance.DisableMusic();
+        SoundManager.instance.DisableSound();
         YG2.RewardedAdvShow(YGRewardID);
     }
 
@@ -102,7 +104,7 @@ public class RewAutoClicker : MonoBehaviour
         btnSelf.interactable = false;
         imgTV.gameObject.SetActive(false);
         LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
-        
+
         
         if (!isAutoClickRunning) // Если таймер ещё не запущен
         {

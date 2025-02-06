@@ -89,6 +89,7 @@ public class RewMoveBoost : MonoBehaviour
         //animContrCharacter.SetBool("isKicked", false);
        // animContrCharacter.Play("1_Idle_1");
         //animContrCharacter.speed=1f;
+        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);
         OnRewardMoveBoostTimeFinish(); 
         OnRewardTimerUpdate(_isRewardUpdate);
         
@@ -102,6 +103,7 @@ public class RewMoveBoost : MonoBehaviour
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
         imgTV.gameObject.SetActive(false);
+        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
         
         if (!isMoveBoostRunning) // Если таймер ещё не запущен
         {
@@ -140,6 +142,8 @@ public class RewMoveBoost : MonoBehaviour
     private void CallRewVideo()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        MusicManager.instance.DisableMusic();
+        SoundManager.instance.DisableSound();
         YG2.RewardedAdvShow(YGRewardID);
     }
 

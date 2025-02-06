@@ -133,12 +133,15 @@ namespace Gley.Localization.Internal
             }
             supportedLanguages = Enum.GetValues(typeof(SupportedLanguages)).Cast<SupportedLanguages>().ToList();
             int language = LoadLanguage();
+            /*
             if (language == -1)
             {
                 //language = 10;
                 language = TransferLanguageYandexToGley();
                 Debug.Log("yourLanguage is"+language);
-            }
+                */
+            
+            language = TransferLanguageYandexToGley();
             SetCurrentLanguage((SupportedLanguages)language);
            // OnTranslateStarts();
         }

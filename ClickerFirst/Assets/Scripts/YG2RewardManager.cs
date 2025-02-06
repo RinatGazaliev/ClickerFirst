@@ -38,6 +38,8 @@ public class YG2RewardManager : MonoBehaviour
     {
         YG2.onRewardAdv += OnRewardFinish;
         YG2.onOpenRewardedAdv += OnRewardStart;
+        YG2.onCloseRewaededAdv += OnRewardClose;
+        YG2.onErrorRewardedAdv += OnRewardClose;
     }
 
     // Необходимо отписывать методы от событий при деактивации объекта
@@ -45,6 +47,8 @@ public class YG2RewardManager : MonoBehaviour
     {
         YG2.onRewardAdv -= OnRewardFinish;
         YG2.onOpenRewardedAdv -= OnRewardStart;
+        YG2.onCloseRewaededAdv -= OnRewardClose;
+        YG2.onErrorRewardedAdv -= OnRewardClose;
     }
     
     // Когда объект с данным классом станет активным, метод OnReward подпишится на событие вознаграждения
@@ -119,6 +123,12 @@ public class YG2RewardManager : MonoBehaviour
             
         }
 
+    }
+    
+    private void OnRewardClose()
+    {
+        MusicManager.instance.EnableMusic();
+        SoundManager.instance.EnableSound();
     }
     void Start()
     {

@@ -59,6 +59,7 @@ public class RewGetEquip : MonoBehaviour
 
     private void OnRewardGain(bool _isRewardUpdate)
     {
+   
         //attrButtonPtr.SetActive(true);
         attrShop.InitFunct();
        
@@ -182,6 +183,8 @@ public class RewGetEquip : MonoBehaviour
     private void CallRewVideo()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        MusicManager.instance.DisableMusic();
+        SoundManager.instance.DisableSound();
         YG2.RewardedAdvShow(YGRewardID);
     }
 }

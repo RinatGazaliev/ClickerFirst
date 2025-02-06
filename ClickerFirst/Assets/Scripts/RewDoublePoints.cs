@@ -68,6 +68,7 @@ public class RewDoublePoints : MonoBehaviour
         Config.SetDoublePointsRewValue(1);
         isDoublePointsRunning = false;
         //OnRewardDoublePointsTimeFinish();
+        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(true);
         OnRewardTimerUpdate(_isUpdateReward);
       
        
@@ -102,6 +103,8 @@ public class RewDoublePoints : MonoBehaviour
     private void CallRewVideo()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        MusicManager.instance.DisableMusic();
+        SoundManager.instance.DisableSound();
         YG2.RewardedAdvShow(YGRewardID);
     }
     private void OnRewardGain (bool _isUpdateReward)
@@ -109,6 +112,7 @@ public class RewDoublePoints : MonoBehaviour
         timerSlider.gameObject.SetActive(true);
         btnSelf.interactable = false;
         imgTV.gameObject.SetActive(false);
+        LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
         
         if (!isDoublePointsRunning) // Если таймер ещё не запущен
         {

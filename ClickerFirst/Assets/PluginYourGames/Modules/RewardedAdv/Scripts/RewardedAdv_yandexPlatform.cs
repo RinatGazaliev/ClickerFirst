@@ -15,7 +15,7 @@ namespace YG.Insides
 {
     public partial class YGSendMessage
     {
-        public void OpenRewardedAdv() => YGInsides.OpenRewardedAdv();
+        public void OpenRewardedAdv(string id) => YGInsides.OpenRewardedAdv(id);
 
         public void CloseRewardedAdv() => YGInsides.CloseRewardedAdv();
 
