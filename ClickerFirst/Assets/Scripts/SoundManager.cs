@@ -127,6 +127,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip ouch3;
     public AudioClip ouch4;
     public AudioClip ouch5;
+    public AudioClip ouch6;
+    public AudioClip ouch7;
+    public AudioClip ouch8;
     public void PlayRandomOuchSound()
     {
         if (audioSound == null)
@@ -137,7 +140,12 @@ public class SoundManager : MonoBehaviour
 
         AudioClip[] ouchClips = { ouch1, ouch2, ouch3, ouch4, ouch5 };
         AudioClip randomClip = ouchClips[Random.Range(0, ouchClips.Length)];  // Выбор случайного клипа
-        audioSound.PlayOneShot(randomClip);  // Проигрывание звука
+        if (Config.isSound)
+        {
+            audioSound.PlayOneShot(randomClip);  // Проигрывание звука
+        }
+
+       
     }
     
     

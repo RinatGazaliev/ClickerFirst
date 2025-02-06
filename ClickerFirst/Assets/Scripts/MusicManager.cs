@@ -116,8 +116,12 @@ public class MusicManager : MonoBehaviour
     }
     public void EnableMusic()
     {
+        if (Config.isSound)
+        {
+            audioMusic.volume=0.1f;
+        }
         //Config.SetMusic(true);
-        audioMusic.volume=0.1f;
+        
        // audioMusicRun.volume = 1;
     }
     

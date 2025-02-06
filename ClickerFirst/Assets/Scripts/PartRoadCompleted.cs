@@ -2,15 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Gley.Localization;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using YG;
+using Random = UnityEngine.Random;
 
 public class PartRoadCompleted : MonoBehaviour
 {
     public static event Action OnPartRoadCompletedActive;
     public static event Action OnPartRoadCompletedClosed;
+   
+    
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnOkTut1;
     
@@ -35,9 +39,16 @@ public class PartRoadCompleted : MonoBehaviour
     [SerializeField] private Image bgImg;
 
     [SerializeField] private CanvasGroup canvasGroup;
+    
+    [Header("JokeZone")]
+    [SerializeField] private Text txtJoke;
+    [SerializeField] private List<string> nameJokeLocalization;
+    
     // Start is called before the first frame update
     void Start()
     {
+        int findJoke = Random.Range(0, nameJokeLocalization.Count);
+        txtJoke.text = API.GetText(nameJokeLocalization[findJoke]);
         canvasGroup = GetComponent<CanvasGroup>();
         btnContinue.onClick.AddListener(ContinuePressed);
       //  bgImg = GetComponent<Image>();
