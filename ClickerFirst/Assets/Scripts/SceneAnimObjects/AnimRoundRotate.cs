@@ -7,7 +7,7 @@ public class AnimRoundRotate : MonoBehaviour
 {
     [SerializeField] private float fullAnimCycleTime = 360.0f; // Время в сек на 1 оборот
     [SerializeField] private float startDelay = 0.5f; // Задержка перед началом вращения 
-    public static float moveSpeed = -10f; // Скорость движения
+    public static float moveSpeed = 10f; // Скорость движения
     public float moveDistance = 5f; // Дистанция одного шага
     private Tween moveTween;
     private void Start()
@@ -30,7 +30,7 @@ public class AnimRoundRotate : MonoBehaviour
         moveTween?.Kill();
 
         // Бесконечное движение в локальных координатах
-        moveTween = transform.DOLocalMoveX(transform.localPosition.x + moveDistance, moveDistance / moveSpeed)
+        moveTween = transform.DOLocalMoveX(transform.localPosition.x - moveDistance, moveDistance / moveSpeed)
             .SetEase(Ease.Linear)
             .OnComplete(() => StartMoving()); // После завершения снова запускаем движение
     }
