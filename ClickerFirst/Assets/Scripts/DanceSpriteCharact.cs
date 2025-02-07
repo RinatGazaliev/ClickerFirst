@@ -1,28 +1,32 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DanceSpriteCharact : MonoBehaviour
 {
-    public Image imageComponent; // ��������� Image
-    public Sprite sprite1; // ������ ������
-    public Sprite sprite2; // ������ ������
-    public float switchInterval = 0.5f; // �������� ������������ � ��������
+    public Image imageComponent; // Ссылка на Image
+    public Sprite sprite1; // Первый спрайт
+    public Sprite sprite2; // Второй спрайт
+    public float switchInterval = 0.5f; // Интервал между сменами спрайтов
 
     private bool isSprite1Active = true;
     private Coroutine animationCoroutine;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartAnimation();
+        StartAnimation(); // Запускаем анимацию при включении объекта (например, при открытии виджета)
+    }
+
+    private void OnDisable()
+    {
+        StopAnimation(); // Останавливаем анимацию при закрытии виджета
     }
 
     private void StartAnimation()
     {
         if (animationCoroutine != null)
         {
-            StopCoroutine(animationCoroutine); // ������������� ���������� ��������
+            StopCoroutine(animationCoroutine); // Останавливаем предыдущую корутину (если есть)
         }
         animationCoroutine = StartCoroutine(SwitchSprites());
     }
@@ -38,12 +42,12 @@ public class DanceSpriteCharact : MonoBehaviour
 
     IEnumerator SwitchSprites()
     {
-        while (true) // Бесконечный цикл для непрерывного выполнения
+        while (true)
         {
             imageComponent.sprite = isSprite1Active ? sprite2 : sprite1;
             isSprite1Active = !isSprite1Active;
 
-            yield return new WaitForSecondsRealtime(switchInterval); // Пауза перед следующей сменой спрайта
+            yield return new WaitForSecondsRealtime(switchInterval);
         }
     }
 }
