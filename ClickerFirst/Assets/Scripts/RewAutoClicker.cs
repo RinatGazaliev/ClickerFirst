@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CrazyGames;
 using UnityEngine;
-using YG;
 using UnityEngine.UI;
 
 public class RewAutoClicker : MonoBehaviour
@@ -48,16 +48,6 @@ public class RewAutoClicker : MonoBehaviour
 
     }
     
-    private void OnEnable()
-    {
-        YG2RewardManager.instance.RewAutoClickFinish += OnRewardGain;
-        //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
-    }
-    private void OnDisable()
-    {
-        YG2RewardManager.instance.RewAutoClickFinish -= OnRewardGain;
-        //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
-    }
 
     private void CallRewVideo()
     {
@@ -65,7 +55,7 @@ public class RewAutoClicker : MonoBehaviour
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
-        YG2.RewardedAdvShow(YGRewardID);
+        CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,OnRewardGain);
     }
 
     private IEnumerator StartAutoClickTimer()
@@ -109,7 +99,9 @@ public class RewAutoClicker : MonoBehaviour
         btnSelf.interactable = false;
         imgTV.gameObject.SetActive(false);
         LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
-
+        MusicManager.instance.EnableMusic();
+        SoundManager.instance.EnableSound();
+        MusicManager.instance.isSwapLocked = false;
         
         if (!isAutoClickRunning) // Если таймер ещё не запущен
         {

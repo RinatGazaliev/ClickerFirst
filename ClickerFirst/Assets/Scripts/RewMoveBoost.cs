@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CrazyGames;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 public class RewMoveBoost : MonoBehaviour
 {
@@ -108,6 +108,10 @@ public class RewMoveBoost : MonoBehaviour
         imgTV.gameObject.SetActive(false);
         LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
         
+        MusicManager.instance.EnableMusic();
+        SoundManager.instance.EnableSound();
+        MusicManager.instance.isSwapLocked = false;
+        
         if (!isMoveBoostRunning) // Если таймер ещё не запущен
         {
             StartCoroutine(StartAutoClickTimer(_isRewardUpdate));
@@ -117,6 +121,7 @@ public class RewMoveBoost : MonoBehaviour
     {
         if (tutName == "Tut2")
         {
+            CrazySDK.Game.GameplayStart();
             OnRewardGain(false);
         }
     }
@@ -132,13 +137,13 @@ public class RewMoveBoost : MonoBehaviour
     }
     private void OnEnable()
     {
-        YG2RewardManager.instance.RewMoveBoosterFinish += GetRewardFinish;
+     
         LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedMoveBoost;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
-        YG2RewardManager.instance.RewMoveBoosterFinish -= GetRewardFinish;
+        
         LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedMoveBoost;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
@@ -148,7 +153,8 @@ public class RewMoveBoost : MonoBehaviour
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
-        YG2.RewardedAdvShow(YGRewardID);
+        //YG2.RewardedAdvShow(YGRewardID);
+        CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,GetRewardFinish);
     }
 
 }

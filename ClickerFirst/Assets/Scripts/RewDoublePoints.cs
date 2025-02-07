@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CrazyGames;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 
 public class RewDoublePoints : MonoBehaviour
@@ -82,6 +82,7 @@ public class RewDoublePoints : MonoBehaviour
     {
         if (tutName == "Tut1")
         {
+            CrazySDK.Game.GameplayStart();
             OnRewardGain(false);
         }
     }
@@ -93,13 +94,13 @@ public class RewDoublePoints : MonoBehaviour
 
     private void OnEnable()
     {
-        YG2RewardManager.instance.RewDoubleCoinsFinish += GetRewardFinish;
+       
         LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedDoubleCoins;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
-        YG2RewardManager.instance.RewDoubleCoinsFinish -= GetRewardFinish;
+       
         LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedDoubleCoins;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
@@ -109,7 +110,7 @@ public class RewDoublePoints : MonoBehaviour
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
-        YG2.RewardedAdvShow(YGRewardID);
+        CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,GetRewardFinish);
     }
     private void OnRewardGain (bool _isUpdateReward)
     {
@@ -117,6 +118,9 @@ public class RewDoublePoints : MonoBehaviour
         btnSelf.interactable = false;
         imgTV.gameObject.SetActive(false);
         LeftButtZoneManager.instance.equipShop.gameObject.SetActive(false);
+        MusicManager.instance.EnableMusic();
+        SoundManager.instance.EnableSound();
+        MusicManager.instance.isSwapLocked = false;
         
         if (!isDoublePointsRunning) // Если таймер ещё не запущен
         {

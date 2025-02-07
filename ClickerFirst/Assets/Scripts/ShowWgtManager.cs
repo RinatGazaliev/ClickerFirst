@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CrazyGames;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -99,6 +100,8 @@ public class ShowWgtManager : MonoBehaviour
    public void StartPartRoadWdg()
    {
        OnDisableCharClick();
+       CrazySDK.Game.HappyTime();
+       CrazySDK.Game.GameplayStop();
        Debug.Log("setPartRoadActive");
        Time.timeScale = 0f;
        int tutN = Config.GetTutN();
@@ -133,6 +136,7 @@ public class ShowWgtManager : MonoBehaviour
    public void ShowNewItemPopUp(string group, int equipN)
    {
        OnDisableCharClick();
+       CrazySDK.Game.GameplayStop();
        attrPopup.gameObject.SetActive(false);
        rewZone.gameObject.SetActive(false);
        newItemPopup.gameObject.SetActive(true);

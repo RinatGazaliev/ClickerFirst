@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using CrazyGames;
 using Unity.VisualScripting;
 using UnityEngine.UI;
-using YG;
 using Random = UnityEngine.Random;
 
 public class RewGetEquip : MonoBehaviour
@@ -144,6 +144,10 @@ public class RewGetEquip : MonoBehaviour
            PlayerPrefs.SetInt("AllEquipWatched", 1);
        }
 
+       MusicManager.instance.EnableMusic();
+       SoundManager.instance.EnableSound();
+       MusicManager.instance.isSwapLocked = false;
+       
         OnRewardTimerUpdate(_isRewardUpdate);
       
         
@@ -156,6 +160,7 @@ public class RewGetEquip : MonoBehaviour
         {
             Debug.Log("GetRewardTut3");
             attrButtonPtr.SetActive(true);
+            CrazySDK.Game.GameplayStart();
             OnRewardGain(false);
         }
     }
@@ -170,13 +175,13 @@ public class RewGetEquip : MonoBehaviour
     }
     private void OnEnable()
     {
-        YG2RewardManager.instance.RewGetEquipFinish += GetRewardFinish;
+      
        // LeftButtZoneManager.OnTutAnimFinished += OnTutAnimFinishedGetEquip;
         //YG2RewardManager.instance.RewAutoClickStart += TouchContinue_VideoRewardClosed;
     }
     private void OnDisable()
     {
-        YG2RewardManager.instance.RewGetEquipFinish -= GetRewardFinish;
+       
        // LeftButtZoneManager.OnTutAnimFinished -= OnTutAnimFinishedGetEquip;
         //YG2RewardManager.instance.RewAutoClickStart -= TouchContinue_VideoRewardClosed;
     }
@@ -186,6 +191,7 @@ public class RewGetEquip : MonoBehaviour
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
-        YG2.RewardedAdvShow(YGRewardID);
+       // YG2.RewardedAdvShow(YGRewardID);
+        CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,GetRewardFinish);
     }
 }

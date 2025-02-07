@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CrazyGames;
 using DG.Tweening;
 using Gley.Localization;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using YG;
 using Random = UnityEngine.Random;
 
 public class PartRoadCompleted : MonoBehaviour
@@ -73,10 +73,11 @@ public class PartRoadCompleted : MonoBehaviour
     private void ContinuePressed()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        CrazySDK.Game.GameplayStart();
         Time.timeScale = 1f;
         Debug.Log("AddInterHere");
-        YG2.InterstitialAdvShow();
-        
+        //YG2.InterstitialAdvShow();
+        CrazySDK.Ad.RequestAd(CrazyAdType.Midgame,null,null, null);
         OnPartRoadCompletedClosed();
         SetJokeText();
         gameObject.SetActive(false);
@@ -86,6 +87,7 @@ public class PartRoadCompleted : MonoBehaviour
 
     public void MoveToTarget(float arcHeightMultiplier, Image obj, Vector3 targetPosition, float duration , GameObject finalBtnReward, GameObject thisTut, Button thisButt)
     {
+        
         OnPartRoadCompletedClosed();
         thisTut.transform.Find("vfxRotation").gameObject.SetActive(false);
         thisButt.gameObject.SetActive(false);

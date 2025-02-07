@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using YG;
+
 
 namespace Gley.Localization.Internal
 {
@@ -133,16 +133,16 @@ namespace Gley.Localization.Internal
             }
             supportedLanguages = Enum.GetValues(typeof(SupportedLanguages)).Cast<SupportedLanguages>().ToList();
             int language = LoadLanguage();
-            /*
+            
             if (language == -1)
             {
-                //language = 10;
-                language = TransferLanguageYandexToGley();
+                language = 10;
+                //language = TransferLanguageYandexToGley();
                 Debug.Log("yourLanguage is"+language);
-                */
+                
+            }
             
-            language = TransferLanguageYandexToGley();
-            SetCurrentLanguage((SupportedLanguages)language);
+           SetCurrentLanguage((SupportedLanguages)language);
            // OnTranslateStarts();
         }
 
@@ -179,45 +179,7 @@ namespace Gley.Localization.Internal
             return defaultLanguage;
         }
         
-        private string GetYandexLanguage()
-        {
-            return YG2.envir.language;
-        }
-
-        private int TransferLanguageYandexToGley()
-        {
-            if (GetYandexLanguage()=="be"||GetYandexLanguage()=="kk"||GetYandexLanguage()=="uk"||GetYandexLanguage()=="uz"||GetYandexLanguage()=="ru")
-            {
-                return 30;
-            }
-            /*else if (GetYandexLanguage()=="ca"||GetYandexLanguage()=="es")
-            {
-                return 34;
-            }
-            else if (GetYandexLanguage()=="it")
-            {
-                return 21;
-            }
-            else if (GetYandexLanguage()=="fr")
-            {
-                return 14;
-            }
-            else if (GetYandexLanguage()=="de")
-            {
-                return 15;
-            }
-            else if (GetYandexLanguage() == "pt")
-            {
-                return 28;
-            }*/
-            else
-            {
-                return 10;
-            }
-        }
-        
-
-
+      
         /// <summary>
         /// Refresh all localization scripts from GameObjects
         /// </summary>

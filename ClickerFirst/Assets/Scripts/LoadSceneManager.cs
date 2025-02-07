@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class LoadSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LoadMenuScene_IEnumerator());
+       
         /*if (Config.GetTutN()<2)
         {
             Config.SetTutN(2);
@@ -30,7 +31,21 @@ public class LoadSceneManager : MonoBehaviour
     {
         
     }
-    
+
+    private void OnEnable()
+    {
+        CrazyInit.OnCrazyInitialized += LoadGame;
+    }
+    private void OnDisable()
+    {
+        CrazyInit.OnCrazyInitialized -= LoadGame;
+    }
+
+    private void LoadGame()
+    {
+        StartCoroutine(LoadMenuScene_IEnumerator());
+    }
+
     public IEnumerator LoadMenuScene_IEnumerator()
     {
         float startTime = Time.time;
