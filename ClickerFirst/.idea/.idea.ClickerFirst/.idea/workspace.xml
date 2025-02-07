@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Gley/Localization/Scripts/Internal/LocalizationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Gley/Localization/Scripts/Internal/LocalizationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewAutoClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewAutoClicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewDoublePoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewDoublePoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewGetEquip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewGetEquip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewMoveBoost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewMoveBoost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,15 +245,8 @@
       <workItem from="1738816880365" duration="2114000" />
       <workItem from="1738819896049" duration="17818000" />
       <workItem from="1738928356623" duration="7361000" />
-      <workItem from="1738940225512" duration="1107000" />
-    </task>
-    <task id="LOCAL-00027" summary="#YGIntegratedRewAndInter">
-      <option name="closed" value="true" />
-      <created>1735219696429</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1735219696429</updated>
+      <workItem from="1738940225512" duration="1154000" />
+      <workItem from="1738941677000" duration="298000" />
     </task>
     <task id="LOCAL-00028" summary="#SpritesEquipLogicChanged">
       <option name="closed" value="true" />
@@ -647,7 +632,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738935456054</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="#PreReleaseBuild">
+      <option name="closed" value="true" />
+      <created>1738941363595</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1738941363596</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +656,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#SoundSwitch" />
     <MESSAGE value="#Bugs_Equip&amp;Flag&amp;ClickChar_Fixed" />
     <MESSAGE value="#AnimCharCorrection" />
     <MESSAGE value="#LocalizationFinished" />
@@ -688,6 +680,7 @@
     <MESSAGE value="#ShowTimerFlagCorrection" />
     <MESSAGE value="#AnimMoveLeftCorrection" />
     <MESSAGE value="#CrazyIntegrated" />
-    <option name="LAST_COMMIT_MESSAGE" value="#CrazyIntegrated" />
+    <MESSAGE value="#PreReleaseBuild" />
+    <option name="LAST_COMMIT_MESSAGE" value="#PreReleaseBuild" />
   </component>
 </project>
