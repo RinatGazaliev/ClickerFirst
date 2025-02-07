@@ -190,7 +190,7 @@ namespace Gley.Localization.Internal
             {
                 return 30;
             }
-            else if (GetYandexLanguage()=="ca"||GetYandexLanguage()=="es")
+            /*else if (GetYandexLanguage()=="ca"||GetYandexLanguage()=="es")
             {
                 return 34;
             }
@@ -209,7 +209,7 @@ namespace Gley.Localization.Internal
             else if (GetYandexLanguage() == "pt")
             {
                 return 28;
-            }
+            }*/
             else
             {
                 return 10;

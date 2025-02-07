@@ -173,7 +173,7 @@ public class ScoreZone : MonoBehaviour
     
     private void UpdateTextParamsValues()
     {
-        float StepSize = startStepSize + (Config.GetDistanceBoostKf()-1)/2;
+        float StepSize = startStepSize*Config.GetMoveBoostRewValue()*Config.GetPerClickScaleKf() + (Config.GetDistanceBoostKf()-1)/2;
         txtStepSize.text = $"{StepSize:F2}";
         txtScorePerClickValue.text = Config.GetScorePerClick().ToString();
         txtScorePerSecValue.text = Config.GetScorePerSec().ToString();
