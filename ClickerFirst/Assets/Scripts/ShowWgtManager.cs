@@ -135,6 +135,7 @@ public class ShowWgtManager : MonoBehaviour
 
    public void ShowNewItemPopUp(string group, int equipN)
    {
+       Debug.Log("NEW ITEM POPUP SHOW");
        OnDisableCharClick();
        CrazySDK.Game.GameplayStop();
        attrPopup.gameObject.SetActive(false);

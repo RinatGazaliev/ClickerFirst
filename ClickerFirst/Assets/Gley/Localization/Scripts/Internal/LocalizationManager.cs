@@ -132,15 +132,15 @@ namespace Gley.Localization.Internal
                 Debug.LogError("Gley Localization is not configured properly. Go to Tools->Gley->Localization for setup");
             }
             supportedLanguages = Enum.GetValues(typeof(SupportedLanguages)).Cast<SupportedLanguages>().ToList();
-            int language = LoadLanguage();
+            int language =10;
             
-            if (language == -1)
+            /*if (language == -1)
             {
                 language = 10;
                 //language = TransferLanguageYandexToGley();
                 Debug.Log("yourLanguage is"+language);
                 
-            }
+            }*/
             
            SetCurrentLanguage((SupportedLanguages)language);
            // OnTranslateStarts();

@@ -55,6 +55,7 @@ public class RewAutoClicker : MonoBehaviour
         MusicManager.instance.DisableMusic();
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
+        CrazySDK.Game.GameplayStop();
         CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,OnRewardGain);
     }
 
@@ -102,6 +103,7 @@ public class RewAutoClicker : MonoBehaviour
         MusicManager.instance.EnableMusic();
         SoundManager.instance.EnableSound();
         MusicManager.instance.isSwapLocked = false;
+        CrazySDK.Game.GameplayStart();
         
         if (!isAutoClickRunning) // Если таймер ещё не запущен
         {

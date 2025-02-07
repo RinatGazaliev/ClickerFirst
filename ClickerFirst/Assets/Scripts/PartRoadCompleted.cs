@@ -77,12 +77,21 @@ public class PartRoadCompleted : MonoBehaviour
         Time.timeScale = 1f;
         Debug.Log("AddInterHere");
         //YG2.InterstitialAdvShow();
-        CrazySDK.Ad.RequestAd(CrazyAdType.Midgame,null,null, null);
+        //CrazySDK.Game.GameplayStop();
+        CrazySDK.Ad.RequestAd(CrazyAdType.Midgame,OnInterStart,null, OnInterFinished);
         OnPartRoadCompletedClosed();
         SetJokeText();
         gameObject.SetActive(false);
 
         // OnPartRoadCompletedActive();
+    }
+    private void OnInterStart()
+    {
+        CrazySDK.Game.GameplayStop();
+    }
+    private void OnInterFinished()
+    {
+        CrazySDK.Game.GameplayStart();
     }
 
     public void MoveToTarget(float arcHeightMultiplier, Image obj, Vector3 targetPosition, float duration , GameObject finalBtnReward, GameObject thisTut, Button thisButt)
