@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CrazyGames;
 using DG.Tweening;
 using Gley.Localization;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -87,17 +88,21 @@ public class PartRoadCompleted : MonoBehaviour
     }
     private void OnInterStart()
     {
-        CrazySDK.Game.GameplayStop();
+        
     }
     private void OnInterFinished()
     {
-        CrazySDK.Game.GameplayStart();
+       
     }
 
     public void MoveToTarget(float arcHeightMultiplier, Image obj, Vector3 targetPosition, float duration , GameObject finalBtnReward, GameObject thisTut, Button thisButt)
     {
         
         OnPartRoadCompletedClosed();
+        if (thisTut==Tut3)
+        {
+            rewardZone.CallItemPopupTut();
+        }
         thisTut.transform.Find("vfxRotation").gameObject.SetActive(false);
         thisButt.gameObject.SetActive(false);
         bgImg.gameObject.SetActive(false);

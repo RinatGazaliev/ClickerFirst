@@ -88,8 +88,16 @@ public class LeftButtZoneManager : MonoBehaviour
             .OnComplete(() =>
             {
                 Debug.Log("appearWithScaleFinish");
-                OnTutAnimFinished(thisTut.name);
+                if (thisTut.name!="Tut3")
+                {
+                    OnTutAnimFinished(thisTut.name); 
+                }
                 thisTut.SetActive(false);
             });
+    }
+
+    public void CallItemPopupTut()
+    {
+        OnTutAnimFinished("Tut3"); 
     }
 }

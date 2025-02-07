@@ -121,7 +121,7 @@ public class RewMoveBoost : MonoBehaviour
     {
         if (tutName == "Tut2")
         {
-            CrazySDK.Game.GameplayStart();
+            
             OnRewardGain(false);
         }
     }
@@ -133,7 +133,7 @@ public class RewMoveBoost : MonoBehaviour
     }
     private void GetRewardFinish()
     {
-        CrazySDK.Game.GameplayStart();
+       
         OnRewardGain(true);
     }
     private void OnEnable()
@@ -155,7 +155,7 @@ public class RewMoveBoost : MonoBehaviour
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
         //YG2.RewardedAdvShow(YGRewardID);
-        CrazySDK.Game.GameplayStop();
+        
         CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,GetRewardFinish);
     }
 

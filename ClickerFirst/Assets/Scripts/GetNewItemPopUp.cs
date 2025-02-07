@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using CrazyGames;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -82,6 +83,7 @@ public class GetNewItemPopUp : MonoBehaviour
         OnItemEquipped(currGroup, currEquipN);
         ShowWgtManager.instance.InitViews();
         SoundManager.instance.PlaySound_getEquip();
+        CrazySDK.Game.GameplayStart();
         OnCloseNewItemPopUp();
         gameObject.SetActive(false);
     }
@@ -89,6 +91,7 @@ public class GetNewItemPopUp : MonoBehaviour
     private void TouchCloseBtn()
     {
         SoundManager.instance.PlaySound_ButtClick();
+        CrazySDK.Game.GameplayStart();
         // SoundManager.instance.PlaySound_ButtClick();
         OnCloseNewItemPopUp();
         ShowWgtManager.instance.InitViews();

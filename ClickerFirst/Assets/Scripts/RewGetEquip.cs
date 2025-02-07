@@ -160,7 +160,7 @@ public class RewGetEquip : MonoBehaviour
         {
             Debug.Log("GetRewardTut3");
             attrButtonPtr.SetActive(true);
-            CrazySDK.Game.GameplayStart();
+            
             OnRewardGain(false);
         }
     }
@@ -192,7 +192,7 @@ public class RewGetEquip : MonoBehaviour
         SoundManager.instance.DisableSound();
         MusicManager.instance.isSwapLocked = true;
        // YG2.RewardedAdvShow(YGRewardID);
-        CrazySDK.Game.GameplayStop();
+        
         CrazySDK.Ad.RequestAd(CrazyAdType.Rewarded,null,null,GetRewardFinish);
     }
 }

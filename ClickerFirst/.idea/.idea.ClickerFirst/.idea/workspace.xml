@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#HappyTimePlaceCorrection">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowWgtManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetNewItemPopUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeftButtZoneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeftButtZoneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadSceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PartRoadCompleted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewAutoClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewAutoClicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewDoublePoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewDoublePoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewGetEquip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewGetEquip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RewMoveBoost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RewMoveBoost.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingHeaven.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/PartRoadCompleted.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/PartRoadCompleted.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RewardManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimFloatingBoat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimMovingUp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.psdimporter@8.0.5/Editor/PSDPlugin/PDNWrapper/PDNDecodeJob.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.psdimporter@8.0.5/Editor/PSDPlugin/PsdFile/PsdFile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/ShapeEditor/ShapeEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@3.1.3/Runtime/Deprecated/CinemachineFreeLook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections/AllocatorManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestPlane.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Editor/Camera/CameraUI.PhysicalCamera.Drawers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -256,15 +264,7 @@
       <workItem from="1738928356623" duration="7361000" />
       <workItem from="1738940225512" duration="1154000" />
       <workItem from="1738941677000" duration="489000" />
-      <workItem from="1738945192254" duration="327000" />
-    </task>
-    <task id="LOCAL-00029" summary="#BoostersZoneCorrection">
-      <option name="closed" value="true" />
-      <created>1735294061034</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1735294061034</updated>
+      <workItem from="1738945192254" duration="3647000" />
     </task>
     <task id="LOCAL-00030" summary="#ScoreDistanceFinished">
       <option name="closed" value="true" />
@@ -650,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738942130813</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="#HappyTimePlaceCorrection">
+      <option name="closed" value="true" />
+      <created>1738945552030</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1738945552031</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +674,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#AnimCharCorrection" />
     <MESSAGE value="#LocalizationFinished" />
     <MESSAGE value="#someLocalizationCorrection" />
     <MESSAGE value="#AddedFeelAnimationsRun&amp;Kick" />
@@ -691,6 +698,7 @@
     <MESSAGE value="#CrazyIntegrated" />
     <MESSAGE value="#PreReleaseBuild" />
     <MESSAGE value="#AnimDanceCorrection" />
-    <option name="LAST_COMMIT_MESSAGE" value="#AnimDanceCorrection" />
+    <MESSAGE value="#HappyTimePlaceCorrection" />
+    <option name="LAST_COMMIT_MESSAGE" value="#HappyTimePlaceCorrection" />
   </component>
 </project>
