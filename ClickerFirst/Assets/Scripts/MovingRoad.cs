@@ -31,7 +31,7 @@ public class MovingRoad : MonoBehaviour
     
     private int currRoadTextureN_1;
     private int currRoadTextureN_2;
-
+    private bool shouldShowFlag = false;
     private int maxTextN;
     public bool isTutLocked = false;
     public static event Action<bool> OnIsWalkingChange;
@@ -128,7 +128,7 @@ public class MovingRoad : MonoBehaviour
         LeftButtZoneManager.OnTutAnimFinished += OnTutWgtAnimFinished;
         ParallaxBGMove.OnStartFinalTut += StartFinalTut;
         ParallaxBGMove.OnFinishFinalTut += FinishFinalTut;
-        TimerShowFlag.OnTimerEnd += ActivateFlag;
+        TimerShowFlag.OnTimerEnd += SetShouldShowFlag;
     }
 
     void OnDisable()
@@ -140,7 +140,7 @@ public class MovingRoad : MonoBehaviour
         LeftButtZoneManager.OnTutAnimFinished -= OnTutWgtAnimFinished;
         ParallaxBGMove.OnStartFinalTut -= StartFinalTut;
         ParallaxBGMove.OnFinishFinalTut -= FinishFinalTut;
-        TimerShowFlag.OnTimerEnd -= ActivateFlag;
+        TimerShowFlag.OnTimerEnd -= SetShouldShowFlag;
     }
 
     private void StartFinalTut()
@@ -153,9 +153,10 @@ public class MovingRoad : MonoBehaviour
         vfxFinal.gameObject.SetActive(true);
     }
 
-    private void ActivateFlag()
+    private void SetShouldShowFlag()
     {
-        Flag.SetActive(true);
+        shouldShowFlag = true;
+        //Flag.SetActive(true);
         isTutLocked = false;
     }
 
@@ -285,6 +286,12 @@ public class MovingRoad : MonoBehaviour
             var object2Position = Part2.transform.localPosition;
             object2Position.x = startPositionPart2;
             Part2.transform.localPosition = object2Position;
+            if (shouldShowFlag)
+            {
+                Flag.SetActive(true);
+                shouldShowFlag = false;
+                OnFlagWgtShown();
+            }
             if (Config.GetFlagCanShow()==1)
             {
  

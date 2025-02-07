@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="#PolyshingPart4">
+    <list default="true" id="15f9b805-fd25-4378-8207-a2a18cccd4c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerFirst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/BuildLogYG2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Editor/BuildLogYG2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Modules/RewardedAdv/Scripts/RewardedAdv_yandexPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Modules/RewardedAdv/Scripts/RewardedAdv_yandexPlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Platforms/YandexGames/YandexGames.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Platforms/YandexGames/YandexGames.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PluginYourGames/Resources/SettingsYG2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PluginYourGames/Resources/SettingsYG2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingRoad.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +29,11 @@
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Modules/InterstitialAdv/Scripts/TimerBeforeAds/Editor/TimerBeforeAdsYGEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Modules/RewardedAdv/Scripts/RewardedAdv_callingSimulation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Modules/RewardedAdv/Scripts/RewardedAdv_yandexPlatform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Modules/RewardedAdv/Scripts/RewardedAdv_yandexPlatform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Modules/RewardedAdv/Scripts/RewardedAdv_yg.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Platforms/YandexGames/YandexGames.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Platforms/YandexGames/YandexGames.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Resources/SettingsYG2.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Resources/SettingsYG2.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/PluginYourGames/Resources/SettingsYG2.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scenes/Loading.unity" root0="SKIP_HIGHLIGHTING" />
@@ -47,6 +47,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CumulativeSumStepCalculator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EquipButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ForkBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/GameSceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/LoadSceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/LoadSceneManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,7 +57,18 @@
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/MyLocalizationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/MyLocalizationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/MyLocalizationManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/PartRoadCompleted.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewAutoClicker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewAutoClicker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewAutoClicker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewAutoClicker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewDoublePoints.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewDoublePoints.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewDoublePoints.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewGetEquip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewGetEquip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewMoveBoost.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/2.ZoraJoy/Games/4.ClickerFirst/UnityPrj/ClickerFirst/Assets/Scripts/RewMoveBoost.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RewardManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimFloatingBoat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneAnimObjects/AnimMovingUp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -263,39 +275,8 @@
       <workItem from="1738740698546" duration="16237000" />
       <workItem from="1738774463701" duration="1462000" />
       <workItem from="1738816880365" duration="2114000" />
-      <workItem from="1738819896049" duration="6843000" />
-    </task>
-    <task id="LOCAL-00020" summary="#AddedLoadingLogic">
-      <option name="closed" value="true" />
-      <created>1734954677127</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1734954677127</updated>
-    </task>
-    <task id="LOCAL-00021" summary="#ButtViewAnimations">
-      <option name="closed" value="true" />
-      <created>1734965260875</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1734965260875</updated>
-    </task>
-    <task id="LOCAL-00022" summary="#PartAnimationsCharacterIntegreated">
-      <option name="closed" value="true" />
-      <created>1735028283602</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1735028283602</updated>
-    </task>
-    <task id="LOCAL-00023" summary="#KickAnimAdded">
-      <option name="closed" value="true" />
-      <created>1735032007262</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1735032007262</updated>
+      <workItem from="1738819896049" duration="17818000" />
+      <workItem from="1738928356623" duration="1643000" />
     </task>
     <task id="LOCAL-00024" summary="#MusicAndSoundsMechAdded">
       <option name="closed" value="true" />
@@ -657,7 +638,39 @@
       <option name="project" value="LOCAL" />
       <updated>1738833802058</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="#Polyshing5">
+      <option name="closed" value="true" />
+      <created>1738841446139</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1738841446139</updated>
+    </task>
+    <task id="LOCAL-00070" summary="#PreReleaseVersion">
+      <option name="closed" value="true" />
+      <created>1738844064719</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1738844064719</updated>
+    </task>
+    <task id="LOCAL-00071" summary="#SoundSwapCorrection">
+      <option name="closed" value="true" />
+      <created>1738847237411</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1738847237411</updated>
+    </task>
+    <task id="LOCAL-00072" summary="#StepValueCorrection">
+      <option name="closed" value="true" />
+      <created>1738850584166</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1738850584166</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,10 +686,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="#TutSistemAdded" />
-    <MESSAGE value="#SaveRoadSystem" />
-    <MESSAGE value="#HeavenMaterial" />
-    <MESSAGE value="#RewardsTutFinished" />
     <MESSAGE value="#AnimRotateSomeCorrection" />
     <MESSAGE value="#AutoclickRunButtonAdded" />
     <MESSAGE value="#RewardsCompleteNewSystemFlagShow" />
@@ -698,6 +707,10 @@
     <MESSAGE value="#LocalizationYG" />
     <MESSAGE value="#PolyshingP2" />
     <MESSAGE value="#PolyshingPart4" />
-    <option name="LAST_COMMIT_MESSAGE" value="#PolyshingPart4" />
+    <MESSAGE value="#Polyshing5" />
+    <MESSAGE value="#PreReleaseVersion" />
+    <MESSAGE value="#SoundSwapCorrection" />
+    <MESSAGE value="#StepValueCorrection" />
+    <option name="LAST_COMMIT_MESSAGE" value="#StepValueCorrection" />
   </component>
 </project>
