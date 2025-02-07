@@ -53,9 +53,19 @@ public class PartRoadCompleted : MonoBehaviour
         btnContinue.onClick.AddListener(ContinuePressed);
       //  bgImg = GetComponent<Image>();
         Vector3 coordTut1FinalPosition = rewardZone.rewDoublePoints.transform.position;
-        
-        btnOkTut1.onClick.AddListener(() => MoveToTarget(3,coinAnimate, rewardZone.rewDoublePoints.transform.position, 0.5f , rewardZone.rewDoublePoints.gameObject, Tut1, btnOkTut1));
-        btnOkTut2.onClick.AddListener(() => MoveToTarget(2, kickAnimate, rewardZone.rewMoveBoost.transform.position, 0.5f , rewardZone.rewMoveBoost.gameObject, Tut2, btnOkTut2));
+
+        btnOkTut1.onClick.AddListener(() =>
+        {
+            MoveToTarget(3, coinAnimate, rewardZone.rewDoublePoints.transform.position, 0.5f,
+                rewardZone.rewDoublePoints.gameObject, Tut1, btnOkTut1);
+            CrazySDK.Game.GameplayStart();
+        });
+        btnOkTut2.onClick.AddListener(() =>
+        {
+            MoveToTarget(2, kickAnimate, rewardZone.rewMoveBoost.transform.position, 0.5f,
+                rewardZone.rewMoveBoost.gameObject, Tut2, btnOkTut2);
+            CrazySDK.Game.GameplayStart();
+        });
         btnOkTut3.onClick.AddListener(() => MoveToTarget(1, clothesAnimate, EquipShopIcon.transform.position, 0.5f , EquipShopIcon, Tut3, btnOkTut3));
         SetJokeText();
     }
