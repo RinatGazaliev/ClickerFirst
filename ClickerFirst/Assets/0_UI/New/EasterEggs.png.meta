@@ -114,9 +114,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 1796
+        y: 1790
         width: 109
-        height: 251
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,7 +473,7 @@ TextureImporter:
         x: 1
         y: 1573
         width: 195
-        height: 206
+        height: 209
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,7 +494,7 @@ TextureImporter:
         x: 200
         y: 1558
         width: 148
-        height: 206
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,7 +515,7 @@ TextureImporter:
         x: 351
         y: 1559
         width: 128
-        height: 206
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,10 +596,10 @@ TextureImporter:
       name: EasterEggs_23
       rect:
         serializedVersion: 2
-        x: 917
-        y: 1634
-        width: 253
-        height: 173
+        x: 918
+        y: 1636
+        width: 251
+        height: 170
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -781,6 +781,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EasterEggs_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 423
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d08644af27d6ae4db55ab049510f44d
+      internalID: -437711211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -818,6 +839,7 @@ TextureImporter:
       EasterEggs_3: -2047939938
       EasterEggs_30: -1852319386
       EasterEggs_31: 336532422
+      EasterEggs_32: -437711211
       EasterEggs_4: -1390463556
       EasterEggs_5: 2141886954
       EasterEggs_6: -667349925
