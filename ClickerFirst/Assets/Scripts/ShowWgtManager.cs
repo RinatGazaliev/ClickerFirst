@@ -100,8 +100,8 @@ public class ShowWgtManager : MonoBehaviour
    public void StartPartRoadWdg()
    {
        OnDisableCharClick();
-       CrazySDK.Game.HappyTime();
        CrazySDK.Game.GameplayStop();
+       CrazySDK.Game.HappyTime();
        Debug.Log("setPartRoadActive");
        Time.timeScale = 0f;
        int tutN = Config.GetTutN();
