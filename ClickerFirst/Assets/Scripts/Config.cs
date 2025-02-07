@@ -347,7 +347,7 @@ public class Config : MonoBehaviour
         
     }
     
-    private static List<int> boosterPrice = new List<int> {50, 200, 200, 1250, 2500, 5000, 15000, 50000, 100000, 300000, 1000000, 2000000, };
+    private static List<int> boosterPrice = new List<int> {50, 200, 200, 1250, 2500, 5000, 25000, 50000, 100000, 500000, 1000000, 2000000, };
     public static int GetBoosterPrice(int boosterN) {
         return boosterPrice[boosterN];
     }
