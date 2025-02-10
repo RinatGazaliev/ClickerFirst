@@ -7,11 +7,11 @@ using DG.Tweening;
 public class CrystalCollection : MonoBehaviour
 {
     private int multiplierKF = 5;
-    [SerializeField] private Button triggerButton; // Кнопка для запуска анимации
+    [SerializeField] private Button triggerButton;
     [SerializeField] private GameObject PileOfCrystalParent;
-    [SerializeField] private ParticleSystem vfxEffect; // 🎇 Ссылка на VFX
-    [SerializeField] private Transform targetObject; // 🎯 Объект, который увеличивается
-    [SerializeField] private Text txtValueReward; // 🔤 Текст награды
+    [SerializeField] private ParticleSystem vfxEffect;
+    [SerializeField] private Transform targetObject;
+    [SerializeField] private Text txtValueReward;
     [SerializeField] private Image targetImage;
     [SerializeField] private SpriteRenderer targetSprite;
     [SerializeField] private Vector3[] InitialPos1;
@@ -20,8 +20,11 @@ public class CrystalCollection : MonoBehaviour
     [SerializeField] private Vector3 FinalPositionHor;
     [SerializeField] private int CrystalNo;
 
+    [SerializeField] private Transform scaleTarget;
+    private static Transform scaleTargetGlobal;
+
     private int currRewValue;
-    private Vector3 endWorldPos; // Конечная точка в мировых координатах
+    private Vector3 endWorldPos;
     public Ease moveEase;
 
     void Start()
@@ -38,13 +41,13 @@ public class CrystalCollection : MonoBehaviour
         }
 
         SetStartPositionCryst();
+        FindScaleTarget();
 
-        // ✅ Привязываем кнопку и блокируем после нажатия
         if (triggerButton != null)
         {
             triggerButton.onClick.AddListener(() =>
             {
-                triggerButton.interactable = false; // ❌ Отключаем кнопку сразу после нажатия
+                triggerButton.interactable = false;
                 StartScalingEffect();
             });
         }
@@ -54,7 +57,34 @@ public class CrystalCollection : MonoBehaviour
         }
     }
 
-    /// 🔹 1. Увеличение объекта, затем исчезновение
+    private void FindScaleTarget()
+    {
+        if (scaleTargetGlobal == null)
+        {
+            Transform canvas = GameObject.Find("Canvas_UI")?.transform;
+            if (canvas != null)
+            {
+                Transform scoreZone = canvas.Find("ScoreZone");
+                if (scoreZone != null)
+                {
+                    scaleTargetGlobal = scoreZone.Find("SausagoidsNumber");
+                    if (scaleTargetGlobal != null)
+                        Debug.Log($"✅ Найден объект SausagoidsNumber: {scaleTargetGlobal.name}");
+                    else
+                        Debug.LogWarning("❌ Не найден объект 'SausagoidsNumber' внутри ScoreZone!");
+                }
+                else
+                {
+                    Debug.LogWarning("❌ Не найден объект 'ScoreZone' внутри Canvas_UI!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("❌ Не найден Canvas_UI!");
+            }
+        }
+    }
+
     private void StartScalingEffect()
     {
         if (targetObject != null)
@@ -72,7 +102,6 @@ public class CrystalCollection : MonoBehaviour
         }
     }
 
-    /// 🔹 2. Исчезновение объекта, затем параллельно запустить анимации текста и монет
     private void StartFadeEffect()
     {
         if (targetImage != null)
@@ -102,7 +131,6 @@ public class CrystalCollection : MonoBehaviour
         }
     }
 
-    /// 🔹 3. Запуск VFX, анимации монет и текста одновременно
     private void StartEffects()
     {
         if (vfxEffect != null)
@@ -118,22 +146,19 @@ public class CrystalCollection : MonoBehaviour
         StartTextAnimation();
     }
 
-    /// 🔹 4. Анимация текста: увеличение + движение в сторону монет + исчезновение
     private void StartTextAnimation()
     {
         if (txtValueReward != null)
         {
             Vector3 startPos = txtValueReward.transform.position;
-            Vector3 moveDirection = (endWorldPos - startPos).normalized * 100f; // Двигаем текст в том же направлении, что и монеты
+            Vector3 moveDirection = (endWorldPos - startPos).normalized * 100f;
 
-            // 🟢 Увеличение + движение
             txtValueReward.transform.DOScale(1.5f, 0.5f)
                 .SetEase(Ease.OutElastic);
 
             txtValueReward.transform.DOMove(startPos + moveDirection, 0.5f, false)
                 .SetEase(Ease.OutExpo);
 
-            // 🔥 Плавное исчезновение
             txtValueReward.DOFade(0, 0.4f)
                 .SetEase(Ease.InExpo)
                 .OnComplete(() =>
@@ -180,13 +205,35 @@ public class CrystalCollection : MonoBehaviour
                 .SetEase(moveEase)
                 .OnComplete(() =>
                 {
+                    ScaleObject();
                     crystal.gameObject.SetActive(false);
-                    
                 });
 
             delay += 0.1f;
         }
         Config.SetTotalScore(Config.GetTotalScore() + currRewValue);
+    }
+
+    private void ScaleObject()
+    {
+        Transform target = scaleTarget != null ? scaleTarget : scaleTargetGlobal;
+
+        if (target != null)
+        {
+            target.DOKill();
+            target.localScale = Vector3.one;
+
+            target.DOScale(1.2f, 0.1f)
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
+                {
+                    target.DOScale(1f, 0.1f).SetEase(Ease.InQuad);
+                });
+        }
+        else
+        {
+            Debug.LogWarning("❌ scaleTarget не найден!");
+        }
     }
 
     public void SetStartPositionCryst()
