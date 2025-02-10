@@ -13,6 +13,8 @@ public class TxtAddScorePerClick : MonoBehaviour
     [SerializeField] private float minRotation = -15f; // Минимальный угол поворота
     [SerializeField] private float maxRotation = 15f;  // Максимальный угол поворота
 
+    private static Transform scaleTargetGlobal; // 🟢 Глобальный объект для скейла (SausagoidsNumber)
+
     void Start()
     {
         txtAddScore = gameObject.GetComponent<Text>();
@@ -23,7 +25,56 @@ public class TxtAddScorePerClick : MonoBehaviour
         txtAddScore.text = $"<color={randomColor}>+{currScoreToAdd}</color>"; // Красим всё число
 
         objectRenderer = gameObject.GetComponent<Graphic>();
+
+        FindScaleTarget(); // 🟢 Ищем объект "SausagoidsNumber"
         AnimateMoveUpDisappear();
+        ScaleObject(); // 🟢 Запускаем анимацию "SausagoidsNumber"
+    }
+
+    /// 🔹 **Метод автоматического поиска "SausagoidsNumber"**
+    private void FindScaleTarget()
+    {
+        if (scaleTargetGlobal == null)
+        {
+            Transform canvas = GameObject.Find("Canvas_UI")?.transform;
+            if (canvas != null)
+            {
+                Transform scoreZone = canvas.Find("ScoreZone");
+                if (scoreZone != null)
+                {
+                    scaleTargetGlobal = scoreZone.Find("SausagoidsNumber");
+                    if (scaleTargetGlobal != null)
+                        Debug.Log($"✅ Найден объект SausagoidsNumber: {scaleTargetGlobal.name}");
+                    else
+                        Debug.LogWarning("❌ Не найден объект 'SausagoidsNumber' внутри ScoreZone!");
+                }
+                else
+                {
+                    Debug.LogWarning("❌ Не найден объект 'ScoreZone' внутри Canvas_UI!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("❌ Не найден Canvas_UI!");
+            }
+        }
+    }
+
+    /// 🔹 **Метод анимации увеличения "SausagoidsNumber"**
+    private void ScaleObject()
+    {
+        if (scaleTargetGlobal != null)
+        {
+            scaleTargetGlobal.DOKill(); // Останавливаем текущую анимацию
+            scaleTargetGlobal.localScale = Vector3.one; // Сбрасываем масштаб перед новой анимацией
+
+            scaleTargetGlobal.DOScale(1.2f, 0.1f) // Увеличение на 20%
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
+                {
+                    scaleTargetGlobal.DOScale(1f, 0.1f).SetEase(Ease.InQuad); // ✅ Возвращение к 1.0
+                });
+        }
     }
 
     private string GetRandomColor()
