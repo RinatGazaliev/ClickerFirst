@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CrazyGames;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -49,7 +50,7 @@ public class LoadSceneManager : MonoBehaviour
     public IEnumerator LoadMenuScene_IEnumerator()
     {
         float startTime = Time.time;
-
+        CrazySDK.Ad.HasAdblock(SetConfigAdblock);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("GameScene");
         asyncLoad.allowSceneActivation = false;
         while (!asyncLoad.isDone)
@@ -76,5 +77,10 @@ public class LoadSceneManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    private void SetConfigAdblock(bool IsAdblock)
+    {
+        Config.isAdBlock = IsAdblock;
     }
 }

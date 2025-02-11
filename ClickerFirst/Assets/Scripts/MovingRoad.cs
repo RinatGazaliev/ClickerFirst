@@ -17,6 +17,7 @@ public class MovingRoad : MonoBehaviour
     [SerializeField] GameObject Part1;
     [SerializeField] GameObject Part2;
     [SerializeField] GameObject Flag;
+    [SerializeField] GameObject Zombie;
     private float startPositionPart1;
     private float startPositionPart2;
     //public Transform object1; // Первый объект
@@ -305,11 +306,16 @@ public class MovingRoad : MonoBehaviour
                 Config.SetHeavenMove(true);
                 Flag.SetActive(true);
                 Config.SetFlagCanShow(0);
+                if (currRoadTextureN_2==2)
+                {
+                    Zombie.SetActive(true);
+                }
             }
             else
             {
                 Debug.Log("currRoadTextureN"+currRoadTextureN_1);
                 Debug.Log("currRoadTextureN"+currRoadTextureN_2);
+                Zombie.SetActive(false);
                 if (currRoadTextureN_1!=currRoadTextureN_2)
                 {
                     currRoadTextureN_1 = currRoadTextureN_2;

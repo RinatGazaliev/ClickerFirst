@@ -124,20 +124,33 @@ public class RewardManager : MonoBehaviour
     private void UpdateAutoClickRewardTimer()
     {
         btnReward_Autoclick.gameObject.SetActive(false);
-        isTimerAutoClickRunning = true;
+        if (Config.isAdBlock)
+        {
+            isTimerAutoClickRunning = true; 
+        }
     }
     private void UpdateDoublePointsRewardTimer(bool _isRewardUpdate)
     {
         if (_isRewardUpdate)
         {
             btnReward_DoublePoints.gameObject.SetActive(false);
-            isTimerDoubleCoinsRunning = true;
-            
+           if (!Config.isAdBlock)
+            {
+                isTimerDoubleCoinsRunning = true;
+            }
         }
         else
         {
-            btnReward_DoublePoints.gameObject.SetActive(true);
-            btnReward_DoublePoints.InitViews();
+            if (!Config.isAdBlock)
+            {
+                btnReward_DoublePoints.gameObject.SetActive(true);
+                btnReward_DoublePoints.InitViews();
+            }
+            else
+            {
+                btnReward_DoublePoints.gameObject.SetActive(false);
+            }
+
         }
 
     }
@@ -146,12 +159,24 @@ public class RewardManager : MonoBehaviour
         if (_isRewardUpdate)
         {
             btnReward_MoveBoost.gameObject.SetActive(false);
-            isTimerMoveBoostRunning = true;
+           
+            if (!Config.isAdBlock)
+            {
+                isTimerMoveBoostRunning = true;
+            }
         }
         else
         {
-            btnReward_MoveBoost.gameObject.SetActive(true);
-            btnReward_MoveBoost.InitViews();
+        
+            if (!Config.isAdBlock)
+            {
+                btnReward_MoveBoost.gameObject.SetActive(true);
+                btnReward_MoveBoost.InitViews();
+            }
+            else
+            {
+                btnReward_MoveBoost.gameObject.SetActive(false);
+            }
         }
 
     }
@@ -160,23 +185,37 @@ public class RewardManager : MonoBehaviour
     {
         if (_isRewardUpdate)
         {
-            btnReward_GetEquip.gameObject.SetActive(true);
-            btnReward_GetEquip.GetComponent<Button>().interactable=false;
-            var color = btnReward_GetEquip.imgTV.color;
-            color.a = 0.5f;
-            btnReward_GetEquip.imgTV.color = color;
-            isTimerGetEquipRunning = true;
-            //totalTimerGetEquip=timerGetEquip;
-            Debug.Log("RewardGetEquipUpdated");
-            
+            if (!Config.isAdBlock)
+            {
+                btnReward_GetEquip.gameObject.SetActive(true);
+                btnReward_GetEquip.GetComponent<Button>().interactable = false;
+                var color = btnReward_GetEquip.imgTV.color;
+                color.a = 0.5f;
+                btnReward_GetEquip.imgTV.color = color;
+                isTimerGetEquipRunning = true;
+                //totalTimerGetEquip=timerGetEquip;
+                Debug.Log("RewardGetEquipUpdated");
+            }
+            else
+            {
+                btnReward_GetEquip.gameObject.SetActive(false);
+            }
+
         }
         else
         {
-            btnReward_GetEquip.gameObject.SetActive(true);
-            var color = btnReward_GetEquip.imgTV.color;
-            color.a = 1f;
-            btnReward_GetEquip.imgTV.color = color;
-            btnReward_GetEquip.GetComponent<Button>().interactable=true;
+            if (!Config.isAdBlock)
+            {
+                btnReward_GetEquip.gameObject.SetActive(true);
+                var color = btnReward_GetEquip.imgTV.color;
+                color.a = 1f;
+                btnReward_GetEquip.imgTV.color = color;
+                btnReward_GetEquip.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                btnReward_GetEquip.gameObject.SetActive(false);
+            }
         }
 
     }

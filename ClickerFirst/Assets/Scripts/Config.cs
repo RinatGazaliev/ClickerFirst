@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Config : MonoBehaviour
 {
+
+    public static bool isAdBlock = false;
     
     private const string TUTNUMBER = "TutN";
     public static void SetTutN(int scoreValue)

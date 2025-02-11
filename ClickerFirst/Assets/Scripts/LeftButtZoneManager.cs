@@ -44,38 +44,40 @@ public class LeftButtZoneManager : MonoBehaviour
 
     private IEnumerator StartAnim()
     {
-        yield return new WaitForSeconds(0.1f);
-        rewAutoClicker.gameObject.SetActive(true);
-        rewAutoClicker.GetComponent<UIAnimation>().CallAnimationFunct();
-
-        if (tutN>=1)
+        if (!Config.isAdBlock)
         {
             yield return new WaitForSeconds(0.1f);
-            rewDoublePoints.gameObject.SetActive(true);
-            rewDoublePoints.GetComponent<UIAnimation>().CallAnimationFunct();
-        }
+            rewAutoClicker.gameObject.SetActive(true);
+            rewAutoClicker.GetComponent<UIAnimation>().CallAnimationFunct();
 
-
-        if (tutN >= 2)
-        {
-            yield return new WaitForSeconds(0.1f);
-            rewMoveBoost.GetComponent<UIAnimation>().CallAnimationFunct();
-            rewMoveBoost.gameObject.SetActive(true);
-        }
-
-        if (tutN >= 3)
-        {
-            yield return new WaitForSeconds(0.1f);
-            equipShop.GetComponent<UIAnimation>().CallAnimationFunct();
-            equipShop.SetActive(true);
-            if (isRewardEnded==0)
+            if (tutN>=1)
             {
                 yield return new WaitForSeconds(0.1f);
+                rewDoublePoints.gameObject.SetActive(true);
+                rewDoublePoints.GetComponent<UIAnimation>().CallAnimationFunct();
+            }
+
+
+            if (tutN >= 2)
+            {
+                yield return new WaitForSeconds(0.1f);
+                rewMoveBoost.GetComponent<UIAnimation>().CallAnimationFunct();
+                rewMoveBoost.gameObject.SetActive(true);
+            }
+
+            if (tutN >= 3)
+            {
+                yield return new WaitForSeconds(0.1f);
+                equipShop.GetComponent<UIAnimation>().CallAnimationFunct();
+                equipShop.SetActive(true);
+                if (isRewardEnded==0)
+                {
+                    yield return new WaitForSeconds(0.1f);
 //                rewGetEquip.GetComponent<UIAnimation>().CallAnimationFunct();
-                rewGetEquip.gameObject.SetActive(true);
+                    rewGetEquip.gameObject.SetActive(true);
+                }
             }
         }
-
     }
     
     public void AppearWithScale(GameObject obj, float duration,GameObject thisTut)
