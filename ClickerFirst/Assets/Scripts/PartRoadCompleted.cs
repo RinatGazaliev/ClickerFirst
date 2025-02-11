@@ -98,11 +98,11 @@ public class PartRoadCompleted : MonoBehaviour
     }
     private void OnInterStart()
     {
-        
+        CrazySDK.Game.GameplayStop();
     }
     private void OnInterFinished()
     {
-       
+        CrazySDK.Game.GameplayStart();
     }
 
     public void MoveToTarget(float arcHeightMultiplier, Image obj, Vector3 targetPosition, float duration , GameObject finalBtnReward, GameObject thisTut, Button thisButt)
