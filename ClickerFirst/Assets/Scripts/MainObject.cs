@@ -46,7 +46,9 @@ public class MainObject : MonoBehaviour
         Debug.Log("Спрайт был кликнут через родительский объект!");
         // Debug.Log("ConfiScorePerClickKF"+Config.GetPerClickScaleKf());
     }
-    
+
+
+
     public void OnPointerClick()
     {
         Debug.Log("MainObjClicked");
