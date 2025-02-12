@@ -8,15 +8,18 @@ using UnityEngine.U2D.Animation;
 
 public class BodyClick : MonoBehaviour
 {
+    public static BodyClick instance;
     [SerializeField] private MainObject mainCharacter;
     // Start is called before the first frame update
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D polygonCollider;
     private SpriteSkin spriteSkin;
 
+    
 
     void Start()
     {
+        instance = this;
         polygonCollider = GetComponent<BoxCollider2D>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
        // spriteSkin = GetComponent<SpriteSkin>();
@@ -85,11 +88,11 @@ public class BodyClick : MonoBehaviour
         GetNewItemPopUp.OnCloseNewItemPopUp -= ActivateMainObjClick;
     }
 
-    private void ActivateMainObjClick()
+    public void ActivateMainObjClick()
     {
         polygonCollider.enabled=true;
     }
-    private void InactivateMainObjClick()
+    public void InactivateMainObjClick()
     {
         polygonCollider.enabled=false;
     }
