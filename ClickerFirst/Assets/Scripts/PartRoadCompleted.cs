@@ -89,9 +89,9 @@ public class PartRoadCompleted : MonoBehaviour
         Debug.Log("AddInterHere");
         //YG2.InterstitialAdvShow();
         //CrazySDK.Game.GameplayStop();
-        CrazySDK.Ad.RequestAd(CrazyAdType.Midgame,OnInterStart,null, OnInterFinished);
         OnPartRoadCompletedClosed();
         SetJokeText();
+        CrazySDK.Ad.RequestAd(CrazyAdType.Midgame, OnInterStart, null, OnInterFinished);
         gameObject.SetActive(false);
 
         // OnPartRoadCompletedActive();
